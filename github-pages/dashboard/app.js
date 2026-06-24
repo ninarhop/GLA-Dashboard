@@ -123,7 +123,7 @@ function renderTracking() {
     metric("Added to current VRVH", countyRow ? countyRow.addedToCurrentVrvh : summary.addedToCurrentVrvh),
     metric("Added after purge-list contact", influencedCount),
     metric("Purge-list contacts", summary.purgeListContacts || summary.contactedVoters),
-    metric("GLA list types", (tracking.listTypeCounts || []).length)
+    metric("Easy App touches", summary.easyAppTouches || 0)
   ].join("");
 
   byId("trackingSourceTable").innerHTML = `
@@ -213,16 +213,73 @@ function renderOutreach() {
 }
 
 function renderRegistration() {
-  byId("demographicTable").innerHTML = `<p class="brand-subtitle">Registration outcome files are not loaded in this public copy.</p>`;
+  const tracking = data.outreachTracking;
+  const easyApp = tracking?.easyApp;
+  if (!tracking || !easyApp) {
+    byId("demographicTable").innerHTML = `<p class="brand-subtitle">Easy App aggregate data is not loaded in this public copy.</p>`;
+    byId("attributionTable").innerHTML = rowsToTable(
+      [
+        { key: "source", label: "Aggregate source" },
+        { key: "status", label: "Status" }
+      ],
+      [
+        { source: "EZ app registrations", status: "Needed" },
+        { source: "Future registration systems", status: "Needed" },
+        { source: "Matched outreach totals", status: "Needed" }
+      ]
+    );
+    return;
+  }
+
+  const countyRow = selectedCountyRow(easyApp.countySummary || []);
+  const summary = tracking.summary;
+  const touches = countyRow ? countyRow.touches : summary.easyAppTouches;
+  const submissions = countyRow ? countyRow.submissions : summary.easyAppSubmissions;
+  const currentVrvh = countyRow ? countyRow.currentVrvh : summary.easyAppCurrentVrvh;
+  const addedToCurrent = countyRow ? countyRow.addedToCurrentVrvh : summary.easyAppAddedToCurrentVrvh;
+  const currentPurge = countyRow ? countyRow.currentPurge : summary.easyAppCurrentPurge;
+  const submissionRate = countyRow ? countyRow.submissionRate : summary.easyAppSubmissionRate;
+  const currentVrvhRate = countyRow ? countyRow.currentVrvhRate : summary.easyAppCurrentVrvhRate;
+
+  byId("demographicTable").innerHTML = `
+    <div class="metric-grid compact">
+      ${[
+        metric("Easy App touches", touches),
+        metric("Easy App submissions", submissions),
+        metric("Made current VRVH", currentVrvh),
+        metric("Added to current VRVH", addedToCurrent),
+        metric("Still current purge", currentPurge),
+        metric("Submission rate", formatPercent(submissionRate / 100)),
+        metric("Current VRVH rate", formatPercent(currentVrvhRate / 100))
+      ].join("")}
+    </div>
+    ${rowsToTable(
+      [
+        { key: "county", label: "County" },
+        { key: "touches", label: "Easy App touches", render: (row) => formatNumber(row.touches) },
+        { key: "submissions", label: "Submissions", render: (row) => formatNumber(row.submissions) },
+        { key: "currentVrvh", label: "Current VRVH", render: (row) => formatNumber(row.currentVrvh) },
+        { key: "addedToCurrentVrvh", label: "Added to VRVH", render: (row) => formatNumber(row.addedToCurrentVrvh) },
+        { key: "currentPurge", label: "Current purge", render: (row) => formatNumber(row.currentPurge) }
+      ],
+      countyRow ? [countyRow] : (easyApp.countySummary || []).slice(0, 20)
+    )}
+  `;
+
   byId("attributionTable").innerHTML = rowsToTable(
     [
       { key: "source", label: "Aggregate source" },
-      { key: "status", label: "Status" }
+      { key: "count", label: "Rows", render: (row) => formatNumber(row.count) }
     ],
     [
-      { source: "EZ app registrations", status: "Needed" },
-      { source: "Future registration systems", status: "Needed" },
-      { source: "Matched outreach totals", status: "Needed" }
+      ...(easyApp.currentVrvhStatusCounts || []).map((row) => ({
+        source: row.currentVrvhStatus,
+        count: row.count
+      })),
+      ...(easyApp.submissionCounts || []).map((row) => ({
+        source: `Submission ${row.submissionStatus}`,
+        count: row.count
+      }))
     ]
   );
 }
@@ -441,6 +498,7 @@ function bindEvents() {
       state.county = event.target.value;
       renderTracking();
       renderVoterFile();
+      renderRegistration();
       renderPrimary2026();
       renderZodiac();
       renderGeography();

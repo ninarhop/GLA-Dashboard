@@ -9049,603 +9049,2091 @@ window.GLA_WEBSITE_DATA.zodiac = {
 window.GLA_WEBSITE_DATA.outreachTracking = {
   "source": {
     "fileName": "GLA_2026_Registration_Outreach_Tracking.csv",
-    "modifiedAt": "2026-06-24T13:33:24+00:00",
-    "rowCount": 251813,
+    "modifiedAt": "2026-06-24T14:46:01+00:00",
+    "rowCount": 252227,
     "detailsRedacted": true
   },
   "summary": {
-    "totalRows": 251813,
-    "currentPurgeListSize": 134695,
-    "addedToCurrentVrvh": 117118,
-    "removedFromCurrentVrvh": 134695,
-    "contactedVoters": 54026,
-    "purgeListContacts": 54028,
-    "untouchedVoters": 80669,
-    "contactRate": 40.11,
+    "totalRows": 252227,
+    "currentPurgeListSize": 134942,
+    "addedToCurrentVrvh": 117285,
+    "removedFromCurrentVrvh": 134942,
+    "contactedVoters": 54328,
+    "purgeListContacts": 54771,
+    "untouchedVoters": 80614,
+    "contactRate": 40.26,
     "totalTexts": 0,
     "totalMailers": 0,
-    "registrationsInfluenced": 2,
-    "conversionRate": 0.0
+    "registrationsInfluenced": 443,
+    "conversionRate": 0.81,
+    "easyAppTouches": 775,
+    "easyAppSubmissions": 440,
+    "easyAppCurrentVrvh": 760,
+    "easyAppAddedToCurrentVrvh": 441,
+    "easyAppCurrentPurge": 334,
+    "easyAppSubmissionRate": 56.77,
+    "easyAppCurrentVrvhRate": 98.06
   },
   "sourceCounts": [
     {
       "source": "NOT IN GLA CONTACT FILE",
-      "count": 196446
+      "count": 196121
     },
     {
       "source": "TOUCHED / CONTACTED",
-      "count": 54028
+      "count": 53996
     },
     {
-      "source": "TXT BANK 5.20.2026 UNREGISTERD VOTER LIST",
-      "count": 1339
+      "source": "TXT BANK 5.20.2026 UNREGISTERED VOTER LIST",
+      "count": 1335
+    },
+    {
+      "source": "GLA EASY APP 6.14.2026",
+      "count": 775
     }
   ],
   "changeCounts": [
     {
       "changeStatus": "REMOVED FROM CURRENT VRVH",
-      "count": 134695
+      "count": 134942
     },
     {
       "changeStatus": "ADDED TO CURRENT VRVH",
-      "count": 117118
+      "count": 117285
     }
   ],
   "contactStatusCounts": [
     {
       "contactStatus": "NOT IN GLA CONTACT FILE",
-      "count": 197686
+      "count": 197999
     },
     {
       "contactStatus": "TOUCHED / CONTACTED",
-      "count": 54127
+      "count": 54228
     }
   ],
   "listTypeCounts": [
     {
+      "listType": "NOT IN GLA CONTACT FILE",
+      "count": 196121
+    },
+    {
       "listType": "PURGE LIST",
-      "count": 250474
+      "count": 54771
     },
     {
       "listType": "UNREGISTERED LIST",
-      "count": 1339
+      "count": 1335
     }
   ],
   "contactDateCounts": [
     {
-      "contactDate": "2/15/2026 0:00",
-      "count": 54028
+      "contactDate": "15 Feb 2026 00:00:00",
+      "count": 53996
     },
     {
-      "contactDate": "5/20/2026",
-      "count": 1339
+      "contactDate": "2026-05-20",
+      "count": 1335
+    },
+    {
+      "contactDate": "19 May 2026 00:00:00",
+      "count": 124
+    },
+    {
+      "contactDate": "23 Apr 2026 00:00:00",
+      "count": 108
+    },
+    {
+      "contactDate": "06 Jun 2026 00:00:00",
+      "count": 91
+    },
+    {
+      "contactDate": "29 Apr 2026 00:00:00",
+      "count": 57
+    },
+    {
+      "contactDate": "08 Apr 2026 00:00:00",
+      "count": 39
+    },
+    {
+      "contactDate": "23 Jan 2026 00:00:00",
+      "count": 37
+    },
+    {
+      "contactDate": "05 Mar 2026 00:00:00",
+      "count": 36
+    },
+    {
+      "contactDate": "11 Mar 2026 00:00:00",
+      "count": 32
+    },
+    {
+      "contactDate": "02 May 2026 00:00:00",
+      "count": 32
+    },
+    {
+      "contactDate": "22 Jan 2026 00:00:00",
+      "count": 22
+    },
+    {
+      "contactDate": "09 Jan 2026 00:00:00",
+      "count": 21
+    },
+    {
+      "contactDate": "12 Mar 2026 00:00:00",
+      "count": 18
+    },
+    {
+      "contactDate": "26 Feb 2026 00:00:00",
+      "count": 17
+    },
+    {
+      "contactDate": "13 Jun 2026 00:00:00",
+      "count": 12
+    },
+    {
+      "contactDate": "14 Jun 2026 00:00:00",
+      "count": 10
+    },
+    {
+      "contactDate": "13 Jan 2026 00:00:00",
+      "count": 10
+    },
+    {
+      "contactDate": "22 Mar 2026 00:00:00",
+      "count": 9
+    },
+    {
+      "contactDate": "20 Mar 2026 00:00:00",
+      "count": 8
+    },
+    {
+      "contactDate": "05 May 2026 00:00:00",
+      "count": 8
+    },
+    {
+      "contactDate": "25 Feb 2026 00:00:00",
+      "count": 7
+    },
+    {
+      "contactDate": "08 Jan 2026 00:00:00",
+      "count": 7
+    },
+    {
+      "contactDate": "31 Jan 2026 00:00:00",
+      "count": 5
+    },
+    {
+      "contactDate": "16 Apr 2026 00:00:00",
+      "count": 4
+    },
+    {
+      "contactDate": "09 May 2026 00:00:00",
+      "count": 4
+    },
+    {
+      "contactDate": "08 Feb 2026 00:00:00",
+      "count": 4
+    },
+    {
+      "contactDate": "03 May 2026 00:00:00",
+      "count": 4
+    },
+    {
+      "contactDate": "01 Apr 2026 00:00:00",
+      "count": 4
+    },
+    {
+      "contactDate": "29 May 2026 00:00:00",
+      "count": 2
+    },
+    {
+      "contactDate": "28 Feb 2026 00:00:00",
+      "count": 2
+    },
+    {
+      "contactDate": "28 Apr 2026 00:00:00",
+      "count": 2
+    },
+    {
+      "contactDate": "23 May 2026 00:00:00",
+      "count": 2
+    },
+    {
+      "contactDate": "21 Mar 2026 00:00:00",
+      "count": 2
+    },
+    {
+      "contactDate": "21 Feb 2026 00:00:00",
+      "count": 2
+    },
+    {
+      "contactDate": "20 Jan 2026 00:00:00",
+      "count": 2
+    },
+    {
+      "contactDate": "18 Mar 2026 00:00:00",
+      "count": 2
+    },
+    {
+      "contactDate": "17 Feb 2026 00:00:00",
+      "count": 2
+    },
+    {
+      "contactDate": "14 May 2026 00:00:00",
+      "count": 2
+    },
+    {
+      "contactDate": "13 May 2026 00:00:00",
+      "count": 2
+    },
+    {
+      "contactDate": "11 Apr 2026 00:00:00",
+      "count": 2
+    },
+    {
+      "contactDate": "07 Apr 2026 00:00:00",
+      "count": 2
+    },
+    {
+      "contactDate": "30 May 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "28 Mar 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "27 Feb 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "27 Apr 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "26 Apr 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "25 Apr 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "24 Apr 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "22 Apr 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "20 Feb 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "19 Apr 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "16 May 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "12 Feb 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "09 Feb 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "08 Mar 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "07 May 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "07 Mar 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "07 Jun 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "06 Mar 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "04 Jun 2026 00:00:00",
+      "count": 1
     }
   ],
+  "easyApp": {
+    "submissionCounts": [
+      {
+        "submissionStatus": "TRUE",
+        "count": 440
+      },
+      {
+        "submissionStatus": "FALSE",
+        "count": 335
+      }
+    ],
+    "currentVrvhStatusCounts": [
+      {
+        "currentVrvhStatus": "YES - MADE IT ONTO CURRENT VR_VH",
+        "count": 760
+      },
+      {
+        "currentVrvhStatus": "NO - NOT FOUND IN CURRENT VR_VH",
+        "count": 15
+      }
+    ],
+    "dateCounts": [
+      {
+        "date": "19 May 2026 00:00:00",
+        "count": 124
+      },
+      {
+        "date": "23 Apr 2026 00:00:00",
+        "count": 108
+      },
+      {
+        "date": "06 Jun 2026 00:00:00",
+        "count": 91
+      },
+      {
+        "date": "29 Apr 2026 00:00:00",
+        "count": 57
+      },
+      {
+        "date": "08 Apr 2026 00:00:00",
+        "count": 39
+      },
+      {
+        "date": "23 Jan 2026 00:00:00",
+        "count": 37
+      },
+      {
+        "date": "05 Mar 2026 00:00:00",
+        "count": 36
+      },
+      {
+        "date": "11 Mar 2026 00:00:00",
+        "count": 32
+      },
+      {
+        "date": "02 May 2026 00:00:00",
+        "count": 32
+      },
+      {
+        "date": "22 Jan 2026 00:00:00",
+        "count": 22
+      },
+      {
+        "date": "09 Jan 2026 00:00:00",
+        "count": 21
+      },
+      {
+        "date": "12 Mar 2026 00:00:00",
+        "count": 18
+      },
+      {
+        "date": "26 Feb 2026 00:00:00",
+        "count": 17
+      },
+      {
+        "date": "13 Jun 2026 00:00:00",
+        "count": 12
+      },
+      {
+        "date": "14 Jun 2026 00:00:00",
+        "count": 10
+      },
+      {
+        "date": "13 Jan 2026 00:00:00",
+        "count": 10
+      },
+      {
+        "date": "22 Mar 2026 00:00:00",
+        "count": 9
+      },
+      {
+        "date": "20 Mar 2026 00:00:00",
+        "count": 8
+      },
+      {
+        "date": "05 May 2026 00:00:00",
+        "count": 8
+      },
+      {
+        "date": "25 Feb 2026 00:00:00",
+        "count": 7
+      },
+      {
+        "date": "08 Jan 2026 00:00:00",
+        "count": 7
+      },
+      {
+        "date": "31 Jan 2026 00:00:00",
+        "count": 5
+      },
+      {
+        "date": "16 Apr 2026 00:00:00",
+        "count": 4
+      },
+      {
+        "date": "09 May 2026 00:00:00",
+        "count": 4
+      },
+      {
+        "date": "08 Feb 2026 00:00:00",
+        "count": 4
+      },
+      {
+        "date": "03 May 2026 00:00:00",
+        "count": 4
+      },
+      {
+        "date": "01 Apr 2026 00:00:00",
+        "count": 4
+      },
+      {
+        "date": "29 May 2026 00:00:00",
+        "count": 2
+      },
+      {
+        "date": "28 Feb 2026 00:00:00",
+        "count": 2
+      },
+      {
+        "date": "28 Apr 2026 00:00:00",
+        "count": 2
+      },
+      {
+        "date": "23 May 2026 00:00:00",
+        "count": 2
+      },
+      {
+        "date": "21 Mar 2026 00:00:00",
+        "count": 2
+      },
+      {
+        "date": "21 Feb 2026 00:00:00",
+        "count": 2
+      },
+      {
+        "date": "20 Jan 2026 00:00:00",
+        "count": 2
+      },
+      {
+        "date": "18 Mar 2026 00:00:00",
+        "count": 2
+      },
+      {
+        "date": "17 Feb 2026 00:00:00",
+        "count": 2
+      },
+      {
+        "date": "14 May 2026 00:00:00",
+        "count": 2
+      },
+      {
+        "date": "13 May 2026 00:00:00",
+        "count": 2
+      },
+      {
+        "date": "11 Apr 2026 00:00:00",
+        "count": 2
+      },
+      {
+        "date": "07 Apr 2026 00:00:00",
+        "count": 2
+      },
+      {
+        "date": "30 May 2026 00:00:00",
+        "count": 1
+      },
+      {
+        "date": "28 Mar 2026 00:00:00",
+        "count": 1
+      },
+      {
+        "date": "27 Feb 2026 00:00:00",
+        "count": 1
+      },
+      {
+        "date": "27 Apr 2026 00:00:00",
+        "count": 1
+      },
+      {
+        "date": "26 Apr 2026 00:00:00",
+        "count": 1
+      },
+      {
+        "date": "25 Apr 2026 00:00:00",
+        "count": 1
+      },
+      {
+        "date": "24 Apr 2026 00:00:00",
+        "count": 1
+      },
+      {
+        "date": "22 Apr 2026 00:00:00",
+        "count": 1
+      },
+      {
+        "date": "20 Feb 2026 00:00:00",
+        "count": 1
+      },
+      {
+        "date": "19 Apr 2026 00:00:00",
+        "count": 1
+      },
+      {
+        "date": "16 May 2026 00:00:00",
+        "count": 1
+      },
+      {
+        "date": "12 Feb 2026 00:00:00",
+        "count": 1
+      },
+      {
+        "date": "09 Feb 2026 00:00:00",
+        "count": 1
+      },
+      {
+        "date": "08 Mar 2026 00:00:00",
+        "count": 1
+      },
+      {
+        "date": "07 May 2026 00:00:00",
+        "count": 1
+      },
+      {
+        "date": "07 Mar 2026 00:00:00",
+        "count": 1
+      },
+      {
+        "date": "07 Jun 2026 00:00:00",
+        "count": 1
+      },
+      {
+        "date": "06 Mar 2026 00:00:00",
+        "count": 1
+      },
+      {
+        "date": "04 Jun 2026 00:00:00",
+        "count": 1
+      }
+    ],
+    "countySummary": [
+      {
+        "county": "Pulaski",
+        "touches": 198,
+        "submissions": 91,
+        "currentVrvh": 196,
+        "addedToCurrentVrvh": 171,
+        "currentPurge": 27,
+        "submissionRate": 45.96,
+        "currentVrvhRate": 98.99
+      },
+      {
+        "county": "Washington",
+        "touches": 53,
+        "submissions": 42,
+        "currentVrvh": 53,
+        "addedToCurrentVrvh": 19,
+        "currentPurge": 34,
+        "submissionRate": 79.25,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Lonoke",
+        "touches": 46,
+        "submissions": 39,
+        "currentVrvh": 44,
+        "addedToCurrentVrvh": 10,
+        "currentPurge": 36,
+        "submissionRate": 84.78,
+        "currentVrvhRate": 95.65
+      },
+      {
+        "county": "Benton",
+        "touches": 37,
+        "submissions": 15,
+        "currentVrvh": 34,
+        "addedToCurrentVrvh": 23,
+        "currentPurge": 14,
+        "submissionRate": 40.54,
+        "currentVrvhRate": 91.89
+      },
+      {
+        "county": "Jefferson",
+        "touches": 28,
+        "submissions": 0,
+        "currentVrvh": 28,
+        "addedToCurrentVrvh": 28,
+        "currentPurge": 0,
+        "submissionRate": 0.0,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Sebastian",
+        "touches": 27,
+        "submissions": 21,
+        "currentVrvh": 26,
+        "addedToCurrentVrvh": 24,
+        "currentPurge": 3,
+        "submissionRate": 77.78,
+        "currentVrvhRate": 96.3
+      },
+      {
+        "county": "Faulkner",
+        "touches": 26,
+        "submissions": 18,
+        "currentVrvh": 24,
+        "addedToCurrentVrvh": 9,
+        "currentPurge": 17,
+        "submissionRate": 69.23,
+        "currentVrvhRate": 92.31
+      },
+      {
+        "county": "Pope",
+        "touches": 22,
+        "submissions": 22,
+        "currentVrvh": 22,
+        "addedToCurrentVrvh": 12,
+        "currentPurge": 10,
+        "submissionRate": 100.0,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Crawford",
+        "touches": 21,
+        "submissions": 21,
+        "currentVrvh": 21,
+        "addedToCurrentVrvh": 13,
+        "currentPurge": 8,
+        "submissionRate": 100.0,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Crittenden",
+        "touches": 21,
+        "submissions": 4,
+        "currentVrvh": 21,
+        "addedToCurrentVrvh": 17,
+        "currentPurge": 4,
+        "submissionRate": 19.05,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Saline",
+        "touches": 21,
+        "submissions": 2,
+        "currentVrvh": 21,
+        "addedToCurrentVrvh": 13,
+        "currentPurge": 8,
+        "submissionRate": 9.52,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Phillips",
+        "touches": 20,
+        "submissions": 1,
+        "currentVrvh": 20,
+        "addedToCurrentVrvh": 19,
+        "currentPurge": 1,
+        "submissionRate": 5.0,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Lee",
+        "touches": 19,
+        "submissions": 0,
+        "currentVrvh": 19,
+        "addedToCurrentVrvh": 19,
+        "currentPurge": 0,
+        "submissionRate": 0.0,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Ouachita",
+        "touches": 14,
+        "submissions": 9,
+        "currentVrvh": 14,
+        "addedToCurrentVrvh": 0,
+        "currentPurge": 14,
+        "submissionRate": 64.29,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Baxter",
+        "touches": 13,
+        "submissions": 8,
+        "currentVrvh": 13,
+        "addedToCurrentVrvh": 4,
+        "currentPurge": 9,
+        "submissionRate": 61.54,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Grant",
+        "touches": 13,
+        "submissions": 9,
+        "currentVrvh": 13,
+        "addedToCurrentVrvh": 4,
+        "currentPurge": 9,
+        "submissionRate": 69.23,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Hot Spring",
+        "touches": 12,
+        "submissions": 12,
+        "currentVrvh": 12,
+        "addedToCurrentVrvh": 6,
+        "currentPurge": 6,
+        "submissionRate": 100.0,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Poinsett",
+        "touches": 12,
+        "submissions": 10,
+        "currentVrvh": 12,
+        "addedToCurrentVrvh": 0,
+        "currentPurge": 12,
+        "submissionRate": 83.33,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Conway",
+        "touches": 11,
+        "submissions": 9,
+        "currentVrvh": 11,
+        "addedToCurrentVrvh": 0,
+        "currentPurge": 11,
+        "submissionRate": 81.82,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Craighead",
+        "touches": 11,
+        "submissions": 7,
+        "currentVrvh": 11,
+        "addedToCurrentVrvh": 4,
+        "currentPurge": 7,
+        "submissionRate": 63.64,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Little River",
+        "touches": 11,
+        "submissions": 10,
+        "currentVrvh": 11,
+        "addedToCurrentVrvh": 10,
+        "currentPurge": 1,
+        "submissionRate": 90.91,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Fulton",
+        "touches": 10,
+        "submissions": 10,
+        "currentVrvh": 10,
+        "addedToCurrentVrvh": 0,
+        "currentPurge": 10,
+        "submissionRate": 100.0,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Greene",
+        "touches": 10,
+        "submissions": 10,
+        "currentVrvh": 10,
+        "addedToCurrentVrvh": 0,
+        "currentPurge": 10,
+        "submissionRate": 100.0,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Hempstead",
+        "touches": 10,
+        "submissions": 10,
+        "currentVrvh": 10,
+        "addedToCurrentVrvh": 0,
+        "currentPurge": 10,
+        "submissionRate": 100.0,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Howard",
+        "touches": 10,
+        "submissions": 10,
+        "currentVrvh": 10,
+        "addedToCurrentVrvh": 1,
+        "currentPurge": 9,
+        "submissionRate": 100.0,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "St. Francis",
+        "touches": 10,
+        "submissions": 2,
+        "currentVrvh": 10,
+        "addedToCurrentVrvh": 10,
+        "currentPurge": 0,
+        "submissionRate": 20.0,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "White",
+        "touches": 10,
+        "submissions": 9,
+        "currentVrvh": 9,
+        "addedToCurrentVrvh": 1,
+        "currentPurge": 9,
+        "submissionRate": 90.0,
+        "currentVrvhRate": 90.0
+      },
+      {
+        "county": "Izard",
+        "touches": 9,
+        "submissions": 9,
+        "currentVrvh": 9,
+        "addedToCurrentVrvh": 0,
+        "currentPurge": 9,
+        "submissionRate": 100.0,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Yell",
+        "touches": 8,
+        "submissions": 2,
+        "currentVrvh": 8,
+        "addedToCurrentVrvh": 2,
+        "currentPurge": 6,
+        "submissionRate": 25.0,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Cleburne",
+        "touches": 7,
+        "submissions": 2,
+        "currentVrvh": 7,
+        "addedToCurrentVrvh": 1,
+        "currentPurge": 6,
+        "submissionRate": 28.57,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Miller",
+        "touches": 6,
+        "submissions": 0,
+        "currentVrvh": 6,
+        "addedToCurrentVrvh": 6,
+        "currentPurge": 0,
+        "submissionRate": 0.0,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Union",
+        "touches": 6,
+        "submissions": 4,
+        "currentVrvh": 6,
+        "addedToCurrentVrvh": 0,
+        "currentPurge": 6,
+        "submissionRate": 66.67,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Arkansas",
+        "touches": 5,
+        "submissions": 4,
+        "currentVrvh": 4,
+        "addedToCurrentVrvh": 0,
+        "currentPurge": 5,
+        "submissionRate": 80.0,
+        "currentVrvhRate": 80.0
+      },
+      {
+        "county": "Carroll",
+        "touches": 5,
+        "submissions": 2,
+        "currentVrvh": 5,
+        "addedToCurrentVrvh": 3,
+        "currentPurge": 2,
+        "submissionRate": 40.0,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Garland",
+        "touches": 5,
+        "submissions": 2,
+        "currentVrvh": 3,
+        "addedToCurrentVrvh": 5,
+        "currentPurge": 0,
+        "submissionRate": 40.0,
+        "currentVrvhRate": 60.0
+      },
+      {
+        "county": "Mississippi",
+        "touches": 5,
+        "submissions": 4,
+        "currentVrvh": 5,
+        "addedToCurrentVrvh": 1,
+        "currentPurge": 4,
+        "submissionRate": 80.0,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Independence",
+        "touches": 4,
+        "submissions": 4,
+        "currentVrvh": 4,
+        "addedToCurrentVrvh": 0,
+        "currentPurge": 4,
+        "submissionRate": 100.0,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Logan",
+        "touches": 4,
+        "submissions": 4,
+        "currentVrvh": 4,
+        "addedToCurrentVrvh": 0,
+        "currentPurge": 4,
+        "submissionRate": 100.0,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Madison",
+        "touches": 4,
+        "submissions": 0,
+        "currentVrvh": 4,
+        "addedToCurrentVrvh": 0,
+        "currentPurge": 4,
+        "submissionRate": 0.0,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Pike",
+        "touches": 4,
+        "submissions": 0,
+        "currentVrvh": 4,
+        "addedToCurrentVrvh": 0,
+        "currentPurge": 4,
+        "submissionRate": 0.0,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Ashley",
+        "touches": 2,
+        "submissions": 1,
+        "currentVrvh": 2,
+        "addedToCurrentVrvh": 2,
+        "currentPurge": 0,
+        "submissionRate": 50.0,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Van Buren",
+        "touches": 2,
+        "submissions": 0,
+        "currentVrvh": 2,
+        "addedToCurrentVrvh": 2,
+        "currentPurge": 0,
+        "submissionRate": 0.0,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Boone",
+        "touches": 1,
+        "submissions": 0,
+        "currentVrvh": 1,
+        "addedToCurrentVrvh": 1,
+        "currentPurge": 0,
+        "submissionRate": 0.0,
+        "currentVrvhRate": 100.0
+      },
+      {
+        "county": "Columbia",
+        "touches": 1,
+        "submissions": 0,
+        "currentVrvh": 0,
+        "addedToCurrentVrvh": 1,
+        "currentPurge": 0,
+        "submissionRate": 0.0,
+        "currentVrvhRate": 0.0
+      },
+      {
+        "county": "Nevada",
+        "touches": 1,
+        "submissions": 1,
+        "currentVrvh": 1,
+        "addedToCurrentVrvh": 0,
+        "currentPurge": 1,
+        "submissionRate": 100.0,
+        "currentVrvhRate": 100.0
+      }
+    ]
+  },
   "countySummary": [
     {
-      "county": "Carroll",
-      "rows": 2371,
-      "addedToCurrentVrvh": 1309,
-      "registrationsInfluenced": 2,
-      "influencedRate": 0.15
+      "county": "Pulaski",
+      "rows": 31899,
+      "addedToCurrentVrvh": 13511,
+      "registrationsInfluenced": 171,
+      "influencedRate": 1.27,
+      "easyAppTouches": 198,
+      "easyAppSubmissions": 91,
+      "easyAppCurrentVrvh": 196,
+      "easyAppAddedToCurrentVrvh": 171,
+      "easyAppCurrentPurge": 27,
+      "easyAppSubmissionRate": 45.96,
+      "easyAppCurrentVrvhRate": 98.99
     },
     {
-      "county": "Arkansas",
-      "rows": 1632,
-      "addedToCurrentVrvh": 303,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "county": "Jefferson",
+      "rows": 2419,
+      "addedToCurrentVrvh": 1621,
+      "registrationsInfluenced": 28,
+      "influencedRate": 1.73,
+      "easyAppTouches": 28,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 28,
+      "easyAppAddedToCurrentVrvh": 28,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0.0,
+      "easyAppCurrentVrvhRate": 100.0
+    },
+    {
+      "county": "Sebastian",
+      "rows": 11378,
+      "addedToCurrentVrvh": 5036,
+      "registrationsInfluenced": 24,
+      "influencedRate": 0.48,
+      "easyAppTouches": 27,
+      "easyAppSubmissions": 21,
+      "easyAppCurrentVrvh": 26,
+      "easyAppAddedToCurrentVrvh": 24,
+      "easyAppCurrentPurge": 3,
+      "easyAppSubmissionRate": 77.78,
+      "easyAppCurrentVrvhRate": 96.3
+    },
+    {
+      "county": "Benton",
+      "rows": 31651,
+      "addedToCurrentVrvh": 18166,
+      "registrationsInfluenced": 23,
+      "influencedRate": 0.13,
+      "easyAppTouches": 37,
+      "easyAppSubmissions": 15,
+      "easyAppCurrentVrvh": 34,
+      "easyAppAddedToCurrentVrvh": 23,
+      "easyAppCurrentPurge": 14,
+      "easyAppSubmissionRate": 40.54,
+      "easyAppCurrentVrvhRate": 91.89
+    },
+    {
+      "county": "Lee",
+      "rows": 688,
+      "addedToCurrentVrvh": 326,
+      "registrationsInfluenced": 19,
+      "influencedRate": 5.83,
+      "easyAppTouches": 19,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 19,
+      "easyAppAddedToCurrentVrvh": 19,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0.0,
+      "easyAppCurrentVrvhRate": 100.0
+    },
+    {
+      "county": "Phillips",
+      "rows": 1592,
+      "addedToCurrentVrvh": 399,
+      "registrationsInfluenced": 19,
+      "influencedRate": 4.76,
+      "easyAppTouches": 20,
+      "easyAppSubmissions": 1,
+      "easyAppCurrentVrvh": 20,
+      "easyAppAddedToCurrentVrvh": 19,
+      "easyAppCurrentPurge": 1,
+      "easyAppSubmissionRate": 5.0,
+      "easyAppCurrentVrvhRate": 100.0
+    },
+    {
+      "county": "Washington",
+      "rows": 20502,
+      "addedToCurrentVrvh": 11381,
+      "registrationsInfluenced": 19,
+      "influencedRate": 0.17,
+      "easyAppTouches": 53,
+      "easyAppSubmissions": 42,
+      "easyAppCurrentVrvh": 53,
+      "easyAppAddedToCurrentVrvh": 19,
+      "easyAppCurrentPurge": 34,
+      "easyAppSubmissionRate": 79.25,
+      "easyAppCurrentVrvhRate": 100.0
+    },
+    {
+      "county": "Crittenden",
+      "rows": 1626,
+      "addedToCurrentVrvh": 1412,
+      "registrationsInfluenced": 17,
+      "influencedRate": 1.2,
+      "easyAppTouches": 21,
+      "easyAppSubmissions": 4,
+      "easyAppCurrentVrvh": 21,
+      "easyAppAddedToCurrentVrvh": 17,
+      "easyAppCurrentPurge": 4,
+      "easyAppSubmissionRate": 19.05,
+      "easyAppCurrentVrvhRate": 100.0
+    },
+    {
+      "county": "Crawford",
+      "rows": 5207,
+      "addedToCurrentVrvh": 2323,
+      "registrationsInfluenced": 13,
+      "influencedRate": 0.56,
+      "easyAppTouches": 21,
+      "easyAppSubmissions": 21,
+      "easyAppCurrentVrvh": 21,
+      "easyAppAddedToCurrentVrvh": 13,
+      "easyAppCurrentPurge": 8,
+      "easyAppSubmissionRate": 100.0,
+      "easyAppCurrentVrvhRate": 100.0
+    },
+    {
+      "county": "Saline",
+      "rows": 9853,
+      "addedToCurrentVrvh": 5565,
+      "registrationsInfluenced": 13,
+      "influencedRate": 0.23,
+      "easyAppTouches": 21,
+      "easyAppSubmissions": 2,
+      "easyAppCurrentVrvh": 21,
+      "easyAppAddedToCurrentVrvh": 13,
+      "easyAppCurrentPurge": 8,
+      "easyAppSubmissionRate": 9.52,
+      "easyAppCurrentVrvhRate": 100.0
+    },
+    {
+      "county": "Pope",
+      "rows": 4727,
+      "addedToCurrentVrvh": 2129,
+      "registrationsInfluenced": 12,
+      "influencedRate": 0.56,
+      "easyAppTouches": 22,
+      "easyAppSubmissions": 22,
+      "easyAppCurrentVrvh": 22,
+      "easyAppAddedToCurrentVrvh": 12,
+      "easyAppCurrentPurge": 10,
+      "easyAppSubmissionRate": 100.0,
+      "easyAppCurrentVrvhRate": 100.0
+    },
+    {
+      "county": "Little River",
+      "rows": 986,
+      "addedToCurrentVrvh": 549,
+      "registrationsInfluenced": 10,
+      "influencedRate": 1.82,
+      "easyAppTouches": 11,
+      "easyAppSubmissions": 10,
+      "easyAppCurrentVrvh": 11,
+      "easyAppAddedToCurrentVrvh": 10,
+      "easyAppCurrentPurge": 1,
+      "easyAppSubmissionRate": 90.91,
+      "easyAppCurrentVrvhRate": 100.0
+    },
+    {
+      "county": "Lonoke",
+      "rows": 10912,
+      "addedToCurrentVrvh": 3161,
+      "registrationsInfluenced": 10,
+      "influencedRate": 0.32,
+      "easyAppTouches": 46,
+      "easyAppSubmissions": 39,
+      "easyAppCurrentVrvh": 44,
+      "easyAppAddedToCurrentVrvh": 10,
+      "easyAppCurrentPurge": 36,
+      "easyAppSubmissionRate": 84.78,
+      "easyAppCurrentVrvhRate": 95.65
+    },
+    {
+      "county": "St. Francis",
+      "rows": 1471,
+      "addedToCurrentVrvh": 377,
+      "registrationsInfluenced": 10,
+      "influencedRate": 2.65,
+      "easyAppTouches": 10,
+      "easyAppSubmissions": 2,
+      "easyAppCurrentVrvh": 10,
+      "easyAppAddedToCurrentVrvh": 10,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 20.0,
+      "easyAppCurrentVrvhRate": 100.0
+    },
+    {
+      "county": "Faulkner",
+      "rows": 9465,
+      "addedToCurrentVrvh": 4227,
+      "registrationsInfluenced": 9,
+      "influencedRate": 0.21,
+      "easyAppTouches": 26,
+      "easyAppSubmissions": 18,
+      "easyAppCurrentVrvh": 24,
+      "easyAppAddedToCurrentVrvh": 9,
+      "easyAppCurrentPurge": 17,
+      "easyAppSubmissionRate": 69.23,
+      "easyAppCurrentVrvhRate": 92.31
+    },
+    {
+      "county": "Hot Spring",
+      "rows": 2583,
+      "addedToCurrentVrvh": 1274,
+      "registrationsInfluenced": 6,
+      "influencedRate": 0.47,
+      "easyAppTouches": 12,
+      "easyAppSubmissions": 12,
+      "easyAppCurrentVrvh": 12,
+      "easyAppAddedToCurrentVrvh": 6,
+      "easyAppCurrentPurge": 6,
+      "easyAppSubmissionRate": 100.0,
+      "easyAppCurrentVrvhRate": 100.0
+    },
+    {
+      "county": "Miller",
+      "rows": 2392,
+      "addedToCurrentVrvh": 1667,
+      "registrationsInfluenced": 6,
+      "influencedRate": 0.36,
+      "easyAppTouches": 6,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 6,
+      "easyAppAddedToCurrentVrvh": 6,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0.0,
+      "easyAppCurrentVrvhRate": 100.0
+    },
+    {
+      "county": "Carroll",
+      "rows": 2374,
+      "addedToCurrentVrvh": 1311,
+      "registrationsInfluenced": 5,
+      "influencedRate": 0.38,
+      "easyAppTouches": 5,
+      "easyAppSubmissions": 2,
+      "easyAppCurrentVrvh": 5,
+      "easyAppAddedToCurrentVrvh": 3,
+      "easyAppCurrentPurge": 2,
+      "easyAppSubmissionRate": 40.0,
+      "easyAppCurrentVrvhRate": 100.0
+    },
+    {
+      "county": "Garland",
+      "rows": 6325,
+      "addedToCurrentVrvh": 4399,
+      "registrationsInfluenced": 5,
+      "influencedRate": 0.11,
+      "easyAppTouches": 5,
+      "easyAppSubmissions": 2,
+      "easyAppCurrentVrvh": 3,
+      "easyAppAddedToCurrentVrvh": 5,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 40.0,
+      "easyAppCurrentVrvhRate": 60.0
+    },
+    {
+      "county": "Baxter",
+      "rows": 4723,
+      "addedToCurrentVrvh": 2326,
+      "registrationsInfluenced": 4,
+      "influencedRate": 0.17,
+      "easyAppTouches": 13,
+      "easyAppSubmissions": 8,
+      "easyAppCurrentVrvh": 13,
+      "easyAppAddedToCurrentVrvh": 4,
+      "easyAppCurrentPurge": 9,
+      "easyAppSubmissionRate": 61.54,
+      "easyAppCurrentVrvhRate": 100.0
+    },
+    {
+      "county": "Craighead",
+      "rows": 8161,
+      "addedToCurrentVrvh": 3823,
+      "registrationsInfluenced": 4,
+      "influencedRate": 0.1,
+      "easyAppTouches": 11,
+      "easyAppSubmissions": 7,
+      "easyAppCurrentVrvh": 11,
+      "easyAppAddedToCurrentVrvh": 4,
+      "easyAppCurrentPurge": 7,
+      "easyAppSubmissionRate": 63.64,
+      "easyAppCurrentVrvhRate": 100.0
+    },
+    {
+      "county": "Grant",
+      "rows": 1401,
+      "addedToCurrentVrvh": 722,
+      "registrationsInfluenced": 4,
+      "influencedRate": 0.55,
+      "easyAppTouches": 13,
+      "easyAppSubmissions": 9,
+      "easyAppCurrentVrvh": 13,
+      "easyAppAddedToCurrentVrvh": 4,
+      "easyAppCurrentPurge": 9,
+      "easyAppSubmissionRate": 69.23,
+      "easyAppCurrentVrvhRate": 100.0
     },
     {
       "county": "Ashley",
       "rows": 1312,
       "addedToCurrentVrvh": 529,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "registrationsInfluenced": 2,
+      "influencedRate": 0.38,
+      "easyAppTouches": 2,
+      "easyAppSubmissions": 1,
+      "easyAppCurrentVrvh": 2,
+      "easyAppAddedToCurrentVrvh": 2,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 50.0,
+      "easyAppCurrentVrvhRate": 100.0
     },
     {
-      "county": "Baxter",
-      "rows": 4714,
-      "addedToCurrentVrvh": 2323,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "county": "Van Buren",
+      "rows": 2177,
+      "addedToCurrentVrvh": 739,
+      "registrationsInfluenced": 2,
+      "influencedRate": 0.27,
+      "easyAppTouches": 2,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 2,
+      "easyAppAddedToCurrentVrvh": 2,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0.0,
+      "easyAppCurrentVrvhRate": 100.0
     },
     {
-      "county": "Benton",
-      "rows": 31634,
-      "addedToCurrentVrvh": 18158,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "county": "Yell",
+      "rows": 1217,
+      "addedToCurrentVrvh": 476,
+      "registrationsInfluenced": 2,
+      "influencedRate": 0.42,
+      "easyAppTouches": 8,
+      "easyAppSubmissions": 2,
+      "easyAppCurrentVrvh": 8,
+      "easyAppAddedToCurrentVrvh": 2,
+      "easyAppCurrentPurge": 6,
+      "easyAppSubmissionRate": 25.0,
+      "easyAppCurrentVrvhRate": 100.0
     },
     {
       "county": "Boone",
       "rows": 3678,
       "addedToCurrentVrvh": 1900,
+      "registrationsInfluenced": 1,
+      "influencedRate": 0.05,
+      "easyAppTouches": 1,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 1,
+      "easyAppAddedToCurrentVrvh": 1,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0.0,
+      "easyAppCurrentVrvhRate": 100.0
+    },
+    {
+      "county": "Cleburne",
+      "rows": 2519,
+      "addedToCurrentVrvh": 1107,
+      "registrationsInfluenced": 1,
+      "influencedRate": 0.09,
+      "easyAppTouches": 7,
+      "easyAppSubmissions": 2,
+      "easyAppCurrentVrvh": 7,
+      "easyAppAddedToCurrentVrvh": 1,
+      "easyAppCurrentPurge": 6,
+      "easyAppSubmissionRate": 28.57,
+      "easyAppCurrentVrvhRate": 100.0
+    },
+    {
+      "county": "Columbia",
+      "rows": 1673,
+      "addedToCurrentVrvh": 609,
+      "registrationsInfluenced": 1,
+      "influencedRate": 0.16,
+      "easyAppTouches": 1,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 1,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0.0,
+      "easyAppCurrentVrvhRate": 0.0
+    },
+    {
+      "county": "Howard",
+      "rows": 1373,
+      "addedToCurrentVrvh": 468,
+      "registrationsInfluenced": 1,
+      "influencedRate": 0.21,
+      "easyAppTouches": 10,
+      "easyAppSubmissions": 10,
+      "easyAppCurrentVrvh": 10,
+      "easyAppAddedToCurrentVrvh": 1,
+      "easyAppCurrentPurge": 9,
+      "easyAppSubmissionRate": 100.0,
+      "easyAppCurrentVrvhRate": 100.0
+    },
+    {
+      "county": "Mississippi",
+      "rows": 2964,
+      "addedToCurrentVrvh": 1000,
+      "registrationsInfluenced": 1,
+      "influencedRate": 0.1,
+      "easyAppTouches": 5,
+      "easyAppSubmissions": 4,
+      "easyAppCurrentVrvh": 5,
+      "easyAppAddedToCurrentVrvh": 1,
+      "easyAppCurrentPurge": 4,
+      "easyAppSubmissionRate": 80.0,
+      "easyAppCurrentVrvhRate": 100.0
+    },
+    {
+      "county": "White",
+      "rows": 4004,
+      "addedToCurrentVrvh": 3214,
+      "registrationsInfluenced": 1,
+      "influencedRate": 0.03,
+      "easyAppTouches": 10,
+      "easyAppSubmissions": 9,
+      "easyAppCurrentVrvh": 9,
+      "easyAppAddedToCurrentVrvh": 1,
+      "easyAppCurrentPurge": 9,
+      "easyAppSubmissionRate": 90.0,
+      "easyAppCurrentVrvhRate": 90.0
+    },
+    {
+      "county": "Arkansas",
+      "rows": 1635,
+      "addedToCurrentVrvh": 303,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 5,
+      "easyAppSubmissions": 4,
+      "easyAppCurrentVrvh": 4,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 5,
+      "easyAppSubmissionRate": 80.0,
+      "easyAppCurrentVrvhRate": 80.0
     },
     {
       "county": "Bradley",
       "rows": 765,
       "addedToCurrentVrvh": 261,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Calhoun",
       "rows": 380,
       "addedToCurrentVrvh": 144,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Chicot",
       "rows": 818,
       "addedToCurrentVrvh": 328,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Clark",
       "rows": 1126,
       "addedToCurrentVrvh": 700,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Clay",
       "rows": 1021,
       "addedToCurrentVrvh": 441,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
-    },
-    {
-      "county": "Cleburne",
-      "rows": 2515,
-      "addedToCurrentVrvh": 1107,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Cleveland",
       "rows": 918,
       "addedToCurrentVrvh": 282,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
-    },
-    {
-      "county": "Columbia",
-      "rows": 1673,
-      "addedToCurrentVrvh": 609,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Conway",
-      "rows": 979,
+      "rows": 988,
       "addedToCurrentVrvh": 625,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
-    },
-    {
-      "county": "Craighead",
-      "rows": 8154,
-      "addedToCurrentVrvh": 3820,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
-    },
-    {
-      "county": "Crawford",
-      "rows": 5190,
-      "addedToCurrentVrvh": 2312,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
-    },
-    {
-      "county": "Crittenden",
-      "rows": 1617,
-      "addedToCurrentVrvh": 1406,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 11,
+      "easyAppSubmissions": 9,
+      "easyAppCurrentVrvh": 11,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 11,
+      "easyAppSubmissionRate": 81.82,
+      "easyAppCurrentVrvhRate": 100.0
     },
     {
       "county": "Cross",
       "rows": 1185,
       "addedToCurrentVrvh": 297,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Dallas",
       "rows": 199,
       "addedToCurrentVrvh": 137,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Desha",
       "rows": 1466,
       "addedToCurrentVrvh": 255,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Drew",
       "rows": 2015,
       "addedToCurrentVrvh": 578,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
-    },
-    {
-      "county": "Faulkner",
-      "rows": 9451,
-      "addedToCurrentVrvh": 4223,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Franklin",
       "rows": 1317,
       "addedToCurrentVrvh": 588,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Fulton",
-      "rows": 1098,
+      "rows": 1107,
       "addedToCurrentVrvh": 424,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
-    },
-    {
-      "county": "Garland",
-      "rows": 6325,
-      "addedToCurrentVrvh": 4399,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
-    },
-    {
-      "county": "Grant",
-      "rows": 1390,
-      "addedToCurrentVrvh": 719,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 10,
+      "easyAppSubmissions": 10,
+      "easyAppCurrentVrvh": 10,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 10,
+      "easyAppSubmissionRate": 100.0,
+      "easyAppCurrentVrvhRate": 100.0
     },
     {
       "county": "Greene",
-      "rows": 3873,
+      "rows": 3882,
       "addedToCurrentVrvh": 1169,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 10,
+      "easyAppSubmissions": 10,
+      "easyAppCurrentVrvh": 10,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 10,
+      "easyAppSubmissionRate": 100.0,
+      "easyAppCurrentVrvhRate": 100.0
     },
     {
       "county": "Hempstead",
-      "rows": 719,
+      "rows": 728,
       "addedToCurrentVrvh": 405,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
-    },
-    {
-      "county": "Hot Spring",
-      "rows": 2573,
-      "addedToCurrentVrvh": 1269,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
-    },
-    {
-      "county": "Howard",
-      "rows": 1365,
-      "addedToCurrentVrvh": 468,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 10,
+      "easyAppSubmissions": 10,
+      "easyAppCurrentVrvh": 10,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 10,
+      "easyAppSubmissionRate": 100.0,
+      "easyAppCurrentVrvhRate": 100.0
     },
     {
       "county": "Independence",
-      "rows": 2814,
+      "rows": 2817,
       "addedToCurrentVrvh": 1239,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 4,
+      "easyAppSubmissions": 4,
+      "easyAppCurrentVrvh": 4,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 4,
+      "easyAppSubmissionRate": 100.0,
+      "easyAppCurrentVrvhRate": 100.0
     },
     {
       "county": "Izard",
-      "rows": 1654,
+      "rows": 1662,
       "addedToCurrentVrvh": 550,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 9,
+      "easyAppSubmissions": 9,
+      "easyAppCurrentVrvh": 9,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 9,
+      "easyAppSubmissionRate": 100.0,
+      "easyAppCurrentVrvhRate": 100.0
     },
     {
       "county": "Jackson",
       "rows": 1020,
       "addedToCurrentVrvh": 430,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
-    },
-    {
-      "county": "Jefferson",
-      "rows": 2412,
-      "addedToCurrentVrvh": 1614,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Johnson",
       "rows": 1223,
       "addedToCurrentVrvh": 998,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Lafayette",
       "rows": 401,
       "addedToCurrentVrvh": 243,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Lawrence",
       "rows": 882,
       "addedToCurrentVrvh": 457,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
-    },
-    {
-      "county": "Lee",
-      "rows": 685,
-      "addedToCurrentVrvh": 323,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Lincoln",
       "rows": 493,
       "addedToCurrentVrvh": 176,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
-    },
-    {
-      "county": "Little River",
-      "rows": 978,
-      "addedToCurrentVrvh": 541,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Logan",
-      "rows": 2313,
+      "rows": 2316,
       "addedToCurrentVrvh": 645,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
-    },
-    {
-      "county": "Lonoke",
-      "rows": 10881,
-      "addedToCurrentVrvh": 3155,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 4,
+      "easyAppSubmissions": 4,
+      "easyAppCurrentVrvh": 4,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 4,
+      "easyAppSubmissionRate": 100.0,
+      "easyAppCurrentVrvhRate": 100.0
     },
     {
       "county": "Madison",
-      "rows": 1891,
+      "rows": 1894,
       "addedToCurrentVrvh": 713,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 4,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 4,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 4,
+      "easyAppSubmissionRate": 0.0,
+      "easyAppCurrentVrvhRate": 100.0
     },
     {
       "county": "Marion",
       "rows": 1417,
       "addedToCurrentVrvh": 718,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
-    },
-    {
-      "county": "Miller",
-      "rows": 2387,
-      "addedToCurrentVrvh": 1662,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
-    },
-    {
-      "county": "Mississippi",
-      "rows": 2961,
-      "addedToCurrentVrvh": 1000,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Monroe",
       "rows": 292,
       "addedToCurrentVrvh": 189,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Montgomery",
       "rows": 448,
       "addedToCurrentVrvh": 194,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Nevada",
       "rows": 1547,
       "addedToCurrentVrvh": 225,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 1,
+      "easyAppSubmissions": 1,
+      "easyAppCurrentVrvh": 1,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 1,
+      "easyAppSubmissionRate": 100.0,
+      "easyAppCurrentVrvhRate": 100.0
     },
     {
       "county": "Newton",
       "rows": 391,
       "addedToCurrentVrvh": 208,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Ouachita",
-      "rows": 3811,
+      "rows": 3822,
       "addedToCurrentVrvh": 597,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 14,
+      "easyAppSubmissions": 9,
+      "easyAppCurrentVrvh": 14,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 14,
+      "easyAppSubmissionRate": 64.29,
+      "easyAppCurrentVrvhRate": 100.0
     },
     {
       "county": "Perry",
       "rows": 1030,
       "addedToCurrentVrvh": 409,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
-    },
-    {
-      "county": "Phillips",
-      "rows": 1590,
-      "addedToCurrentVrvh": 397,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Pike",
-      "rows": 1112,
+      "rows": 1115,
       "addedToCurrentVrvh": 431,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 4,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 4,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 4,
+      "easyAppSubmissionRate": 0.0,
+      "easyAppCurrentVrvhRate": 100.0
     },
     {
       "county": "Poinsett",
-      "rows": 2322,
+      "rows": 2331,
       "addedToCurrentVrvh": 566,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 12,
+      "easyAppSubmissions": 10,
+      "easyAppCurrentVrvh": 12,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 12,
+      "easyAppSubmissionRate": 83.33,
+      "easyAppCurrentVrvhRate": 100.0
     },
     {
       "county": "Polk",
       "rows": 1735,
       "addedToCurrentVrvh": 771,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
-    },
-    {
-      "county": "Pope",
-      "rows": 4710,
-      "addedToCurrentVrvh": 2119,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Prairie",
       "rows": 310,
       "addedToCurrentVrvh": 214,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
-    },
-    {
-      "county": "Pulaski",
-      "rows": 31834,
-      "addedToCurrentVrvh": 13464,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Randolph",
       "rows": 1330,
       "addedToCurrentVrvh": 656,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
-    },
-    {
-      "county": "Saline",
-      "rows": 9844,
-      "addedToCurrentVrvh": 5561,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Scott",
       "rows": 528,
       "addedToCurrentVrvh": 193,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Searcy",
       "rows": 442,
       "addedToCurrentVrvh": 366,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
-    },
-    {
-      "county": "Sebastian",
-      "rows": 11360,
-      "addedToCurrentVrvh": 5019,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Sevier",
       "rows": 715,
       "addedToCurrentVrvh": 446,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Sharp",
       "rows": 1759,
       "addedToCurrentVrvh": 862,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
-    },
-    {
-      "county": "St. Francis",
-      "rows": 1470,
-      "addedToCurrentVrvh": 376,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Stone",
       "rows": 977,
       "addedToCurrentVrvh": 655,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     },
     {
       "county": "Union",
-      "rows": 6223,
+      "rows": 6227,
       "addedToCurrentVrvh": 1246,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
-    },
-    {
-      "county": "Van Buren",
-      "rows": 2177,
-      "addedToCurrentVrvh": 739,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
-    },
-    {
-      "county": "Washington",
-      "rows": 20461,
-      "addedToCurrentVrvh": 11370,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
-    },
-    {
-      "county": "White",
-      "rows": 3998,
-      "addedToCurrentVrvh": 3214,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 6,
+      "easyAppSubmissions": 4,
+      "easyAppCurrentVrvh": 6,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 6,
+      "easyAppSubmissionRate": 66.67,
+      "easyAppCurrentVrvhRate": 100.0
     },
     {
       "county": "Woodruff",
       "rows": 301,
       "addedToCurrentVrvh": 204,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0
-    },
-    {
-      "county": "Yell",
-      "rows": 1211,
-      "addedToCurrentVrvh": 475,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0
+      "influencedRate": 0.0,
+      "easyAppTouches": 0,
+      "easyAppSubmissions": 0,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 0,
+      "easyAppSubmissionRate": 0,
+      "easyAppCurrentVrvhRate": 0
     }
   ],
   "addedContactedRows": []
