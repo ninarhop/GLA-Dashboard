@@ -1,0 +1,12 @@
+# Public GitHub repository allowlist.
+# Everything is ignored unless explicitly allowed below.
+*
+
+!.gitignore
+!README.md
+
+!.github/
+!.github/**
+
+!github-pages/
+!github-pages/**
