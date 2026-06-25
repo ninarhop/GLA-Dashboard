@@ -9058,14 +9058,16 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
     "currentPurgeListSize": 134663,
     "addedToCurrentVrvh": 117081,
     "removedFromCurrentVrvh": 134663,
-    "contactedVoters": 54081,
-    "purgeListContacts": 54368,
-    "untouchedVoters": 80582,
-    "contactRate": 40.16,
-    "totalTexts": 0,
+    "contactedVoters": 54406,
+    "purgeListContacts": 58508,
+    "glaTouches": 58508,
+    "currentPurgeGlaTouches": 54406,
+    "untouchedVoters": 80257,
+    "contactRate": 40.4,
+    "totalTexts": 4140,
     "totalMailers": 0,
-    "registrationsInfluenced": 276,
-    "conversionRate": 0.51,
+    "registrationsInfluenced": 1217,
+    "conversionRate": 2.08,
     "easyAppTouches": 372,
     "easyAppSubmissions": 145,
     "easyAppCurrentVrvh": 328,
@@ -9134,7 +9136,267 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "count": 4140
     }
   ],
+  "glaTouchSourceCounts": [
+    {
+      "source": "TOUCHED / CONTACTED",
+      "count": 53996
+    },
+    {
+      "source": "TXT BANK 5.20.2026 UNREGISTERED VOTER LIST",
+      "count": 4140
+    },
+    {
+      "source": "GLA EASY APP 6.14.2026",
+      "count": 372
+    }
+  ],
   "contactDateCounts": [
+    {
+      "contactDate": "15 Feb 2026 00:00:00",
+      "count": 53996
+    },
+    {
+      "contactDate": "2026-05-20",
+      "count": 4140
+    },
+    {
+      "contactDate": "23 Apr 2026 00:00:00",
+      "count": 37
+    },
+    {
+      "contactDate": "19 May 2026 00:00:00",
+      "count": 33
+    },
+    {
+      "contactDate": "29 Apr 2026 00:00:00",
+      "count": 26
+    },
+    {
+      "contactDate": "09 Jan 2026 00:00:00",
+      "count": 23
+    },
+    {
+      "contactDate": "22 Jan 2026 00:00:00",
+      "count": 19
+    },
+    {
+      "contactDate": "12 Mar 2026 00:00:00",
+      "count": 18
+    },
+    {
+      "contactDate": "23 Jan 2026 00:00:00",
+      "count": 16
+    },
+    {
+      "contactDate": "08 Apr 2026 00:00:00",
+      "count": 15
+    },
+    {
+      "contactDate": "06 Jun 2026 00:00:00",
+      "count": 13
+    },
+    {
+      "contactDate": "02 May 2026 00:00:00",
+      "count": 13
+    },
+    {
+      "contactDate": "11 Mar 2026 00:00:00",
+      "count": 13
+    },
+    {
+      "contactDate": "26 Feb 2026 00:00:00",
+      "count": 12
+    },
+    {
+      "contactDate": "13 Jun 2026 00:00:00",
+      "count": 11
+    },
+    {
+      "contactDate": "05 Mar 2026 00:00:00",
+      "count": 11
+    },
+    {
+      "contactDate": "13 Jan 2026 00:00:00",
+      "count": 10
+    },
+    {
+      "contactDate": "20 Mar 2026 00:00:00",
+      "count": 8
+    },
+    {
+      "contactDate": "25 Feb 2026 00:00:00",
+      "count": 7
+    },
+    {
+      "contactDate": "08 Jan 2026 00:00:00",
+      "count": 7
+    },
+    {
+      "contactDate": "05 May 2026 00:00:00",
+      "count": 6
+    },
+    {
+      "contactDate": "31 Jan 2026 00:00:00",
+      "count": 5
+    },
+    {
+      "contactDate": "22 Mar 2026 00:00:00",
+      "count": 5
+    },
+    {
+      "contactDate": "14 Jun 2026 00:00:00",
+      "count": 5
+    },
+    {
+      "contactDate": "08 Feb 2026 00:00:00",
+      "count": 4
+    },
+    {
+      "contactDate": "03 May 2026 00:00:00",
+      "count": 4
+    },
+    {
+      "contactDate": "16 Apr 2026 00:00:00",
+      "count": 4
+    },
+    {
+      "contactDate": "09 May 2026 00:00:00",
+      "count": 4
+    },
+    {
+      "contactDate": "13 May 2026 00:00:00",
+      "count": 2
+    },
+    {
+      "contactDate": "11 Apr 2026 00:00:00",
+      "count": 2
+    },
+    {
+      "contactDate": "21 Feb 2026 00:00:00",
+      "count": 2
+    },
+    {
+      "contactDate": "23 May 2026 00:00:00",
+      "count": 2
+    },
+    {
+      "contactDate": "14 May 2026 00:00:00",
+      "count": 2
+    },
+    {
+      "contactDate": "28 Apr 2026 00:00:00",
+      "count": 2
+    },
+    {
+      "contactDate": "18 Mar 2026 00:00:00",
+      "count": 2
+    },
+    {
+      "contactDate": "17 Feb 2026 00:00:00",
+      "count": 2
+    },
+    {
+      "contactDate": "28 Feb 2026 00:00:00",
+      "count": 2
+    },
+    {
+      "contactDate": "01 Apr 2026 00:00:00",
+      "count": 2
+    },
+    {
+      "contactDate": "25 Apr 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "20 Feb 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "06 Mar 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "07 Jun 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "29 May 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "27 Apr 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "04 Jun 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "26 Apr 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "08 Mar 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "12 Feb 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "28 Mar 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "16 May 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "30 May 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "24 Apr 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "21 Mar 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "07 Mar 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "19 Apr 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "09 Feb 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "22 Apr 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "20 Jan 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "27 Feb 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "07 Apr 2026 00:00:00",
+      "count": 1
+    },
+    {
+      "contactDate": "07 May 2026 00:00:00",
+      "count": 1
+    }
+  ],
+  "glaTouchDateCounts": [
     {
       "contactDate": "15 Feb 2026 00:00:00",
       "count": 53996
@@ -10104,25 +10366,29 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
   },
   "countySummary": [
     {
-      "county": "Pulaski",
-      "rows": 31834,
-      "addedToCurrentVrvh": 13464,
-      "registrationsInfluenced": 124,
-      "influencedRate": 0.92,
-      "easyAppTouches": 133,
-      "easyAppSubmissions": 56,
-      "easyAppCurrentVrvh": 132,
-      "easyAppAddedToCurrentVrvh": 124,
-      "easyAppCurrentPurge": 9,
-      "easyAppSubmissionRate": 42.11,
-      "easyAppCurrentVrvhRate": 99.25
+      "county": "Sebastian",
+      "rows": 11306,
+      "addedToCurrentVrvh": 4995,
+      "registrationsInfluenced": 515,
+      "influencedRate": 16.05,
+      "glaTouches": 3208,
+      "currentPurgeGlaTouches": 2693,
+      "easyAppTouches": 9,
+      "easyAppSubmissions": 4,
+      "easyAppCurrentVrvh": 8,
+      "easyAppAddedToCurrentVrvh": 7,
+      "easyAppCurrentPurge": 2,
+      "easyAppSubmissionRate": 44.44,
+      "easyAppCurrentVrvhRate": 88.89
     },
     {
       "county": "Jefferson",
       "rows": 2403,
       "addedToCurrentVrvh": 1606,
-      "registrationsInfluenced": 21,
-      "influencedRate": 1.31,
+      "registrationsInfluenced": 202,
+      "influencedRate": 46.12,
+      "glaTouches": 438,
+      "currentPurgeGlaTouches": 236,
       "easyAppTouches": 21,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 21,
@@ -10132,11 +10398,61 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "easyAppCurrentVrvhRate": 100.0
     },
     {
+      "county": "Crittenden",
+      "rows": 1612,
+      "addedToCurrentVrvh": 1402,
+      "registrationsInfluenced": 158,
+      "influencedRate": 71.49,
+      "glaTouches": 221,
+      "currentPurgeGlaTouches": 63,
+      "easyAppTouches": 12,
+      "easyAppSubmissions": 1,
+      "easyAppCurrentVrvh": 11,
+      "easyAppAddedToCurrentVrvh": 11,
+      "easyAppCurrentPurge": 1,
+      "easyAppSubmissionRate": 8.33,
+      "easyAppCurrentVrvhRate": 91.67
+    },
+    {
+      "county": "Pulaski",
+      "rows": 31834,
+      "addedToCurrentVrvh": 13464,
+      "registrationsInfluenced": 124,
+      "influencedRate": 1.55,
+      "glaTouches": 8012,
+      "currentPurgeGlaTouches": 7888,
+      "easyAppTouches": 133,
+      "easyAppSubmissions": 56,
+      "easyAppCurrentVrvh": 132,
+      "easyAppAddedToCurrentVrvh": 124,
+      "easyAppCurrentPurge": 9,
+      "easyAppSubmissionRate": 42.11,
+      "easyAppCurrentVrvhRate": 99.25
+    },
+    {
+      "county": "Ouachita",
+      "rows": 3810,
+      "addedToCurrentVrvh": 596,
+      "registrationsInfluenced": 68,
+      "influencedRate": 4.13,
+      "glaTouches": 1647,
+      "currentPurgeGlaTouches": 1579,
+      "easyAppTouches": 3,
+      "easyAppSubmissions": 1,
+      "easyAppCurrentVrvh": 0,
+      "easyAppAddedToCurrentVrvh": 0,
+      "easyAppCurrentPurge": 3,
+      "easyAppSubmissionRate": 33.33,
+      "easyAppCurrentVrvhRate": 0.0
+    },
+    {
       "county": "Phillips",
       "rows": 1590,
       "addedToCurrentVrvh": 397,
-      "registrationsInfluenced": 17,
-      "influencedRate": 4.28,
+      "registrationsInfluenced": 54,
+      "influencedRate": 11.87,
+      "glaTouches": 455,
+      "currentPurgeGlaTouches": 401,
       "easyAppTouches": 18,
       "easyAppSubmissions": 1,
       "easyAppCurrentVrvh": 17,
@@ -10150,7 +10466,9 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "rows": 685,
       "addedToCurrentVrvh": 323,
       "registrationsInfluenced": 16,
-      "influencedRate": 4.95,
+      "influencedRate": 12.03,
+      "glaTouches": 133,
+      "currentPurgeGlaTouches": 117,
       "easyAppTouches": 16,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 16,
@@ -10164,7 +10482,9 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "rows": 31634,
       "addedToCurrentVrvh": 18158,
       "registrationsInfluenced": 15,
-      "influencedRate": 0.08,
+      "influencedRate": 0.24,
+      "glaTouches": 6346,
+      "currentPurgeGlaTouches": 6331,
       "easyAppTouches": 20,
       "easyAppSubmissions": 7,
       "easyAppCurrentVrvh": 18,
@@ -10174,25 +10494,13 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "easyAppCurrentVrvhRate": 90.0
     },
     {
-      "county": "Crittenden",
-      "rows": 1612,
-      "addedToCurrentVrvh": 1402,
-      "registrationsInfluenced": 11,
-      "influencedRate": 0.78,
-      "easyAppTouches": 12,
-      "easyAppSubmissions": 1,
-      "easyAppCurrentVrvh": 11,
-      "easyAppAddedToCurrentVrvh": 11,
-      "easyAppCurrentPurge": 1,
-      "easyAppSubmissionRate": 8.33,
-      "easyAppCurrentVrvhRate": 91.67
-    },
-    {
       "county": "Saline",
       "rows": 9844,
       "addedToCurrentVrvh": 5561,
       "registrationsInfluenced": 9,
-      "influencedRate": 0.16,
+      "influencedRate": 0.47,
+      "glaTouches": 1918,
+      "currentPurgeGlaTouches": 1909,
       "easyAppTouches": 12,
       "easyAppSubmissions": 2,
       "easyAppCurrentVrvh": 12,
@@ -10206,7 +10514,9 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "rows": 1470,
       "addedToCurrentVrvh": 376,
       "registrationsInfluenced": 9,
-      "influencedRate": 2.39,
+      "influencedRate": 2.26,
+      "glaTouches": 399,
+      "currentPurgeGlaTouches": 390,
       "easyAppTouches": 9,
       "easyAppSubmissions": 1,
       "easyAppCurrentVrvh": 9,
@@ -10220,7 +10530,9 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "rows": 20461,
       "addedToCurrentVrvh": 11370,
       "registrationsInfluenced": 8,
-      "influencedRate": 0.07,
+      "influencedRate": 0.22,
+      "glaTouches": 3633,
+      "currentPurgeGlaTouches": 3625,
       "easyAppTouches": 12,
       "easyAppSubmissions": 8,
       "easyAppCurrentVrvh": 12,
@@ -10230,25 +10542,13 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "easyAppCurrentVrvhRate": 100.0
     },
     {
-      "county": "Sebastian",
-      "rows": 11306,
-      "addedToCurrentVrvh": 4995,
-      "registrationsInfluenced": 7,
-      "influencedRate": 0.14,
-      "easyAppTouches": 9,
-      "easyAppSubmissions": 4,
-      "easyAppCurrentVrvh": 8,
-      "easyAppAddedToCurrentVrvh": 7,
-      "easyAppCurrentPurge": 2,
-      "easyAppSubmissionRate": 44.44,
-      "easyAppCurrentVrvhRate": 88.89
-    },
-    {
       "county": "Faulkner",
       "rows": 9451,
       "addedToCurrentVrvh": 4223,
       "registrationsInfluenced": 5,
-      "influencedRate": 0.12,
+      "influencedRate": 0.24,
+      "glaTouches": 2123,
+      "currentPurgeGlaTouches": 2118,
       "easyAppTouches": 12,
       "easyAppSubmissions": 6,
       "easyAppCurrentVrvh": 9,
@@ -10262,7 +10562,9 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "rows": 6325,
       "addedToCurrentVrvh": 4399,
       "registrationsInfluenced": 5,
-      "influencedRate": 0.11,
+      "influencedRate": 1.0,
+      "glaTouches": 501,
+      "currentPurgeGlaTouches": 496,
       "easyAppTouches": 5,
       "easyAppSubmissions": 2,
       "easyAppCurrentVrvh": 5,
@@ -10276,7 +10578,9 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "rows": 10881,
       "addedToCurrentVrvh": 3155,
       "registrationsInfluenced": 4,
-      "influencedRate": 0.13,
+      "influencedRate": 0.11,
+      "glaTouches": 3737,
+      "currentPurgeGlaTouches": 3733,
       "easyAppTouches": 15,
       "easyAppSubmissions": 9,
       "easyAppCurrentVrvh": 10,
@@ -10290,7 +10594,9 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "rows": 2371,
       "addedToCurrentVrvh": 1309,
       "registrationsInfluenced": 3,
-      "influencedRate": 0.23,
+      "influencedRate": 0.81,
+      "glaTouches": 370,
+      "currentPurgeGlaTouches": 367,
       "easyAppTouches": 2,
       "easyAppSubmissions": 1,
       "easyAppCurrentVrvh": 1,
@@ -10304,7 +10610,9 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "rows": 1312,
       "addedToCurrentVrvh": 529,
       "registrationsInfluenced": 2,
-      "influencedRate": 0.38,
+      "influencedRate": 0.72,
+      "glaTouches": 279,
+      "currentPurgeGlaTouches": 277,
       "easyAppTouches": 2,
       "easyAppSubmissions": 1,
       "easyAppCurrentVrvh": 2,
@@ -10318,7 +10626,9 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "rows": 5190,
       "addedToCurrentVrvh": 2312,
       "registrationsInfluenced": 2,
-      "influencedRate": 0.09,
+      "influencedRate": 0.17,
+      "glaTouches": 1151,
+      "currentPurgeGlaTouches": 1149,
       "easyAppTouches": 4,
       "easyAppSubmissions": 4,
       "easyAppCurrentVrvh": 4,
@@ -10332,7 +10642,9 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "rows": 978,
       "addedToCurrentVrvh": 541,
       "registrationsInfluenced": 2,
-      "influencedRate": 0.37,
+      "influencedRate": 1.21,
+      "glaTouches": 165,
+      "currentPurgeGlaTouches": 163,
       "easyAppTouches": 3,
       "easyAppSubmissions": 2,
       "easyAppCurrentVrvh": 2,
@@ -10346,7 +10658,9 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "rows": 4710,
       "addedToCurrentVrvh": 2119,
       "registrationsInfluenced": 2,
-      "influencedRate": 0.09,
+      "influencedRate": 0.19,
+      "glaTouches": 1027,
+      "currentPurgeGlaTouches": 1025,
       "easyAppTouches": 5,
       "easyAppSubmissions": 5,
       "easyAppCurrentVrvh": 5,
@@ -10360,7 +10674,9 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "rows": 2177,
       "addedToCurrentVrvh": 739,
       "registrationsInfluenced": 2,
-      "influencedRate": 0.27,
+      "influencedRate": 0.35,
+      "glaTouches": 579,
+      "currentPurgeGlaTouches": 577,
       "easyAppTouches": 2,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 2,
@@ -10374,7 +10690,9 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "rows": 4714,
       "addedToCurrentVrvh": 2323,
       "registrationsInfluenced": 1,
-      "influencedRate": 0.04,
+      "influencedRate": 0.13,
+      "glaTouches": 772,
+      "currentPurgeGlaTouches": 771,
       "easyAppTouches": 4,
       "easyAppSubmissions": 2,
       "easyAppCurrentVrvh": 3,
@@ -10388,7 +10706,9 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "rows": 3678,
       "addedToCurrentVrvh": 1900,
       "registrationsInfluenced": 1,
-      "influencedRate": 0.05,
+      "influencedRate": 0.16,
+      "glaTouches": 608,
+      "currentPurgeGlaTouches": 607,
       "easyAppTouches": 1,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 1,
@@ -10402,7 +10722,9 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "rows": 2515,
       "addedToCurrentVrvh": 1107,
       "registrationsInfluenced": 1,
-      "influencedRate": 0.09,
+      "influencedRate": 0.17,
+      "glaTouches": 578,
+      "currentPurgeGlaTouches": 577,
       "easyAppTouches": 3,
       "easyAppSubmissions": 1,
       "easyAppCurrentVrvh": 2,
@@ -10416,7 +10738,9 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "rows": 1673,
       "addedToCurrentVrvh": 609,
       "registrationsInfluenced": 1,
-      "influencedRate": 0.16,
+      "influencedRate": 0.28,
+      "glaTouches": 362,
+      "currentPurgeGlaTouches": 361,
       "easyAppTouches": 1,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 1,
@@ -10430,7 +10754,9 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "rows": 8154,
       "addedToCurrentVrvh": 3820,
       "registrationsInfluenced": 1,
-      "influencedRate": 0.03,
+      "influencedRate": 0.06,
+      "glaTouches": 1678,
+      "currentPurgeGlaTouches": 1677,
       "easyAppTouches": 4,
       "easyAppSubmissions": 3,
       "easyAppCurrentVrvh": 3,
@@ -10444,7 +10770,9 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "rows": 1390,
       "addedToCurrentVrvh": 719,
       "registrationsInfluenced": 1,
-      "influencedRate": 0.14,
+      "influencedRate": 0.47,
+      "glaTouches": 212,
+      "currentPurgeGlaTouches": 211,
       "easyAppTouches": 2,
       "easyAppSubmissions": 1,
       "easyAppCurrentVrvh": 1,
@@ -10458,7 +10786,9 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "rows": 2573,
       "addedToCurrentVrvh": 1269,
       "registrationsInfluenced": 1,
-      "influencedRate": 0.08,
+      "influencedRate": 0.2,
+      "glaTouches": 493,
+      "currentPurgeGlaTouches": 492,
       "easyAppTouches": 2,
       "easyAppSubmissions": 2,
       "easyAppCurrentVrvh": 1,
@@ -10472,7 +10802,9 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "rows": 1365,
       "addedToCurrentVrvh": 468,
       "registrationsInfluenced": 1,
-      "influencedRate": 0.21,
+      "influencedRate": 0.29,
+      "glaTouches": 344,
+      "currentPurgeGlaTouches": 343,
       "easyAppTouches": 2,
       "easyAppSubmissions": 2,
       "easyAppCurrentVrvh": 1,
@@ -10486,7 +10818,9 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "rows": 2387,
       "addedToCurrentVrvh": 1662,
       "registrationsInfluenced": 1,
-      "influencedRate": 0.06,
+      "influencedRate": 0.63,
+      "glaTouches": 158,
+      "currentPurgeGlaTouches": 157,
       "easyAppTouches": 1,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 1,
@@ -10501,6 +10835,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 1000,
       "registrationsInfluenced": 1,
       "influencedRate": 0.1,
+      "glaTouches": 966,
+      "currentPurgeGlaTouches": 965,
       "easyAppTouches": 2,
       "easyAppSubmissions": 1,
       "easyAppCurrentVrvh": 2,
@@ -10514,7 +10850,9 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "rows": 3998,
       "addedToCurrentVrvh": 3214,
       "registrationsInfluenced": 1,
-      "influencedRate": 0.03,
+      "influencedRate": 0.5,
+      "glaTouches": 200,
+      "currentPurgeGlaTouches": 199,
       "easyAppTouches": 4,
       "easyAppSubmissions": 3,
       "easyAppCurrentVrvh": 3,
@@ -10528,7 +10866,9 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "rows": 1211,
       "addedToCurrentVrvh": 475,
       "registrationsInfluenced": 1,
-      "influencedRate": 0.21,
+      "influencedRate": 0.42,
+      "glaTouches": 238,
+      "currentPurgeGlaTouches": 237,
       "easyAppTouches": 2,
       "easyAppSubmissions": 1,
       "easyAppCurrentVrvh": 1,
@@ -10543,6 +10883,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 303,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 548,
+      "currentPurgeGlaTouches": 548,
       "easyAppTouches": 2,
       "easyAppSubmissions": 1,
       "easyAppCurrentVrvh": 1,
@@ -10557,6 +10899,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 261,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 199,
+      "currentPurgeGlaTouches": 199,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -10571,6 +10915,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 144,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 63,
+      "currentPurgeGlaTouches": 63,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -10585,6 +10931,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 328,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 195,
+      "currentPurgeGlaTouches": 195,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -10599,6 +10947,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 700,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 95,
+      "currentPurgeGlaTouches": 95,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -10613,6 +10963,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 441,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 203,
+      "currentPurgeGlaTouches": 203,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -10627,6 +10979,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 282,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 227,
+      "currentPurgeGlaTouches": 227,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -10641,6 +10995,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 625,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 74,
+      "currentPurgeGlaTouches": 74,
       "easyAppTouches": 2,
       "easyAppSubmissions": 1,
       "easyAppCurrentVrvh": 0,
@@ -10655,6 +11011,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 297,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 314,
+      "currentPurgeGlaTouches": 314,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -10669,6 +11027,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 137,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 16,
+      "currentPurgeGlaTouches": 16,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -10683,6 +11043,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 255,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 524,
+      "currentPurgeGlaTouches": 524,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -10697,6 +11059,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 578,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 628,
+      "currentPurgeGlaTouches": 628,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -10711,6 +11075,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 588,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 237,
+      "currentPurgeGlaTouches": 237,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -10725,6 +11091,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 424,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 216,
+      "currentPurgeGlaTouches": 216,
       "easyAppTouches": 1,
       "easyAppSubmissions": 1,
       "easyAppCurrentVrvh": 0,
@@ -10739,6 +11107,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 1169,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 1285,
+      "currentPurgeGlaTouches": 1285,
       "easyAppTouches": 1,
       "easyAppSubmissions": 1,
       "easyAppCurrentVrvh": 1,
@@ -10753,6 +11123,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 405,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 79,
+      "currentPurgeGlaTouches": 79,
       "easyAppTouches": 1,
       "easyAppSubmissions": 1,
       "easyAppCurrentVrvh": 1,
@@ -10767,6 +11139,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 1239,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 522,
+      "currentPurgeGlaTouches": 522,
       "easyAppTouches": 1,
       "easyAppSubmissions": 1,
       "easyAppCurrentVrvh": 1,
@@ -10781,6 +11155,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 550,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 136,
+      "currentPurgeGlaTouches": 136,
       "easyAppTouches": 1,
       "easyAppSubmissions": 1,
       "easyAppCurrentVrvh": 0,
@@ -10795,6 +11171,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 430,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 201,
+      "currentPurgeGlaTouches": 201,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -10809,6 +11187,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 998,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 23,
+      "currentPurgeGlaTouches": 23,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -10823,6 +11203,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 243,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 42,
+      "currentPurgeGlaTouches": 42,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -10837,6 +11219,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 457,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 85,
+      "currentPurgeGlaTouches": 85,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -10851,6 +11235,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 176,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 101,
+      "currentPurgeGlaTouches": 101,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -10865,6 +11251,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 645,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 699,
+      "currentPurgeGlaTouches": 699,
       "easyAppTouches": 1,
       "easyAppSubmissions": 1,
       "easyAppCurrentVrvh": 1,
@@ -10879,6 +11267,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 713,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 447,
+      "currentPurgeGlaTouches": 447,
       "easyAppTouches": 1,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 1,
@@ -10893,6 +11283,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 718,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 237,
+      "currentPurgeGlaTouches": 237,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -10907,6 +11299,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 189,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 23,
+      "currentPurgeGlaTouches": 23,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -10921,6 +11315,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 194,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 85,
+      "currentPurgeGlaTouches": 85,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -10935,6 +11331,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 225,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 561,
+      "currentPurgeGlaTouches": 561,
       "easyAppTouches": 1,
       "easyAppSubmissions": 1,
       "easyAppCurrentVrvh": 0,
@@ -10948,7 +11346,9 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "rows": 391,
       "addedToCurrentVrvh": 208,
       "registrationsInfluenced": 0,
-      "influencedRate": 0.0,
+      "influencedRate": 0,
+      "glaTouches": 0,
+      "currentPurgeGlaTouches": 0,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -10958,25 +11358,13 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "easyAppCurrentVrvhRate": 0
     },
     {
-      "county": "Ouachita",
-      "rows": 3810,
-      "addedToCurrentVrvh": 596,
-      "registrationsInfluenced": 0,
-      "influencedRate": 0.0,
-      "easyAppTouches": 3,
-      "easyAppSubmissions": 1,
-      "easyAppCurrentVrvh": 0,
-      "easyAppAddedToCurrentVrvh": 0,
-      "easyAppCurrentPurge": 3,
-      "easyAppSubmissionRate": 33.33,
-      "easyAppCurrentVrvhRate": 0.0
-    },
-    {
       "county": "Perry",
       "rows": 1030,
       "addedToCurrentVrvh": 409,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 257,
+      "currentPurgeGlaTouches": 257,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -10991,6 +11379,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 431,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 255,
+      "currentPurgeGlaTouches": 255,
       "easyAppTouches": 1,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -11005,6 +11395,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 566,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 770,
+      "currentPurgeGlaTouches": 770,
       "easyAppTouches": 3,
       "easyAppSubmissions": 1,
       "easyAppCurrentVrvh": 0,
@@ -11019,6 +11411,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 771,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 335,
+      "currentPurgeGlaTouches": 335,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -11033,6 +11427,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 214,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 14,
+      "currentPurgeGlaTouches": 14,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -11047,6 +11443,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 656,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 207,
+      "currentPurgeGlaTouches": 207,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -11061,6 +11459,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 193,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 91,
+      "currentPurgeGlaTouches": 91,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -11075,6 +11475,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 366,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 11,
+      "currentPurgeGlaTouches": 11,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -11089,6 +11491,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 446,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 67,
+      "currentPurgeGlaTouches": 67,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -11103,6 +11507,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 862,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 358,
+      "currentPurgeGlaTouches": 358,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -11117,6 +11523,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 655,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 47,
+      "currentPurgeGlaTouches": 47,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
@@ -11131,6 +11539,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 1246,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 2173,
+      "currentPurgeGlaTouches": 2173,
       "easyAppTouches": 2,
       "easyAppSubmissions": 1,
       "easyAppCurrentVrvh": 1,
@@ -11144,7 +11554,9 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "rows": 2885,
       "addedToCurrentVrvh": 0,
       "registrationsInfluenced": 0,
-      "influencedRate": 0,
+      "influencedRate": 0.0,
+      "glaTouches": 2885,
+      "currentPurgeGlaTouches": 0,
       "easyAppTouches": 11,
       "easyAppSubmissions": 7,
       "easyAppCurrentVrvh": 5,
@@ -11159,6 +11571,8 @@ window.GLA_WEBSITE_DATA.outreachTracking = {
       "addedToCurrentVrvh": 204,
       "registrationsInfluenced": 0,
       "influencedRate": 0.0,
+      "glaTouches": 22,
+      "currentPurgeGlaTouches": 22,
       "easyAppTouches": 0,
       "easyAppSubmissions": 0,
       "easyAppCurrentVrvh": 0,
