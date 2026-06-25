@@ -1,0 +1,1326 @@
+{
+  "meta": {
+    "title": "Get Loud Arkansas Public Dashboard",
+    "generatedAt": "2026-06-25",
+    "privacy": "aggregate-only"
+  },
+  "overview": {
+    "totalPeople": 251813,
+    "addedToCurrentVrvh": 117118,
+    "contacted": 54127,
+    "notInGlaContactFile": 197686,
+    "counties": 75,
+    "contactRate": 21.5
+  },
+  "tracking": {
+    "summary": {
+      "totalPeople": 251813,
+      "addedToCurrentVrvh": 117118,
+      "notInGlaContactFile": 197686,
+      "counties": 75
+    },
+    "sourceTotals": [
+      {
+        "source": "NOT IN GLA CONTACT FILE",
+        "people": 196446,
+        "addedToCurrentVrvh": 116135,
+        "notInGlaContactFile": 196446
+      },
+      {
+        "source": "TOUCHED / CONTACTED",
+        "people": 54028,
+        "addedToCurrentVrvh": 2,
+        "notInGlaContactFile": 0
+      },
+      {
+        "source": "TXT BANK 5.20.2026 UNREGISTERD VOTER LIST",
+        "people": 1339,
+        "addedToCurrentVrvh": 981,
+        "notInGlaContactFile": 1240
+      }
+    ],
+    "countyTotals": [
+      {
+        "county": "Pulaski",
+        "people": 31834,
+        "addedToCurrentVrvh": 13464,
+        "contacted": 7883,
+        "active": 18220,
+        "inactive": 13614
+      },
+      {
+        "county": "Benton",
+        "people": 31634,
+        "addedToCurrentVrvh": 18158,
+        "contacted": 6328,
+        "active": 21601,
+        "inactive": 10033
+      },
+      {
+        "county": "Washington",
+        "people": 20461,
+        "addedToCurrentVrvh": 11370,
+        "contacted": 3622,
+        "active": 12747,
+        "inactive": 7714
+      },
+      {
+        "county": "Sebastian",
+        "people": 11360,
+        "addedToCurrentVrvh": 5019,
+        "contacted": 2549,
+        "active": 5954,
+        "inactive": 5406
+      },
+      {
+        "county": "Lonoke",
+        "people": 10881,
+        "addedToCurrentVrvh": 3155,
+        "contacted": 3725,
+        "active": 3841,
+        "inactive": 7040
+      },
+      {
+        "county": "Saline",
+        "people": 9844,
+        "addedToCurrentVrvh": 5561,
+        "contacted": 1908,
+        "active": 6545,
+        "inactive": 3299
+      },
+      {
+        "county": "Faulkner",
+        "people": 9451,
+        "addedToCurrentVrvh": 4223,
+        "contacted": 2114,
+        "active": 5636,
+        "inactive": 3815
+      },
+      {
+        "county": "Craighead",
+        "people": 8154,
+        "addedToCurrentVrvh": 3820,
+        "contacted": 1677,
+        "active": 4858,
+        "inactive": 3296
+      },
+      {
+        "county": "Garland",
+        "people": 6325,
+        "addedToCurrentVrvh": 4399,
+        "contacted": 496,
+        "active": 5945,
+        "inactive": 380
+      },
+      {
+        "county": "Union",
+        "people": 6223,
+        "addedToCurrentVrvh": 1246,
+        "contacted": 2172,
+        "active": 1688,
+        "inactive": 4535
+      },
+      {
+        "county": "Crawford",
+        "people": 5190,
+        "addedToCurrentVrvh": 2312,
+        "contacted": 1147,
+        "active": 2717,
+        "inactive": 2473
+      },
+      {
+        "county": "Baxter",
+        "people": 4714,
+        "addedToCurrentVrvh": 2323,
+        "contacted": 768,
+        "active": 3290,
+        "inactive": 1424
+      },
+      {
+        "county": "Pope",
+        "people": 4710,
+        "addedToCurrentVrvh": 2119,
+        "contacted": 1022,
+        "active": 2807,
+        "inactive": 1903
+      },
+      {
+        "county": "White",
+        "people": 3998,
+        "addedToCurrentVrvh": 3214,
+        "contacted": 196,
+        "active": 3812,
+        "inactive": 186
+      },
+      {
+        "county": "Greene",
+        "people": 3873,
+        "addedToCurrentVrvh": 1169,
+        "contacted": 1284,
+        "active": 1626,
+        "inactive": 2247
+      },
+      {
+        "county": "Ouachita",
+        "people": 3811,
+        "addedToCurrentVrvh": 597,
+        "contacted": 1545,
+        "active": 701,
+        "inactive": 3110
+      },
+      {
+        "county": "Boone",
+        "people": 3678,
+        "addedToCurrentVrvh": 1900,
+        "contacted": 607,
+        "active": 2445,
+        "inactive": 1233
+      },
+      {
+        "county": "Mississippi",
+        "people": 2961,
+        "addedToCurrentVrvh": 1000,
+        "contacted": 965,
+        "active": 1193,
+        "inactive": 1768
+      },
+      {
+        "county": "Independence",
+        "people": 2814,
+        "addedToCurrentVrvh": 1239,
+        "contacted": 521,
+        "active": 1749,
+        "inactive": 1065
+      },
+      {
+        "county": "Hot Spring",
+        "people": 2573,
+        "addedToCurrentVrvh": 1269,
+        "contacted": 492,
+        "active": 1708,
+        "inactive": 865
+      },
+      {
+        "county": "Cleburne",
+        "people": 2515,
+        "addedToCurrentVrvh": 1107,
+        "contacted": 575,
+        "active": 1581,
+        "inactive": 934
+      },
+      {
+        "county": "Jefferson",
+        "people": 2412,
+        "addedToCurrentVrvh": 1614,
+        "contacted": 208,
+        "active": 2177,
+        "inactive": 235
+      },
+      {
+        "county": "Miller",
+        "people": 2387,
+        "addedToCurrentVrvh": 1662,
+        "contacted": 157,
+        "active": 2076,
+        "inactive": 311
+      },
+      {
+        "county": "Carroll",
+        "people": 2371,
+        "addedToCurrentVrvh": 1309,
+        "contacted": 368,
+        "active": 1615,
+        "inactive": 756
+      },
+      {
+        "county": "Poinsett",
+        "people": 2322,
+        "addedToCurrentVrvh": 566,
+        "contacted": 769,
+        "active": 858,
+        "inactive": 1464
+      },
+      {
+        "county": "Logan",
+        "people": 2313,
+        "addedToCurrentVrvh": 645,
+        "contacted": 698,
+        "active": 781,
+        "inactive": 1532
+      },
+      {
+        "county": "Van Buren",
+        "people": 2177,
+        "addedToCurrentVrvh": 739,
+        "contacted": 577,
+        "active": 1063,
+        "inactive": 1114
+      },
+      {
+        "county": "Drew",
+        "people": 2015,
+        "addedToCurrentVrvh": 578,
+        "contacted": 628,
+        "active": 734,
+        "inactive": 1281
+      },
+      {
+        "county": "Madison",
+        "people": 1891,
+        "addedToCurrentVrvh": 713,
+        "contacted": 447,
+        "active": 879,
+        "inactive": 1012
+      },
+      {
+        "county": "Sharp",
+        "people": 1759,
+        "addedToCurrentVrvh": 862,
+        "contacted": 358,
+        "active": 1104,
+        "inactive": 655
+      },
+      {
+        "county": "Polk",
+        "people": 1735,
+        "addedToCurrentVrvh": 771,
+        "contacted": 335,
+        "active": 1098,
+        "inactive": 637
+      },
+      {
+        "county": "Columbia",
+        "people": 1673,
+        "addedToCurrentVrvh": 609,
+        "contacted": 361,
+        "active": 866,
+        "inactive": 807
+      },
+      {
+        "county": "Izard",
+        "people": 1654,
+        "addedToCurrentVrvh": 550,
+        "contacted": 135,
+        "active": 645,
+        "inactive": 1009
+      },
+      {
+        "county": "Arkansas",
+        "people": 1632,
+        "addedToCurrentVrvh": 303,
+        "contacted": 548,
+        "active": 411,
+        "inactive": 1221
+      },
+      {
+        "county": "Crittenden",
+        "people": 1617,
+        "addedToCurrentVrvh": 1406,
+        "contacted": 53,
+        "active": 1522,
+        "inactive": 95
+      },
+      {
+        "county": "Phillips",
+        "people": 1590,
+        "addedToCurrentVrvh": 397,
+        "contacted": 385,
+        "active": 652,
+        "inactive": 938
+      },
+      {
+        "county": "Nevada",
+        "people": 1547,
+        "addedToCurrentVrvh": 225,
+        "contacted": 560,
+        "active": 378,
+        "inactive": 1169
+      },
+      {
+        "county": "St. Francis",
+        "people": 1470,
+        "addedToCurrentVrvh": 376,
+        "contacted": 390,
+        "active": 475,
+        "inactive": 995
+      },
+      {
+        "county": "Desha",
+        "people": 1466,
+        "addedToCurrentVrvh": 255,
+        "contacted": 524,
+        "active": 409,
+        "inactive": 1057
+      },
+      {
+        "county": "Marion",
+        "people": 1417,
+        "addedToCurrentVrvh": 718,
+        "contacted": 237,
+        "active": 898,
+        "inactive": 519
+      },
+      {
+        "county": "Grant",
+        "people": 1390,
+        "addedToCurrentVrvh": 719,
+        "contacted": 211,
+        "active": 947,
+        "inactive": 443
+      },
+      {
+        "county": "Howard",
+        "people": 1365,
+        "addedToCurrentVrvh": 468,
+        "contacted": 343,
+        "active": 554,
+        "inactive": 811
+      },
+      {
+        "county": "Randolph",
+        "people": 1330,
+        "addedToCurrentVrvh": 656,
+        "contacted": 207,
+        "active": 872,
+        "inactive": 458
+      },
+      {
+        "county": "Franklin",
+        "people": 1317,
+        "addedToCurrentVrvh": 588,
+        "contacted": 237,
+        "active": 885,
+        "inactive": 432
+      },
+      {
+        "county": "Ashley",
+        "people": 1312,
+        "addedToCurrentVrvh": 529,
+        "contacted": 277,
+        "active": 833,
+        "inactive": 479
+      },
+      {
+        "county": "Johnson",
+        "people": 1223,
+        "addedToCurrentVrvh": 998,
+        "contacted": 23,
+        "active": 1142,
+        "inactive": 81
+      },
+      {
+        "county": "Yell",
+        "people": 1211,
+        "addedToCurrentVrvh": 475,
+        "contacted": 237,
+        "active": 653,
+        "inactive": 558
+      },
+      {
+        "county": "Cross",
+        "people": 1185,
+        "addedToCurrentVrvh": 297,
+        "contacted": 314,
+        "active": 535,
+        "inactive": 650
+      },
+      {
+        "county": "Clark",
+        "people": 1126,
+        "addedToCurrentVrvh": 700,
+        "contacted": 95,
+        "active": 982,
+        "inactive": 144
+      },
+      {
+        "county": "Pike",
+        "people": 1112,
+        "addedToCurrentVrvh": 431,
+        "contacted": 254,
+        "active": 617,
+        "inactive": 495
+      },
+      {
+        "county": "Fulton",
+        "people": 1098,
+        "addedToCurrentVrvh": 424,
+        "contacted": 216,
+        "active": 659,
+        "inactive": 439
+      },
+      {
+        "county": "Perry",
+        "people": 1030,
+        "addedToCurrentVrvh": 409,
+        "contacted": 257,
+        "active": 517,
+        "inactive": 513
+      },
+      {
+        "county": "Clay",
+        "people": 1021,
+        "addedToCurrentVrvh": 441,
+        "contacted": 203,
+        "active": 543,
+        "inactive": 478
+      },
+      {
+        "county": "Jackson",
+        "people": 1020,
+        "addedToCurrentVrvh": 430,
+        "contacted": 201,
+        "active": 573,
+        "inactive": 447
+      },
+      {
+        "county": "Conway",
+        "people": 979,
+        "addedToCurrentVrvh": 625,
+        "contacted": 73,
+        "active": 928,
+        "inactive": 51
+      },
+      {
+        "county": "Little River",
+        "people": 978,
+        "addedToCurrentVrvh": 541,
+        "contacted": 162,
+        "active": 745,
+        "inactive": 233
+      },
+      {
+        "county": "Stone",
+        "people": 977,
+        "addedToCurrentVrvh": 655,
+        "contacted": 47,
+        "active": 926,
+        "inactive": 51
+      },
+      {
+        "county": "Cleveland",
+        "people": 918,
+        "addedToCurrentVrvh": 282,
+        "contacted": 227,
+        "active": 481,
+        "inactive": 437
+      },
+      {
+        "county": "Lawrence",
+        "people": 882,
+        "addedToCurrentVrvh": 457,
+        "contacted": 85,
+        "active": 664,
+        "inactive": 218
+      },
+      {
+        "county": "Chicot",
+        "people": 818,
+        "addedToCurrentVrvh": 328,
+        "contacted": 195,
+        "active": 453,
+        "inactive": 365
+      },
+      {
+        "county": "Bradley",
+        "people": 765,
+        "addedToCurrentVrvh": 261,
+        "contacted": 199,
+        "active": 397,
+        "inactive": 368
+      },
+      {
+        "county": "Hempstead",
+        "people": 719,
+        "addedToCurrentVrvh": 405,
+        "contacted": 78,
+        "active": 655,
+        "inactive": 64
+      },
+      {
+        "county": "Sevier",
+        "people": 715,
+        "addedToCurrentVrvh": 446,
+        "contacted": 67,
+        "active": 600,
+        "inactive": 115
+      },
+      {
+        "county": "Lee",
+        "people": 685,
+        "addedToCurrentVrvh": 323,
+        "contacted": 117,
+        "active": 371,
+        "inactive": 314
+      },
+      {
+        "county": "Scott",
+        "people": 528,
+        "addedToCurrentVrvh": 193,
+        "contacted": 91,
+        "active": 469,
+        "inactive": 59
+      },
+      {
+        "county": "Lincoln",
+        "people": 493,
+        "addedToCurrentVrvh": 176,
+        "contacted": 101,
+        "active": 219,
+        "inactive": 274
+      },
+      {
+        "county": "Montgomery",
+        "people": 448,
+        "addedToCurrentVrvh": 194,
+        "contacted": 85,
+        "active": 251,
+        "inactive": 197
+      },
+      {
+        "county": "Searcy",
+        "people": 442,
+        "addedToCurrentVrvh": 366,
+        "contacted": 11,
+        "active": 441,
+        "inactive": 1
+      },
+      {
+        "county": "Lafayette",
+        "people": 401,
+        "addedToCurrentVrvh": 243,
+        "contacted": 42,
+        "active": 361,
+        "inactive": 40
+      },
+      {
+        "county": "Newton",
+        "people": 391,
+        "addedToCurrentVrvh": 208,
+        "contacted": 0,
+        "active": 327,
+        "inactive": 64
+      },
+      {
+        "county": "Calhoun",
+        "people": 380,
+        "addedToCurrentVrvh": 144,
+        "contacted": 63,
+        "active": 210,
+        "inactive": 170
+      },
+      {
+        "county": "Prairie",
+        "people": 310,
+        "addedToCurrentVrvh": 214,
+        "contacted": 14,
+        "active": 283,
+        "inactive": 27
+      },
+      {
+        "county": "Woodruff",
+        "people": 301,
+        "addedToCurrentVrvh": 204,
+        "contacted": 22,
+        "active": 267,
+        "inactive": 34
+      },
+      {
+        "county": "Monroe",
+        "people": 292,
+        "addedToCurrentVrvh": 189,
+        "contacted": 23,
+        "active": 268,
+        "inactive": 24
+      },
+      {
+        "county": "Dallas",
+        "people": 199,
+        "addedToCurrentVrvh": 137,
+        "contacted": 16,
+        "active": 181,
+        "inactive": 18
+      }
+    ]
+  },
+  "voterFile": {
+    "summary": {
+      "totalPeople": 251813,
+      "active": 149114,
+      "inactive": 102699
+    },
+    "registrationStatus": [
+      {
+        "status": "A",
+        "count": 149114
+      },
+      {
+        "status": "I",
+        "count": 102699
+      }
+    ]
+  },
+  "purge": {
+    "summary": {
+      "totalPeople": 251813,
+      "addedToCurrentVrvh": 117118
+    },
+    "removedTrackingStatus": [
+      {
+        "status": "NEWLY ADDED SINCE 12/2/24",
+        "count": 117100
+      },
+      {
+        "status": "IN REMOVED VOTER TRACKING",
+        "count": 116978
+      },
+      {
+        "status": "REMOVED SINCE 12/2/24 BUT NOT IN REMOVED TRACKING TABLE",
+        "count": 17717
+      },
+      {
+        "status": "WAS PREVIOUSLY REMOVED AND IS NOW BACK IN VRVH",
+        "count": 18
+      }
+    ]
+  },
+  "outreach": {
+    "summary": {
+      "totalPeople": 251813,
+      "contacted": 54127,
+      "notInGlaContactFile": 197686,
+      "contactRate": 21.5
+    },
+    "contactStatus": [
+      {
+        "status": "NOT IN GLA CONTACT FILE",
+        "count": 197686
+      },
+      {
+        "status": "TOUCHED / CONTACTED",
+        "count": 54127
+      }
+    ]
+  },
+  "registration": {
+    "summary": {
+      "totalPeople": 251813,
+      "addedToCurrentVrvh": 117118,
+      "active": 149114,
+      "inactive": 102699
+    },
+    "changeStatus": [
+      {
+        "status": "REMOVED FROM CURRENT VRVH",
+        "count": 134695
+      },
+      {
+        "status": "ADDED TO CURRENT VRVH",
+        "count": 117118
+      }
+    ]
+  },
+  "geography": {
+    "counties": [
+      {
+        "county": "Pulaski",
+        "people": 31834,
+        "addedToCurrentVrvh": 13464,
+        "contacted": 7883,
+        "active": 18220,
+        "inactive": 13614
+      },
+      {
+        "county": "Benton",
+        "people": 31634,
+        "addedToCurrentVrvh": 18158,
+        "contacted": 6328,
+        "active": 21601,
+        "inactive": 10033
+      },
+      {
+        "county": "Washington",
+        "people": 20461,
+        "addedToCurrentVrvh": 11370,
+        "contacted": 3622,
+        "active": 12747,
+        "inactive": 7714
+      },
+      {
+        "county": "Sebastian",
+        "people": 11360,
+        "addedToCurrentVrvh": 5019,
+        "contacted": 2549,
+        "active": 5954,
+        "inactive": 5406
+      },
+      {
+        "county": "Lonoke",
+        "people": 10881,
+        "addedToCurrentVrvh": 3155,
+        "contacted": 3725,
+        "active": 3841,
+        "inactive": 7040
+      },
+      {
+        "county": "Saline",
+        "people": 9844,
+        "addedToCurrentVrvh": 5561,
+        "contacted": 1908,
+        "active": 6545,
+        "inactive": 3299
+      },
+      {
+        "county": "Faulkner",
+        "people": 9451,
+        "addedToCurrentVrvh": 4223,
+        "contacted": 2114,
+        "active": 5636,
+        "inactive": 3815
+      },
+      {
+        "county": "Craighead",
+        "people": 8154,
+        "addedToCurrentVrvh": 3820,
+        "contacted": 1677,
+        "active": 4858,
+        "inactive": 3296
+      },
+      {
+        "county": "Garland",
+        "people": 6325,
+        "addedToCurrentVrvh": 4399,
+        "contacted": 496,
+        "active": 5945,
+        "inactive": 380
+      },
+      {
+        "county": "Union",
+        "people": 6223,
+        "addedToCurrentVrvh": 1246,
+        "contacted": 2172,
+        "active": 1688,
+        "inactive": 4535
+      },
+      {
+        "county": "Crawford",
+        "people": 5190,
+        "addedToCurrentVrvh": 2312,
+        "contacted": 1147,
+        "active": 2717,
+        "inactive": 2473
+      },
+      {
+        "county": "Baxter",
+        "people": 4714,
+        "addedToCurrentVrvh": 2323,
+        "contacted": 768,
+        "active": 3290,
+        "inactive": 1424
+      },
+      {
+        "county": "Pope",
+        "people": 4710,
+        "addedToCurrentVrvh": 2119,
+        "contacted": 1022,
+        "active": 2807,
+        "inactive": 1903
+      },
+      {
+        "county": "White",
+        "people": 3998,
+        "addedToCurrentVrvh": 3214,
+        "contacted": 196,
+        "active": 3812,
+        "inactive": 186
+      },
+      {
+        "county": "Greene",
+        "people": 3873,
+        "addedToCurrentVrvh": 1169,
+        "contacted": 1284,
+        "active": 1626,
+        "inactive": 2247
+      },
+      {
+        "county": "Ouachita",
+        "people": 3811,
+        "addedToCurrentVrvh": 597,
+        "contacted": 1545,
+        "active": 701,
+        "inactive": 3110
+      },
+      {
+        "county": "Boone",
+        "people": 3678,
+        "addedToCurrentVrvh": 1900,
+        "contacted": 607,
+        "active": 2445,
+        "inactive": 1233
+      },
+      {
+        "county": "Mississippi",
+        "people": 2961,
+        "addedToCurrentVrvh": 1000,
+        "contacted": 965,
+        "active": 1193,
+        "inactive": 1768
+      },
+      {
+        "county": "Independence",
+        "people": 2814,
+        "addedToCurrentVrvh": 1239,
+        "contacted": 521,
+        "active": 1749,
+        "inactive": 1065
+      },
+      {
+        "county": "Hot Spring",
+        "people": 2573,
+        "addedToCurrentVrvh": 1269,
+        "contacted": 492,
+        "active": 1708,
+        "inactive": 865
+      },
+      {
+        "county": "Cleburne",
+        "people": 2515,
+        "addedToCurrentVrvh": 1107,
+        "contacted": 575,
+        "active": 1581,
+        "inactive": 934
+      },
+      {
+        "county": "Jefferson",
+        "people": 2412,
+        "addedToCurrentVrvh": 1614,
+        "contacted": 208,
+        "active": 2177,
+        "inactive": 235
+      },
+      {
+        "county": "Miller",
+        "people": 2387,
+        "addedToCurrentVrvh": 1662,
+        "contacted": 157,
+        "active": 2076,
+        "inactive": 311
+      },
+      {
+        "county": "Carroll",
+        "people": 2371,
+        "addedToCurrentVrvh": 1309,
+        "contacted": 368,
+        "active": 1615,
+        "inactive": 756
+      },
+      {
+        "county": "Poinsett",
+        "people": 2322,
+        "addedToCurrentVrvh": 566,
+        "contacted": 769,
+        "active": 858,
+        "inactive": 1464
+      },
+      {
+        "county": "Logan",
+        "people": 2313,
+        "addedToCurrentVrvh": 645,
+        "contacted": 698,
+        "active": 781,
+        "inactive": 1532
+      },
+      {
+        "county": "Van Buren",
+        "people": 2177,
+        "addedToCurrentVrvh": 739,
+        "contacted": 577,
+        "active": 1063,
+        "inactive": 1114
+      },
+      {
+        "county": "Drew",
+        "people": 2015,
+        "addedToCurrentVrvh": 578,
+        "contacted": 628,
+        "active": 734,
+        "inactive": 1281
+      },
+      {
+        "county": "Madison",
+        "people": 1891,
+        "addedToCurrentVrvh": 713,
+        "contacted": 447,
+        "active": 879,
+        "inactive": 1012
+      },
+      {
+        "county": "Sharp",
+        "people": 1759,
+        "addedToCurrentVrvh": 862,
+        "contacted": 358,
+        "active": 1104,
+        "inactive": 655
+      },
+      {
+        "county": "Polk",
+        "people": 1735,
+        "addedToCurrentVrvh": 771,
+        "contacted": 335,
+        "active": 1098,
+        "inactive": 637
+      },
+      {
+        "county": "Columbia",
+        "people": 1673,
+        "addedToCurrentVrvh": 609,
+        "contacted": 361,
+        "active": 866,
+        "inactive": 807
+      },
+      {
+        "county": "Izard",
+        "people": 1654,
+        "addedToCurrentVrvh": 550,
+        "contacted": 135,
+        "active": 645,
+        "inactive": 1009
+      },
+      {
+        "county": "Arkansas",
+        "people": 1632,
+        "addedToCurrentVrvh": 303,
+        "contacted": 548,
+        "active": 411,
+        "inactive": 1221
+      },
+      {
+        "county": "Crittenden",
+        "people": 1617,
+        "addedToCurrentVrvh": 1406,
+        "contacted": 53,
+        "active": 1522,
+        "inactive": 95
+      },
+      {
+        "county": "Phillips",
+        "people": 1590,
+        "addedToCurrentVrvh": 397,
+        "contacted": 385,
+        "active": 652,
+        "inactive": 938
+      },
+      {
+        "county": "Nevada",
+        "people": 1547,
+        "addedToCurrentVrvh": 225,
+        "contacted": 560,
+        "active": 378,
+        "inactive": 1169
+      },
+      {
+        "county": "St. Francis",
+        "people": 1470,
+        "addedToCurrentVrvh": 376,
+        "contacted": 390,
+        "active": 475,
+        "inactive": 995
+      },
+      {
+        "county": "Desha",
+        "people": 1466,
+        "addedToCurrentVrvh": 255,
+        "contacted": 524,
+        "active": 409,
+        "inactive": 1057
+      },
+      {
+        "county": "Marion",
+        "people": 1417,
+        "addedToCurrentVrvh": 718,
+        "contacted": 237,
+        "active": 898,
+        "inactive": 519
+      },
+      {
+        "county": "Grant",
+        "people": 1390,
+        "addedToCurrentVrvh": 719,
+        "contacted": 211,
+        "active": 947,
+        "inactive": 443
+      },
+      {
+        "county": "Howard",
+        "people": 1365,
+        "addedToCurrentVrvh": 468,
+        "contacted": 343,
+        "active": 554,
+        "inactive": 811
+      },
+      {
+        "county": "Randolph",
+        "people": 1330,
+        "addedToCurrentVrvh": 656,
+        "contacted": 207,
+        "active": 872,
+        "inactive": 458
+      },
+      {
+        "county": "Franklin",
+        "people": 1317,
+        "addedToCurrentVrvh": 588,
+        "contacted": 237,
+        "active": 885,
+        "inactive": 432
+      },
+      {
+        "county": "Ashley",
+        "people": 1312,
+        "addedToCurrentVrvh": 529,
+        "contacted": 277,
+        "active": 833,
+        "inactive": 479
+      },
+      {
+        "county": "Johnson",
+        "people": 1223,
+        "addedToCurrentVrvh": 998,
+        "contacted": 23,
+        "active": 1142,
+        "inactive": 81
+      },
+      {
+        "county": "Yell",
+        "people": 1211,
+        "addedToCurrentVrvh": 475,
+        "contacted": 237,
+        "active": 653,
+        "inactive": 558
+      },
+      {
+        "county": "Cross",
+        "people": 1185,
+        "addedToCurrentVrvh": 297,
+        "contacted": 314,
+        "active": 535,
+        "inactive": 650
+      },
+      {
+        "county": "Clark",
+        "people": 1126,
+        "addedToCurrentVrvh": 700,
+        "contacted": 95,
+        "active": 982,
+        "inactive": 144
+      },
+      {
+        "county": "Pike",
+        "people": 1112,
+        "addedToCurrentVrvh": 431,
+        "contacted": 254,
+        "active": 617,
+        "inactive": 495
+      },
+      {
+        "county": "Fulton",
+        "people": 1098,
+        "addedToCurrentVrvh": 424,
+        "contacted": 216,
+        "active": 659,
+        "inactive": 439
+      },
+      {
+        "county": "Perry",
+        "people": 1030,
+        "addedToCurrentVrvh": 409,
+        "contacted": 257,
+        "active": 517,
+        "inactive": 513
+      },
+      {
+        "county": "Clay",
+        "people": 1021,
+        "addedToCurrentVrvh": 441,
+        "contacted": 203,
+        "active": 543,
+        "inactive": 478
+      },
+      {
+        "county": "Jackson",
+        "people": 1020,
+        "addedToCurrentVrvh": 430,
+        "contacted": 201,
+        "active": 573,
+        "inactive": 447
+      },
+      {
+        "county": "Conway",
+        "people": 979,
+        "addedToCurrentVrvh": 625,
+        "contacted": 73,
+        "active": 928,
+        "inactive": 51
+      },
+      {
+        "county": "Little River",
+        "people": 978,
+        "addedToCurrentVrvh": 541,
+        "contacted": 162,
+        "active": 745,
+        "inactive": 233
+      },
+      {
+        "county": "Stone",
+        "people": 977,
+        "addedToCurrentVrvh": 655,
+        "contacted": 47,
+        "active": 926,
+        "inactive": 51
+      },
+      {
+        "county": "Cleveland",
+        "people": 918,
+        "addedToCurrentVrvh": 282,
+        "contacted": 227,
+        "active": 481,
+        "inactive": 437
+      },
+      {
+        "county": "Lawrence",
+        "people": 882,
+        "addedToCurrentVrvh": 457,
+        "contacted": 85,
+        "active": 664,
+        "inactive": 218
+      },
+      {
+        "county": "Chicot",
+        "people": 818,
+        "addedToCurrentVrvh": 328,
+        "contacted": 195,
+        "active": 453,
+        "inactive": 365
+      },
+      {
+        "county": "Bradley",
+        "people": 765,
+        "addedToCurrentVrvh": 261,
+        "contacted": 199,
+        "active": 397,
+        "inactive": 368
+      },
+      {
+        "county": "Hempstead",
+        "people": 719,
+        "addedToCurrentVrvh": 405,
+        "contacted": 78,
+        "active": 655,
+        "inactive": 64
+      },
+      {
+        "county": "Sevier",
+        "people": 715,
+        "addedToCurrentVrvh": 446,
+        "contacted": 67,
+        "active": 600,
+        "inactive": 115
+      },
+      {
+        "county": "Lee",
+        "people": 685,
+        "addedToCurrentVrvh": 323,
+        "contacted": 117,
+        "active": 371,
+        "inactive": 314
+      },
+      {
+        "county": "Scott",
+        "people": 528,
+        "addedToCurrentVrvh": 193,
+        "contacted": 91,
+        "active": 469,
+        "inactive": 59
+      },
+      {
+        "county": "Lincoln",
+        "people": 493,
+        "addedToCurrentVrvh": 176,
+        "contacted": 101,
+        "active": 219,
+        "inactive": 274
+      },
+      {
+        "county": "Montgomery",
+        "people": 448,
+        "addedToCurrentVrvh": 194,
+        "contacted": 85,
+        "active": 251,
+        "inactive": 197
+      },
+      {
+        "county": "Searcy",
+        "people": 442,
+        "addedToCurrentVrvh": 366,
+        "contacted": 11,
+        "active": 441,
+        "inactive": 1
+      },
+      {
+        "county": "Lafayette",
+        "people": 401,
+        "addedToCurrentVrvh": 243,
+        "contacted": 42,
+        "active": 361,
+        "inactive": 40
+      },
+      {
+        "county": "Newton",
+        "people": 391,
+        "addedToCurrentVrvh": 208,
+        "contacted": 0,
+        "active": 327,
+        "inactive": 64
+      },
+      {
+        "county": "Calhoun",
+        "people": 380,
+        "addedToCurrentVrvh": 144,
+        "contacted": 63,
+        "active": 210,
+        "inactive": 170
+      },
+      {
+        "county": "Prairie",
+        "people": 310,
+        "addedToCurrentVrvh": 214,
+        "contacted": 14,
+        "active": 283,
+        "inactive": 27
+      },
+      {
+        "county": "Woodruff",
+        "people": 301,
+        "addedToCurrentVrvh": 204,
+        "contacted": 22,
+        "active": 267,
+        "inactive": 34
+      },
+      {
+        "county": "Monroe",
+        "people": 292,
+        "addedToCurrentVrvh": 189,
+        "contacted": 23,
+        "active": 268,
+        "inactive": 24
+      },
+      {
+        "county": "Dallas",
+        "people": 199,
+        "addedToCurrentVrvh": 137,
+        "contacted": 16,
+        "active": 181,
+        "inactive": 18
+      }
+    ]
+  }
+}
