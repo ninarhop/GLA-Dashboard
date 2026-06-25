@@ -121,9 +121,9 @@ function renderTracking() {
   byId("trackingSource").textContent = `${formatNumber(tracking.source.rowCount)} aggregate source rows`;
   byId("trackingMetrics").innerHTML = [
     metric("Added to current VRVH", countyRow ? countyRow.addedToCurrentVrvh : summary.addedToCurrentVrvh),
-    metric("Added after purge-list contact", influencedCount),
-    metric("Purge-list contacts", summary.purgeListContacts || summary.contactedVoters),
-    metric("Easy App touches", summary.easyAppTouches || 0)
+    metric("Added after GLA touch", influencedCount),
+    metric("GLA touches", summary.glaTouches || summary.purgeListContacts || summary.contactedVoters),
+    metric("Current purge GLA touches", summary.currentPurgeGlaTouches || summary.contactedVoters)
   ].join("");
 
   byId("trackingSourceTable").innerHTML = `
@@ -135,22 +135,24 @@ function renderTracking() {
       ],
       tracking.listTypeCounts || []
     )}
-    <h3>Contact Source Summary</h3>
+    <h3>GLA Touch Source</h3>
     ${rowsToTable(
       [
         { key: "source", label: "Source" },
-        { key: "count", label: "Rows", render: (row) => formatNumber(row.count) }
+        { key: "count", label: "Touches", render: (row) => formatNumber(row.count) }
       ],
-      tracking.sourceCounts || []
+      tracking.glaTouchSourceCounts || tracking.sourceCounts || []
     )}
   `;
 
   byId("trackingCountyTable").innerHTML = rowsToTable(
     [
       { key: "county", label: "County" },
+      { key: "glaTouches", label: "GLA touches", render: (row) => formatNumber(row.glaTouches || 0) },
+      { key: "currentPurgeGlaTouches", label: "Current purge touches", render: (row) => formatNumber(row.currentPurgeGlaTouches || 0) },
       { key: "addedToCurrentVrvh", label: "Added to VRVH", render: (row) => formatNumber(row.addedToCurrentVrvh) },
-      { key: "registrationsInfluenced", label: "Added after contact", render: (row) => formatNumber(row.registrationsInfluenced) },
-      { key: "influencedRate", label: "Rate", render: (row) => formatPercent(row.influencedRate / 100) }
+      { key: "registrationsInfluenced", label: "Added after GLA touch", render: (row) => formatNumber(row.registrationsInfluenced) },
+      { key: "influencedRate", label: "Conversion", render: (row) => formatPercent(row.influencedRate / 100) }
     ],
     countyRows
   );
@@ -231,38 +233,38 @@ function renderRegistration() {
     return;
   }
 
-  const countyRow = selectedCountyRow(easyApp.countySummary || []);
+  const countyRow = selectedCountyRow(tracking.countySummary || []);
   const summary = tracking.summary;
-  const touches = countyRow ? countyRow.touches : summary.easyAppTouches;
-  const submissions = countyRow ? countyRow.submissions : summary.easyAppSubmissions;
-  const currentVrvh = countyRow ? countyRow.currentVrvh : summary.easyAppCurrentVrvh;
-  const addedToCurrent = countyRow ? countyRow.addedToCurrentVrvh : summary.easyAppAddedToCurrentVrvh;
-  const currentPurge = countyRow ? countyRow.currentPurge : summary.easyAppCurrentPurge;
-  const submissionRate = countyRow ? countyRow.submissionRate : summary.easyAppSubmissionRate;
-  const currentVrvhRate = countyRow ? countyRow.currentVrvhRate : summary.easyAppCurrentVrvhRate;
+  const touches = countyRow ? countyRow.glaTouches : summary.glaTouches;
+  const submissions = countyRow ? countyRow.easyAppSubmissions : summary.easyAppSubmissions;
+  const currentVrvh = countyRow ? countyRow.easyAppCurrentVrvh : summary.easyAppCurrentVrvh;
+  const addedToCurrent = countyRow ? countyRow.registrationsInfluenced : summary.registrationsInfluenced;
+  const currentPurge = countyRow ? countyRow.currentPurgeGlaTouches : summary.currentPurgeGlaTouches;
+  const submissionRate = countyRow ? countyRow.easyAppSubmissionRate : summary.easyAppSubmissionRate;
+  const conversionRate = countyRow ? countyRow.influencedRate : summary.conversionRate;
 
   byId("demographicTable").innerHTML = `
     <div class="metric-grid compact">
       ${[
-        metric("Easy App touches", touches),
+        metric("GLA touches", touches),
         metric("Easy App submissions", submissions),
-        metric("Made current VRVH", currentVrvh),
-        metric("Added to current VRVH", addedToCurrent),
-        metric("Still current purge", currentPurge),
+        metric("Easy App current VRVH", currentVrvh),
+        metric("Registrations influenced", addedToCurrent),
+        metric("Current purge GLA touches", currentPurge),
         metric("Submission rate", formatPercent(submissionRate / 100)),
-        metric("Current VRVH rate", formatPercent(currentVrvhRate / 100))
+        metric("Conversion rate", formatPercent(conversionRate / 100))
       ].join("")}
     </div>
     ${rowsToTable(
       [
         { key: "county", label: "County" },
-        { key: "touches", label: "Easy App touches", render: (row) => formatNumber(row.touches) },
-        { key: "submissions", label: "Submissions", render: (row) => formatNumber(row.submissions) },
-        { key: "currentVrvh", label: "Current VRVH", render: (row) => formatNumber(row.currentVrvh) },
-        { key: "addedToCurrentVrvh", label: "Added to VRVH", render: (row) => formatNumber(row.addedToCurrentVrvh) },
-        { key: "currentPurge", label: "Current purge", render: (row) => formatNumber(row.currentPurge) }
+        { key: "glaTouches", label: "GLA touches", render: (row) => formatNumber(row.glaTouches || 0) },
+        { key: "registrationsInfluenced", label: "Registrations influenced", render: (row) => formatNumber(row.registrationsInfluenced || 0) },
+        { key: "influencedRate", label: "Conversion", render: (row) => formatPercent((row.influencedRate || 0) / 100) },
+        { key: "easyAppSubmissions", label: "Easy App submissions", render: (row) => formatNumber(row.easyAppSubmissions || 0) },
+        { key: "easyAppCurrentVrvh", label: "Easy App current VRVH", render: (row) => formatNumber(row.easyAppCurrentVrvh || 0) }
       ],
-      countyRow ? [countyRow] : (easyApp.countySummary || []).slice(0, 20)
+      countyRow ? [countyRow] : (tracking.countySummary || []).slice(0, 20)
     )}
   `;
 
