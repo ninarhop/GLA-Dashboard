@@ -5,38 +5,44 @@
     "privacy": "aggregate-only"
   },
   "overview": {
-    "totalPeople": 251813,
-    "addedToCurrentVrvh": 117118,
-    "contacted": 54127,
-    "notInGlaContactFile": 197686,
-    "counties": 75,
-    "contactRate": 21.5
+    "totalPeople": 254629,
+    "addedToCurrentVrvh": 117081,
+    "contacted": 57003,
+    "notInGlaContactFile": 197626,
+    "counties": 76,
+    "contactRate": 22.4
   },
   "tracking": {
     "summary": {
-      "totalPeople": 251813,
-      "addedToCurrentVrvh": 117118,
-      "notInGlaContactFile": 197686,
-      "counties": 75
+      "totalPeople": 254629,
+      "addedToCurrentVrvh": 117081,
+      "notInGlaContactFile": 197626,
+      "counties": 76
     },
     "sourceTotals": [
       {
         "source": "NOT IN GLA CONTACT FILE",
-        "people": 196446,
-        "addedToCurrentVrvh": 116135,
-        "notInGlaContactFile": 196446
+        "people": 196121,
+        "addedToCurrentVrvh": 115864,
+        "notInGlaContactFile": 196121
       },
       {
         "source": "TOUCHED / CONTACTED",
-        "people": 54028,
+        "people": 53996,
         "addedToCurrentVrvh": 2,
         "notInGlaContactFile": 0
       },
       {
-        "source": "TXT BANK 5.20.2026 UNREGISTERD VOTER LIST",
-        "people": 1339,
-        "addedToCurrentVrvh": 981,
-        "notInGlaContactFile": 1240
+        "source": "TXT BANK 5.20.2026 UNREGISTERED VOTER LIST",
+        "people": 4140,
+        "addedToCurrentVrvh": 941,
+        "notInGlaContactFile": 1176
+      },
+      {
+        "source": "GLA EASY APP 6.14.2026",
+        "people": 372,
+        "addedToCurrentVrvh": 274,
+        "notInGlaContactFile": 329
       }
     ],
     "countyTotals": [
@@ -66,11 +72,11 @@
       },
       {
         "county": "Sebastian",
-        "people": 11360,
-        "addedToCurrentVrvh": 5019,
-        "contacted": 2549,
-        "active": 5954,
-        "inactive": 5406
+        "people": 11306,
+        "addedToCurrentVrvh": 4995,
+        "contacted": 2541,
+        "active": 5926,
+        "inactive": 5380
       },
       {
         "county": "Lonoke",
@@ -162,10 +168,10 @@
       },
       {
         "county": "Ouachita",
-        "people": 3811,
-        "addedToCurrentVrvh": 597,
+        "people": 3810,
+        "addedToCurrentVrvh": 596,
         "contacted": 1545,
-        "active": 701,
+        "active": 700,
         "inactive": 3110
       },
       {
@@ -183,6 +189,14 @@
         "contacted": 965,
         "active": 1193,
         "inactive": 1768
+      },
+      {
+        "county": "Unknown",
+        "people": 2885,
+        "addedToCurrentVrvh": 0,
+        "contacted": 2885,
+        "active": 0,
+        "inactive": 0
       },
       {
         "county": "Independence",
@@ -210,10 +224,10 @@
       },
       {
         "county": "Jefferson",
-        "people": 2412,
-        "addedToCurrentVrvh": 1614,
-        "contacted": 208,
-        "active": 2177,
+        "people": 2403,
+        "addedToCurrentVrvh": 1606,
+        "contacted": 207,
+        "active": 2168,
         "inactive": 235
       },
       {
@@ -314,10 +328,10 @@
       },
       {
         "county": "Crittenden",
-        "people": 1617,
-        "addedToCurrentVrvh": 1406,
+        "people": 1612,
+        "addedToCurrentVrvh": 1402,
         "contacted": 53,
-        "active": 1522,
+        "active": 1517,
         "inactive": 95
       },
       {
@@ -644,38 +658,46 @@
   },
   "voterFile": {
     "summary": {
-      "totalPeople": 251813,
-      "active": 149114,
-      "inactive": 102699
+      "totalPeople": 254629,
+      "active": 149071,
+      "inactive": 102673
     },
     "registrationStatus": [
       {
         "status": "A",
-        "count": 149114
+        "count": 149071
       },
       {
         "status": "I",
-        "count": 102699
+        "count": 102673
+      },
+      {
+        "status": "Unknown",
+        "count": 2885
       }
     ]
   },
   "purge": {
     "summary": {
-      "totalPeople": 251813,
-      "addedToCurrentVrvh": 117118
+      "totalPeople": 254629,
+      "addedToCurrentVrvh": 117081
     },
     "removedTrackingStatus": [
       {
         "status": "NEWLY ADDED SINCE 12/2/24",
-        "count": 117100
+        "count": 117063
       },
       {
         "status": "IN REMOVED VOTER TRACKING",
-        "count": 116978
+        "count": 116950
       },
       {
         "status": "REMOVED SINCE 12/2/24 BUT NOT IN REMOVED TRACKING TABLE",
-        "count": 17717
+        "count": 17713
+      },
+      {
+        "status": "Unknown",
+        "count": 2885
       },
       {
         "status": "WAS PREVIOUSLY REMOVED AND IS NOW BACK IN VRVH",
@@ -685,37 +707,45 @@
   },
   "outreach": {
     "summary": {
-      "totalPeople": 251813,
-      "contacted": 54127,
-      "notInGlaContactFile": 197686,
-      "contactRate": 21.5
+      "totalPeople": 254629,
+      "contacted": 57003,
+      "notInGlaContactFile": 197626,
+      "contactRate": 22.4
     },
     "contactStatus": [
       {
         "status": "NOT IN GLA CONTACT FILE",
-        "count": 197686
+        "count": 197626
       },
       {
         "status": "TOUCHED / CONTACTED",
-        "count": 54127
+        "count": 54118
+      },
+      {
+        "status": "Unknown",
+        "count": 2885
       }
     ]
   },
   "registration": {
     "summary": {
-      "totalPeople": 251813,
-      "addedToCurrentVrvh": 117118,
-      "active": 149114,
-      "inactive": 102699
+      "totalPeople": 254629,
+      "addedToCurrentVrvh": 117081,
+      "active": 149071,
+      "inactive": 102673
     },
     "changeStatus": [
       {
         "status": "REMOVED FROM CURRENT VRVH",
-        "count": 134695
+        "count": 134663
       },
       {
         "status": "ADDED TO CURRENT VRVH",
-        "count": 117118
+        "count": 117081
+      },
+      {
+        "status": "Unknown",
+        "count": 2885
       }
     ]
   },
@@ -747,11 +777,11 @@
       },
       {
         "county": "Sebastian",
-        "people": 11360,
-        "addedToCurrentVrvh": 5019,
-        "contacted": 2549,
-        "active": 5954,
-        "inactive": 5406
+        "people": 11306,
+        "addedToCurrentVrvh": 4995,
+        "contacted": 2541,
+        "active": 5926,
+        "inactive": 5380
       },
       {
         "county": "Lonoke",
@@ -843,10 +873,10 @@
       },
       {
         "county": "Ouachita",
-        "people": 3811,
-        "addedToCurrentVrvh": 597,
+        "people": 3810,
+        "addedToCurrentVrvh": 596,
         "contacted": 1545,
-        "active": 701,
+        "active": 700,
         "inactive": 3110
       },
       {
@@ -864,6 +894,14 @@
         "contacted": 965,
         "active": 1193,
         "inactive": 1768
+      },
+      {
+        "county": "Unknown",
+        "people": 2885,
+        "addedToCurrentVrvh": 0,
+        "contacted": 2885,
+        "active": 0,
+        "inactive": 0
       },
       {
         "county": "Independence",
@@ -891,10 +929,10 @@
       },
       {
         "county": "Jefferson",
-        "people": 2412,
-        "addedToCurrentVrvh": 1614,
-        "contacted": 208,
-        "active": 2177,
+        "people": 2403,
+        "addedToCurrentVrvh": 1606,
+        "contacted": 207,
+        "active": 2168,
         "inactive": 235
       },
       {
@@ -995,10 +1033,10 @@
       },
       {
         "county": "Crittenden",
-        "people": 1617,
-        "addedToCurrentVrvh": 1406,
+        "people": 1612,
+        "addedToCurrentVrvh": 1402,
         "contacted": 53,
-        "active": 1522,
+        "active": 1517,
         "inactive": 95
       },
       {
