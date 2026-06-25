@@ -1,0 +1,207 @@
+(() => {
+  const root = document.getElementById("app");
+  if (!root) return;
+
+  root.innerHTML = `
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Dashboard sections">
+        <div class="brand-block">
+          <svg class="brand-mark" viewBox="0 0 180 118" role="img" aria-label="Get Loud Arkansas logo">
+            <rect width="180" height="118" rx="10" fill="#dff2ee"></rect>
+            <text x="14" y="43" fill="#8a277f" font-family="Arial Black, Arial, sans-serif" font-size="34" font-weight="900">GET</text>
+            <text x="14" y="78" fill="#557fd0" font-family="Arial Black, Arial, sans-serif" font-size="38" font-weight="900">LOUD</text>
+            <text x="16" y="104" fill="#8a277f" font-family="Arial Black, Arial, sans-serif" font-size="19" font-weight="900">ARKANSAS!</text>
+            <g transform="translate(110 18) rotate(-10)">
+              <path d="M8 19 L43 8 L43 42 L8 31 Z" fill="#ffffff" stroke="#557fd0" stroke-width="4" stroke-linejoin="round"></path>
+              <path d="M43 8 C55 14 58 36 43 42 Z" fill="#dff2ee" stroke="#557fd0" stroke-width="4"></path>
+              <path d="M8 21 L1 21 L1 31 L8 31 Z" fill="#ffffff" stroke="#557fd0" stroke-width="4" stroke-linejoin="round"></path>
+              <text x="15" y="28" fill="#8a277f" font-family="Arial Black, Arial, sans-serif" font-size="11" font-weight="900">VOTE!</text>
+              <path d="M61 18 L70 14 M62 27 L74 27 M60 36 L69 42" stroke="#557fd0" stroke-width="4" stroke-linecap="round"></path>
+            </g>
+          </svg>
+          <div>
+            <div class="brand-name">Voter Tracking</div>
+            <div class="brand-subtitle">Public aggregate dashboard</div>
+          </div>
+        </div>
+        <nav class="section-nav">
+          <button class="nav-button active" data-section="overview" type="button">Home</button>
+          <button class="nav-button" data-section="tracking" type="button">Tracking</button>
+          <button class="nav-button" data-section="voterFile" type="button">Voter File</button>
+          <button class="nav-button" data-section="purge" type="button">Purge</button>
+          <button class="nav-button" data-section="outreach" type="button">Outreach</button>
+          <button class="nav-button" data-section="registration" type="button">Registration</button>
+          <button class="nav-button" data-section="primary2026" type="button">2026 Primary</button>
+          <button class="nav-button" data-section="zodiac" type="button">Zodiac</button>
+          <button class="nav-button" data-section="geography" type="button">Geography</button>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Get Loud Arkansas</p>
+            <h1>Voter Status and Outreach Outcomes</h1>
+          </div>
+          <div class="filter-row" aria-label="Dashboard filters">
+            <label>
+              County
+              <select id="countyFilter">
+                <option value="all">All counties</option>
+              </select>
+            </label>
+          </div>
+        </header>
+
+        <section id="overview" class="dashboard-section active" aria-labelledby="overviewTitle">
+          <div class="section-heading">
+            <h2 id="overviewTitle">Home</h2>
+            <span id="sampleDate" class="status-pill"></span>
+          </div>
+          <div id="metricGrid" class="metric-grid home-kpi-grid"></div>
+          <div id="overviewExtras" hidden>
+            <div id="conversionBars"></div>
+            <div id="watchlist"></div>
+          </div>
+        </section>
+
+        <section id="tracking" class="dashboard-section" aria-labelledby="trackingTitle">
+          <div class="section-heading">
+            <h2 id="trackingTitle">Registration Outreach Tracking</h2>
+            <span id="trackingSource" class="status-pill">GLA tracking source</span>
+          </div>
+          <div id="trackingMetrics" class="metric-grid compact"></div>
+          <div class="two-column">
+            <section class="panel">
+              <h3>Updated GLA Contact Source</h3>
+              <div id="trackingSourceTable"></div>
+            </section>
+            <section class="panel">
+              <h3>Added to Current VRVH by County</h3>
+              <div id="trackingCountyTable"></div>
+            </section>
+          </div>
+        </section>
+
+        <section id="voterFile" class="dashboard-section" aria-labelledby="voterFileTitle">
+          <div class="section-heading">
+            <h2 id="voterFileTitle">Voter File</h2>
+            <span id="voterFileSource" class="status-pill">VR lookup data</span>
+          </div>
+          <div id="voterFileMetrics" class="metric-grid"></div>
+          <div class="two-column">
+            <section class="panel">
+              <h3>Largest County Records</h3>
+              <div id="voterFileCountyTable"></div>
+            </section>
+            <section class="panel">
+              <h3>Lookup Activity</h3>
+              <div id="lookupActivityTable"></div>
+            </section>
+          </div>
+        </section>
+
+        <section id="purge" class="dashboard-section" aria-labelledby="purgeTitle">
+          <div class="section-heading">
+            <h2 id="purgeTitle">Purge Tracking</h2>
+            <span class="status-pill">60-day comparison ready</span>
+          </div>
+          <div id="purgeMetrics" class="metric-grid compact"></div>
+          <section class="panel">
+            <h3>Historical Purge Activity</h3>
+            <div id="purgeTimeline" class="timeline"></div>
+          </section>
+        </section>
+
+        <section id="outreach" class="dashboard-section" aria-labelledby="outreachTitle">
+          <div class="section-heading">
+            <h2 id="outreachTitle">Outreach</h2>
+            <span class="status-pill">All touches retained</span>
+          </div>
+          <div class="two-column">
+            <section class="panel">
+              <h3>Touch Methods</h3>
+              <div id="methodMix" class="method-grid"></div>
+            </section>
+            <section class="panel">
+              <h3>Touch Timeline</h3>
+              <div id="touchTimeline" class="timeline"></div>
+            </section>
+          </div>
+        </section>
+
+        <section id="registration" class="dashboard-section" aria-labelledby="registrationTitle">
+          <div class="section-heading">
+            <h2 id="registrationTitle">Registration</h2>
+            <span class="status-pill">EZ app compatible</span>
+          </div>
+          <div class="two-column">
+            <section class="panel">
+              <h3>GLA Touch Outcomes</h3>
+              <div id="demographicTable"></div>
+            </section>
+            <section class="panel">
+              <h3>Easy App Status Summary</h3>
+              <div id="attributionTable"></div>
+            </section>
+          </div>
+        </section>
+
+        <section id="primary2026" class="dashboard-section" aria-labelledby="primary2026Title">
+          <div class="section-heading">
+            <h2 id="primary2026Title">2026 Primary Data</h2>
+            <span id="primarySource" class="status-pill">Workbook data</span>
+          </div>
+          <div id="primaryMetrics" class="metric-grid"></div>
+          <div class="two-column">
+            <section class="panel">
+              <h3>Primary Turnout by Age</h3>
+              <div id="primaryAgeBars" class="bar-list"></div>
+            </section>
+            <section class="panel">
+              <h3>Gender Summary</h3>
+              <div id="primaryGenderTable"></div>
+            </section>
+          </div>
+          <section class="panel" style="margin-top:16px">
+            <h3>County Primary Turnout</h3>
+            <div id="primaryCountyTable"></div>
+          </section>
+        </section>
+
+        <section id="zodiac" class="dashboard-section" aria-labelledby="zodiacTitle">
+          <div class="section-heading">
+            <h2 id="zodiacTitle">Zodiac</h2>
+            <span id="zodiacSource" class="status-pill">Zodiac files</span>
+          </div>
+          <div id="zodiacMetrics" class="metric-grid"></div>
+          <div class="two-column">
+            <section class="panel">
+              <h3>Statewide by Zodiac</h3>
+              <div id="zodiacStatewideBars" class="bar-list"></div>
+            </section>
+            <section class="panel">
+              <h3>Pulaski by Zodiac</h3>
+              <div id="zodiacPulaskiTable"></div>
+            </section>
+          </div>
+          <section class="panel" style="margin-top:16px">
+            <h3>County Zodiac Turnout</h3>
+            <div id="zodiacCountyTable"></div>
+          </section>
+        </section>
+
+        <section id="geography" class="dashboard-section" aria-labelledby="geoTitle">
+          <div class="section-heading">
+            <h2 id="geoTitle">Geography</h2>
+            <span class="status-pill">County and city rollups</span>
+          </div>
+          <section class="panel">
+            <h3>County Performance</h3>
+            <div id="countyHeatmap" class="county-grid"></div>
+          </section>
+        </section>
+      </main>
+    </div>
+  `;
+})();
