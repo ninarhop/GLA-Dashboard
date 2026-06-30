@@ -54,6 +54,14 @@ That folder contains only static dashboard files and aggregate data.
 
 ## Updating Source CSVs
 
+The easiest update path is to double-click this file in the project root:
+
+```text
+UPDATE_DASHBOARD_FROM_CSV.cmd
+```
+
+That opens a file picker, copies the selected CSV into the private source folder with the correct filename, rebuilds aggregate public data, validates privacy, and publishes the public dashboard.
+
 Use this private local folder for updated CSV exports:
 
 ```text

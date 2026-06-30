@@ -4,9 +4,15 @@
 
 !.gitignore
 !README.md
+!UPDATE_DASHBOARD_FROM_CSV.cmd
 
 !.github/
 !.github/**
+
+!scripts/
+!scripts/build_public_dashboard.py
+!scripts/validate_public_output.py
+!scripts/update_dashboard_from_csv.ps1
 
 !github-pages/
 !github-pages/**

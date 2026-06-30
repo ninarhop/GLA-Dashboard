@@ -26,6 +26,27 @@ G:\Shared drives\Get Loud Arkansas\Data\Get Load Arkansas Dashboard\private-sour
 
 ## How To Replace The CSV
 
+### Easiest Way
+
+1. Download or export the newest tracking CSV.
+2. Double-click this file in the project root:
+
+```text
+UPDATE_DASHBOARD_FROM_CSV.cmd
+```
+
+3. In the file picker, select the newest CSV export.
+4. Wait for the script to finish.
+5. When it says `Dashboard update complete`, open the public site:
+
+```text
+https://ninarhop.github.io/GLA-Dashboard/
+```
+
+The updater automatically copies the CSV into this private folder with the correct filename, rebuilds aggregate public data, validates privacy, and publishes the public dashboard.
+
+### Manual Way
+
 1. Download or export the newest tracking CSV.
 2. Rename the downloaded file to exactly:
 
@@ -57,7 +78,7 @@ GLA_2026_Registration_Outreach_Tracking.csv
 
 ## After Replacing The CSV
 
-Replacing the CSV does not update the website by itself unless the watcher script is already running.
+Replacing the CSV manually does not update the website by itself unless the watcher script is already running.
 
 To manually rebuild the public aggregate dashboard, open PowerShell and run:
 
