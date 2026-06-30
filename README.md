@@ -68,6 +68,12 @@ private-source-data\GLA_2026_Registration_Outreach_Tracking.csv
 
 Keep the filename exactly the same. CSVs in `private-source-data\` are ignored by Git and must not be committed.
 
+For step-by-step replacement instructions, read:
+
+```text
+private-source-data\README.md
+```
+
 For now, `scripts\build_public_dashboard.py` still falls back to the older root-level CSV if the private source folder file is missing.
 
 ## Build And Validate Public Output
