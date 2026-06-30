@@ -1,34 +1,16 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GLA Public Dashboard</title>
-  <link rel="stylesheet" href="css/dashboard.css" />
-</head>
-<body>
-  <div class="app-shell">
-    <aside class="sidebar" aria-label="Dashboard navigation">
-      <div class="brand-block">
-        <div class="brand-mark" aria-hidden="true">GET<br><span>LOUD</span><small>ARKANSAS!</small></div>
-        <div><strong>Voter Tracking</strong><small>Public aggregate dashboard</small></div>
-      </div>
-      <nav id="nav" class="section-nav"></nav>
-    </aside>
-    <main class="content">
-      <header class="topbar">
-        <div>
-          <p class="eyebrow">Get Loud Arkansas</p>
-          <h1>Voter Status and Outreach Outcomes</h1>
-        </div>
-        <div class="filter-row">
-          <label>County<select id="countyFilter"><option value="all">All counties</option></select></label>
-        </div>
-      </header>
-      <div id="privacyNotice" class="notice"></div>
-      <section id="sections"></section>
-    </main>
-  </div>
-  <script src="js/app.js" type="module"></script>
-</body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GLA Executive Dashboard</title>
+    <link rel="stylesheet" href="dashboard/styles.css">
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="dashboard/layout.js"></script>
+    <script src="dashboard/sample-data.js"></script>
+    <script src="Tables%20for%20Website%20data/reg_vote_m_f_by_age_primary_2026.js"></script>
+    <script src="dashboard/app.js"></script>
+  </body>
 </html>
