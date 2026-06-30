@@ -10,3 +10,7 @@
 
 !github-pages/
 !github-pages/**
+
+!private-source-data/
+private-source-data/*
+!private-source-data/README.md

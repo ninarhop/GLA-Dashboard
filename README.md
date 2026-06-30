@@ -52,6 +52,24 @@ github-pages/
 
 That folder contains only static dashboard files and aggregate data.
 
+## Updating Source CSVs
+
+Use this private local folder for updated CSV exports:
+
+```text
+G:\Shared drives\Get Loud Arkansas\Data\Get Load Arkansas Dashboard\private-source-data
+```
+
+Replace this file when you receive a new export:
+
+```text
+private-source-data\GLA_2026_Registration_Outreach_Tracking.csv
+```
+
+Keep the filename exactly the same. CSVs in `private-source-data\` are ignored by Git and must not be committed.
+
+For now, `scripts\build_public_dashboard.py` still falls back to the older root-level CSV if the private source folder file is missing.
+
 ## Build And Validate Public Output
 
 From the active project root:
@@ -65,7 +83,7 @@ python scripts\validate_public_output.py --public-dir github-pages
 `scripts\build_public_dashboard.py` reads:
 
 ```text
-G:\Shared drives\Get Loud Arkansas\Data\Get Load Arkansas Dashboard\GLA_2026_Registration_Outreach_Tracking.csv
+G:\Shared drives\Get Loud Arkansas\Data\Get Load Arkansas Dashboard\private-source-data\GLA_2026_Registration_Outreach_Tracking.csv
 ```
 
 and writes:
