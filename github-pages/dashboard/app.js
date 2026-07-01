@@ -6,6 +6,7 @@
     { id: "registration", label: "Registration" },
     { id: "purge", label: "Purge" },
     { id: "geography", label: "Geography" },
+    { id: "zodiac", label: "Zodiac" },
     { id: "county", label: "County Explorer" }
   ];
 
@@ -397,6 +398,104 @@
     `;
   }
 
+  function renderZodiac() {
+    const zodiac = state.data.zodiac;
+    if (!zodiac) {
+      return `
+        <section class="dashboard-section">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Zodiac</p>
+              <h2>Aggregate Zodiac Summary</h2>
+            </div>
+            <span class="status-pill">Not loaded</span>
+          </div>
+          <section class="panel empty-state">
+            <h3>Zodiac aggregate files are not loaded</h3>
+            <p>Add the approved aggregate Zodiac workbooks and rebuild the public dashboard. Birth dates and person-level rows must never be published.</p>
+          </section>
+        </section>
+      `;
+    }
+
+    const countyRow = state.county === "all"
+      ? null
+      : (zodiac.countySummary || []).find((row) => row.county === state.county);
+    const scope = countyRow || zodiac.summary || {};
+    const countyRows = countyRow ? [countyRow] : (zodiac.countySummary || []).slice(0, 15);
+
+    return `
+      <section class="dashboard-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Zodiac</p>
+            <h2>Aggregate Zodiac Summary</h2>
+          </div>
+          <span class="status-pill">${state.county === "all" ? "Statewide" : escapeHtml(state.county)}</span>
+        </div>
+
+        <div class="metric-grid hero-kpis">
+          ${metricCard("Active Registered Voters", formatNumber(scope.activeRegisteredVoters))}
+          ${metricCard("Recently Voted", formatNumber(scope.recentlyVoted))}
+          ${metricCard("Recently Voted Rate", formatPercent(scope.recentlyVotedPct))}
+          ${metricCard("Did Not Recently Vote", formatNumber(scope.didNotRecentlyVote))}
+          ${metricCard("Zodiac Signs", formatNumber(zodiac.summary?.zodiacSigns))}
+          ${metricCard("Counties", formatNumber(zodiac.summary?.countyCount))}
+        </div>
+
+        <div class="two-column">
+          <section class="panel">
+            <div class="panel-heading">
+              <h3>Statewide by Zodiac Sign</h3>
+              <span>Aggregate counts</span>
+            </div>
+            ${rowsToTable(
+              [
+                { key: "zodiacSign", label: "Sign" },
+                { key: "activeRegisteredVoters", label: "Active", render: (row) => formatNumber(row.activeRegisteredVoters) },
+                { key: "recentlyVoted", label: "Recently voted", render: (row) => formatNumber(row.recentlyVoted) },
+                { key: "recentlyVotedPct", label: "Rate", render: (row) => formatPercent(row.recentlyVotedPct) }
+              ],
+              zodiac.statewideBySign || []
+            )}
+          </section>
+          <section class="panel">
+            <div class="panel-heading">
+              <h3>Pulaski by Zodiac Sign</h3>
+              <span>Aggregate counts</span>
+            </div>
+            ${rowsToTable(
+              [
+                { key: "zodiacSign", label: "Sign" },
+                { key: "activeRegisteredVoters", label: "Active", render: (row) => formatNumber(row.activeRegisteredVoters) },
+                { key: "recentlyVoted", label: "Recently voted", render: (row) => formatNumber(row.recentlyVoted) },
+                { key: "recentlyVotedPct", label: "Rate", render: (row) => formatPercent(row.recentlyVotedPct) }
+              ],
+              zodiac.pulaskiBySign || []
+            )}
+          </section>
+        </div>
+
+        <section class="panel stacked-panel">
+          <div class="panel-heading">
+            <h3>County Zodiac Rollup</h3>
+            <span>${state.county === "all" ? "Top counties by recent voting rate" : "Selected county"}</span>
+          </div>
+          ${rowsToTable(
+            [
+              { key: "county", label: "County" },
+              { key: "activeRegisteredVoters", label: "Active", render: (row) => formatNumber(row.activeRegisteredVoters) },
+              { key: "recentlyVoted", label: "Recently voted", render: (row) => formatNumber(row.recentlyVoted) },
+              { key: "recentlyVotedPct", label: "Rate", render: (row) => formatPercent(row.recentlyVotedPct) },
+              { key: "topZodiacByRecentlyVotedPct", label: "Top sign" }
+            ],
+            countyRows
+          )}
+        </section>
+      </section>
+    `;
+  }
+
   function renderCountyExplorer() {
     const county = selectedCounty();
 
@@ -456,6 +555,8 @@
         return renderPurge();
       case "geography":
         return renderGeography();
+      case "zodiac":
+        return renderZodiac();
       case "county":
         return renderCountyExplorer();
       case "overview":

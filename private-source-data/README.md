@@ -24,6 +24,23 @@ The full path should be:
 G:\Shared drives\Get Loud Arkansas\Data\Get Load Arkansas Dashboard\private-source-data\GLA_2026_Registration_Outreach_Tracking.csv
 ```
 
+## Optional Zodiac Files
+
+If the Zodiac workbooks are updated, put the newest aggregate workbooks in this same folder with these exact names:
+
+```text
+Registered_voters_by_Zodiac.xlsx
+Registered_voters_in_Pulaski_by_Zodiac.xlsx
+```
+
+The build script looks in `private-source-data\` first. If those files are not there, it falls back to the older local folder:
+
+```text
+Zodiac Project 6.17.2026
+```
+
+Only use aggregate Zodiac workbooks. Do not place birth dates or row-level voter exports in public folders.
+
 ## How To Replace The CSV
 
 ### Easiest Way

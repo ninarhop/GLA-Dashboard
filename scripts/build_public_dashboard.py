@@ -8,13 +8,25 @@ import csv, json, re
 from collections import Counter, defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Any
+
+from openpyxl import load_workbook
 
 ROOT = Path(__file__).resolve().parents[1]
 PRIVATE_SOURCE_DIR = ROOT / "private-source-data"
 DEFAULT_INPUT = PRIVATE_SOURCE_DIR / "GLA_2026_Registration_Outreach_Tracking.csv"
 LEGACY_INPUT = ROOT / "GLA_2026_Registration_Outreach_Tracking.csv"
+ZODIAC_DIR = ROOT / "Zodiac Project 6.17.2026"
+ZODIAC_STATEWIDE_INPUT = PRIVATE_SOURCE_DIR / "Registered_voters_by_Zodiac.xlsx"
+ZODIAC_PULASKI_INPUT = PRIVATE_SOURCE_DIR / "Registered_voters_in_Pulaski_by_Zodiac.xlsx"
+LEGACY_ZODIAC_STATEWIDE_INPUT = ZODIAC_DIR / "Registered_voters_by_Zodiac.xlsx"
+LEGACY_ZODIAC_PULASKI_INPUT = ZODIAC_DIR / "Registered_voters_in_Pulaski_by_Zodiac.xlsx"
 DEFAULT_OUTPUT = ROOT / "github-pages" / "data" / "public-dashboard.json"
 PRIVATE_TERMS = re.compile(r"first name|last name|voterid|voter id|full address|phone number|email address|birth date|birthday", re.I)
+ZODIAC_ORDER = [
+    "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo",
+    "Libra", "Scorpio", "Sagittarius", "Capricorn", "Aquarius", "Pisces",
+]
 
 def clean(value: str | None) -> str:
     value = (value or "").strip()
@@ -26,6 +38,140 @@ def default_input_path() -> Path:
     if LEGACY_INPUT.exists():
         return LEGACY_INPUT
     return DEFAULT_INPUT
+
+def first_existing(*paths: Path) -> Path:
+    for path in paths:
+        if path.exists():
+            return path
+    return paths[0]
+
+def safe_int(value: Any) -> int:
+    if value is None or value == "":
+        return 0
+    try:
+        return int(float(str(value).replace(",", "")))
+    except (TypeError, ValueError):
+        return 0
+
+def pct(numerator: float, denominator: float) -> float:
+    return round((numerator / denominator * 100), 2) if denominator else 0
+
+def modified_at(path: Path) -> str | None:
+    if not path.exists():
+        return None
+    return datetime.fromtimestamp(path.stat().st_mtime, timezone.utc).isoformat()
+
+def sum_key(rows: list[dict[str, Any]], key: str) -> float:
+    return sum(float(row.get(key) or 0) for row in rows)
+
+def read_zodiac_rows(path: Path, county_column: str | None) -> list[dict[str, Any]]:
+    if not path.exists():
+        return []
+
+    workbook = load_workbook(path, data_only=True, read_only=True)
+    sheet = workbook.active
+    header_row = next(sheet.iter_rows(min_row=1, max_row=1, values_only=True))
+    headers = [str(cell).strip() if cell is not None else "" for cell in header_row]
+    rows = []
+
+    for raw_row in sheet.iter_rows(min_row=2, values_only=True):
+        raw = dict(zip(headers, raw_row))
+        sign = raw.get("z.Zodiac Sign")
+        if not sign:
+            continue
+        row = {
+            "zodiacSign": str(sign),
+            "activeRegisteredVoters": safe_int(raw.get("Active Registered Voters")),
+            "activeRegisteredPct": float(raw.get("% of Active Registered Voters") or raw.get("% of County Active Registered Voters") or 0),
+            "recentlyVoted": safe_int(raw.get("Recently Voted")),
+            "recentlyVotedPct": float(raw.get("% of Zodiac That Recently Voted") or 0),
+            "didNotRecentlyVote": safe_int(raw.get("Did Not Recently Vote")),
+        }
+        if county_column:
+            row["county"] = clean(raw.get(county_column))
+        rows.append(row)
+    return rows
+
+def aggregate_zodiac_by_sign(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    grouped: dict[str, dict[str, Any]] = {}
+    total_active = sum_key(rows, "activeRegisteredVoters")
+    for row in rows:
+        sign = str(row["zodiacSign"])
+        item = grouped.setdefault(
+            sign,
+            {
+                "zodiacSign": sign,
+                "activeRegisteredVoters": 0,
+                "recentlyVoted": 0,
+                "didNotRecentlyVote": 0,
+            },
+        )
+        item["activeRegisteredVoters"] += int(row["activeRegisteredVoters"])
+        item["recentlyVoted"] += int(row["recentlyVoted"])
+        item["didNotRecentlyVote"] += int(row["didNotRecentlyVote"])
+
+    output = []
+    for item in grouped.values():
+        active = float(item["activeRegisteredVoters"])
+        recent = float(item["recentlyVoted"])
+        item["activeRegisteredPct"] = pct(active, total_active)
+        item["recentlyVotedPct"] = pct(recent, active)
+        output.append(item)
+    return sorted(output, key=lambda row: ZODIAC_ORDER.index(str(row["zodiacSign"])) if str(row["zodiacSign"]) in ZODIAC_ORDER else 99)
+
+def load_zodiac_data() -> dict[str, Any] | None:
+    statewide_path = first_existing(ZODIAC_STATEWIDE_INPUT, LEGACY_ZODIAC_STATEWIDE_INPUT)
+    pulaski_path = first_existing(ZODIAC_PULASKI_INPUT, LEGACY_ZODIAC_PULASKI_INPUT)
+    statewide_rows = read_zodiac_rows(statewide_path, "z.County")
+    pulaski_rows = read_zodiac_rows(pulaski_path, None)
+    if not statewide_rows and not pulaski_rows:
+        return None
+
+    statewide_by_sign = aggregate_zodiac_by_sign(statewide_rows)
+    county_groups: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for row in statewide_rows:
+        county_groups[str(row.get("county") or "Unknown")].append(row)
+
+    county_summary = []
+    for county, rows in county_groups.items():
+        active = sum_key(rows, "activeRegisteredVoters")
+        recent = sum_key(rows, "recentlyVoted")
+        county_summary.append(
+            {
+                "county": county,
+                "activeRegisteredVoters": int(active),
+                "recentlyVoted": int(recent),
+                "didNotRecentlyVote": int(sum_key(rows, "didNotRecentlyVote")),
+                "recentlyVotedPct": pct(recent, active),
+                "topZodiacByRecentlyVotedPct": max(rows, key=lambda row: float(row["recentlyVotedPct"]))["zodiacSign"] if rows else None,
+            }
+        )
+
+    county_summary.sort(key=lambda row: (-float(row["recentlyVotedPct"]), str(row["county"])))
+    pulaski_rows.sort(key=lambda row: -float(row["recentlyVotedPct"]))
+    active_total = sum_key(statewide_rows, "activeRegisteredVoters")
+    recent_total = sum_key(statewide_rows, "recentlyVoted")
+
+    return {
+        "source": {
+            "statewideFileName": statewide_path.name if statewide_path.exists() else None,
+            "statewideModifiedAt": modified_at(statewide_path),
+            "pulaskiFileName": pulaski_path.name if pulaski_path.exists() else None,
+            "pulaskiModifiedAt": modified_at(pulaski_path),
+        },
+        "summary": {
+            "activeRegisteredVoters": int(active_total),
+            "recentlyVoted": int(recent_total),
+            "didNotRecentlyVote": int(sum_key(statewide_rows, "didNotRecentlyVote")),
+            "recentlyVotedPct": pct(recent_total, active_total),
+            "countyCount": len(county_summary),
+            "zodiacSigns": len(statewide_by_sign),
+            "pulaskiRows": len(pulaski_rows),
+        },
+        "statewideBySign": statewide_by_sign,
+        "countySummary": county_summary,
+        "pulaskiBySign": pulaski_rows,
+    }
 
 def main(input_path: str | None = None, output_path: str | None = None) -> None:
     in_path = Path(input_path) if input_path else default_input_path()
@@ -97,6 +243,9 @@ def main(input_path: str | None = None, output_path: str | None = None) -> None:
         "registration": {"summary": {"totalPeople": total, "addedToCurrentVrvh": added_total, "active": active_total, "inactive": inactive_total}, "changeStatus": counter_rows(change_status, "status")},
         "geography": {"counties": county_rows()}
     }
+    zodiac = load_zodiac_data()
+    if zodiac:
+        data["zodiac"] = zodiac
 
     encoded = json.dumps(data, indent=2, ensure_ascii=False)
     if PRIVATE_TERMS.search(encoded):
