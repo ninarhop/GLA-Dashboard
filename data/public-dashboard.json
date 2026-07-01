@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Get Loud Arkansas Public Dashboard",
-    "generatedAt": "2026-06-30",
+    "generatedAt": "2026-07-01",
     "privacy": "aggregate-only"
   },
   "overview": {
@@ -1358,6 +1358,821 @@
         "contacted": 16,
         "active": 181,
         "inactive": 18
+      }
+    ]
+  },
+  "zodiac": {
+    "source": {
+      "statewideFileName": "Registered_voters_by_Zodiac.xlsx",
+      "statewideModifiedAt": "2026-06-17T21:00:07.865000+00:00",
+      "pulaskiFileName": "Registered_voters_in_Pulaski_by_Zodiac.xlsx",
+      "pulaskiModifiedAt": "2026-06-17T20:47:31.165000+00:00"
+    },
+    "summary": {
+      "activeRegisteredVoters": 1459944,
+      "recentlyVoted": 433454,
+      "didNotRecentlyVote": 1026490,
+      "recentlyVotedPct": 29.69,
+      "countyCount": 75,
+      "zodiacSigns": 12,
+      "pulaskiRows": 12
+    },
+    "statewideBySign": [
+      {
+        "zodiacSign": "Aries",
+        "activeRegisteredVoters": 112670,
+        "recentlyVoted": 32536,
+        "didNotRecentlyVote": 80134,
+        "activeRegisteredPct": 7.72,
+        "recentlyVotedPct": 28.88
+      },
+      {
+        "zodiacSign": "Taurus",
+        "activeRegisteredVoters": 113266,
+        "recentlyVoted": 32466,
+        "didNotRecentlyVote": 80800,
+        "activeRegisteredPct": 7.76,
+        "recentlyVotedPct": 28.66
+      },
+      {
+        "zodiacSign": "Gemini",
+        "activeRegisteredVoters": 116117,
+        "recentlyVoted": 33781,
+        "didNotRecentlyVote": 82336,
+        "activeRegisteredPct": 7.95,
+        "recentlyVotedPct": 29.09
+      },
+      {
+        "zodiacSign": "Cancer",
+        "activeRegisteredVoters": 130055,
+        "recentlyVoted": 39071,
+        "didNotRecentlyVote": 90984,
+        "activeRegisteredPct": 8.91,
+        "recentlyVotedPct": 30.04
+      },
+      {
+        "zodiacSign": "Leo",
+        "activeRegisteredVoters": 131723,
+        "recentlyVoted": 40265,
+        "didNotRecentlyVote": 91458,
+        "activeRegisteredPct": 9.02,
+        "recentlyVotedPct": 30.57
+      },
+      {
+        "zodiacSign": "Virgo",
+        "activeRegisteredVoters": 134944,
+        "recentlyVoted": 40548,
+        "didNotRecentlyVote": 94396,
+        "activeRegisteredPct": 9.24,
+        "recentlyVotedPct": 30.05
+      },
+      {
+        "zodiacSign": "Libra",
+        "activeRegisteredVoters": 127199,
+        "recentlyVoted": 38450,
+        "didNotRecentlyVote": 88749,
+        "activeRegisteredPct": 8.71,
+        "recentlyVotedPct": 30.23
+      },
+      {
+        "zodiacSign": "Scorpio",
+        "activeRegisteredVoters": 121160,
+        "recentlyVoted": 36066,
+        "didNotRecentlyVote": 85094,
+        "activeRegisteredPct": 8.3,
+        "recentlyVotedPct": 29.77
+      },
+      {
+        "zodiacSign": "Sagittarius",
+        "activeRegisteredVoters": 120594,
+        "recentlyVoted": 36154,
+        "didNotRecentlyVote": 84440,
+        "activeRegisteredPct": 8.26,
+        "recentlyVotedPct": 29.98
+      },
+      {
+        "zodiacSign": "Capricorn",
+        "activeRegisteredVoters": 113692,
+        "recentlyVoted": 33924,
+        "didNotRecentlyVote": 79768,
+        "activeRegisteredPct": 7.79,
+        "recentlyVotedPct": 29.84
+      },
+      {
+        "zodiacSign": "Aquarius",
+        "activeRegisteredVoters": 119963,
+        "recentlyVoted": 35555,
+        "didNotRecentlyVote": 84408,
+        "activeRegisteredPct": 8.22,
+        "recentlyVotedPct": 29.64
+      },
+      {
+        "zodiacSign": "Pisces",
+        "activeRegisteredVoters": 118561,
+        "recentlyVoted": 34638,
+        "didNotRecentlyVote": 83923,
+        "activeRegisteredPct": 8.12,
+        "recentlyVotedPct": 29.22
+      }
+    ],
+    "countySummary": [
+      {
+        "county": "Lee",
+        "activeRegisteredVoters": 3271,
+        "recentlyVoted": 2358,
+        "didNotRecentlyVote": 913,
+        "recentlyVotedPct": 72.09,
+        "topZodiacByRecentlyVotedPct": "Capricorn"
+      },
+      {
+        "county": "Phillips",
+        "activeRegisteredVoters": 6060,
+        "recentlyVoted": 2897,
+        "didNotRecentlyVote": 3163,
+        "recentlyVotedPct": 47.81,
+        "topZodiacByRecentlyVotedPct": "Taurus"
+      },
+      {
+        "county": "Cleveland",
+        "activeRegisteredVoters": 4122,
+        "recentlyVoted": 1950,
+        "didNotRecentlyVote": 2172,
+        "recentlyVotedPct": 47.31,
+        "topZodiacByRecentlyVotedPct": "Libra"
+      },
+      {
+        "county": "Clay",
+        "activeRegisteredVoters": 6043,
+        "recentlyVoted": 2835,
+        "didNotRecentlyVote": 3208,
+        "recentlyVotedPct": 46.91,
+        "topZodiacByRecentlyVotedPct": "Aries"
+      },
+      {
+        "county": "Dallas",
+        "activeRegisteredVoters": 2790,
+        "recentlyVoted": 1252,
+        "didNotRecentlyVote": 1538,
+        "recentlyVotedPct": 44.87,
+        "topZodiacByRecentlyVotedPct": "Cancer"
+      },
+      {
+        "county": "Sevier",
+        "activeRegisteredVoters": 5794,
+        "recentlyVoted": 2542,
+        "didNotRecentlyVote": 3252,
+        "recentlyVotedPct": 43.87,
+        "topZodiacByRecentlyVotedPct": "Leo"
+      },
+      {
+        "county": "Jackson",
+        "activeRegisteredVoters": 5869,
+        "recentlyVoted": 2557,
+        "didNotRecentlyVote": 3312,
+        "recentlyVotedPct": 43.57,
+        "topZodiacByRecentlyVotedPct": "Capricorn"
+      },
+      {
+        "county": "Chicot",
+        "activeRegisteredVoters": 4266,
+        "recentlyVoted": 1857,
+        "didNotRecentlyVote": 2409,
+        "recentlyVotedPct": 43.53,
+        "topZodiacByRecentlyVotedPct": "Pisces"
+      },
+      {
+        "county": "Pike",
+        "activeRegisteredVoters": 5159,
+        "recentlyVoted": 2229,
+        "didNotRecentlyVote": 2930,
+        "recentlyVotedPct": 43.21,
+        "topZodiacByRecentlyVotedPct": "Cancer"
+      },
+      {
+        "county": "Calhoun",
+        "activeRegisteredVoters": 2505,
+        "recentlyVoted": 1069,
+        "didNotRecentlyVote": 1436,
+        "recentlyVotedPct": 42.67,
+        "topZodiacByRecentlyVotedPct": "Sagittarius"
+      },
+      {
+        "county": "Little River",
+        "activeRegisteredVoters": 5984,
+        "recentlyVoted": 2527,
+        "didNotRecentlyVote": 3457,
+        "recentlyVotedPct": 42.23,
+        "topZodiacByRecentlyVotedPct": "Sagittarius"
+      },
+      {
+        "county": "Madison",
+        "activeRegisteredVoters": 9416,
+        "recentlyVoted": 3938,
+        "didNotRecentlyVote": 5478,
+        "recentlyVotedPct": 41.82,
+        "topZodiacByRecentlyVotedPct": "Leo"
+      },
+      {
+        "county": "Yell",
+        "activeRegisteredVoters": 7795,
+        "recentlyVoted": 3259,
+        "didNotRecentlyVote": 4536,
+        "recentlyVotedPct": 41.81,
+        "topZodiacByRecentlyVotedPct": "Capricorn"
+      },
+      {
+        "county": "Van Buren",
+        "activeRegisteredVoters": 9263,
+        "recentlyVoted": 3864,
+        "didNotRecentlyVote": 5399,
+        "recentlyVotedPct": 41.71,
+        "topZodiacByRecentlyVotedPct": "Aquarius"
+      },
+      {
+        "county": "Desha",
+        "activeRegisteredVoters": 4596,
+        "recentlyVoted": 1884,
+        "didNotRecentlyVote": 2712,
+        "recentlyVotedPct": 40.99,
+        "topZodiacByRecentlyVotedPct": "Gemini"
+      },
+      {
+        "county": "Montgomery",
+        "activeRegisteredVoters": 4653,
+        "recentlyVoted": 1900,
+        "didNotRecentlyVote": 2753,
+        "recentlyVotedPct": 40.83,
+        "topZodiacByRecentlyVotedPct": "Libra"
+      },
+      {
+        "county": "Fulton",
+        "activeRegisteredVoters": 6044,
+        "recentlyVoted": 2454,
+        "didNotRecentlyVote": 3590,
+        "recentlyVotedPct": 40.6,
+        "topZodiacByRecentlyVotedPct": "Cancer"
+      },
+      {
+        "county": "Hempstead",
+        "activeRegisteredVoters": 7113,
+        "recentlyVoted": 2861,
+        "didNotRecentlyVote": 4252,
+        "recentlyVotedPct": 40.22,
+        "topZodiacByRecentlyVotedPct": "Aries"
+      },
+      {
+        "county": "Grant",
+        "activeRegisteredVoters": 10018,
+        "recentlyVoted": 4007,
+        "didNotRecentlyVote": 6011,
+        "recentlyVotedPct": 40.0,
+        "topZodiacByRecentlyVotedPct": "Scorpio"
+      },
+      {
+        "county": "Scott",
+        "activeRegisteredVoters": 3934,
+        "recentlyVoted": 1568,
+        "didNotRecentlyVote": 2366,
+        "recentlyVotedPct": 39.86,
+        "topZodiacByRecentlyVotedPct": "Sagittarius"
+      },
+      {
+        "county": "Perry",
+        "activeRegisteredVoters": 5577,
+        "recentlyVoted": 2188,
+        "didNotRecentlyVote": 3389,
+        "recentlyVotedPct": 39.23,
+        "topZodiacByRecentlyVotedPct": "Capricorn"
+      },
+      {
+        "county": "Conway",
+        "activeRegisteredVoters": 11004,
+        "recentlyVoted": 4286,
+        "didNotRecentlyVote": 6718,
+        "recentlyVotedPct": 38.95,
+        "topZodiacByRecentlyVotedPct": "Scorpio"
+      },
+      {
+        "county": "Logan",
+        "activeRegisteredVoters": 10087,
+        "recentlyVoted": 3900,
+        "didNotRecentlyVote": 6187,
+        "recentlyVotedPct": 38.66,
+        "topZodiacByRecentlyVotedPct": "Cancer"
+      },
+      {
+        "county": "Stone",
+        "activeRegisteredVoters": 8343,
+        "recentlyVoted": 3219,
+        "didNotRecentlyVote": 5124,
+        "recentlyVotedPct": 38.58,
+        "topZodiacByRecentlyVotedPct": "Cancer"
+      },
+      {
+        "county": "Cross",
+        "activeRegisteredVoters": 7439,
+        "recentlyVoted": 2813,
+        "didNotRecentlyVote": 4626,
+        "recentlyVotedPct": 37.81,
+        "topZodiacByRecentlyVotedPct": "Leo"
+      },
+      {
+        "county": "Bradley",
+        "activeRegisteredVoters": 3821,
+        "recentlyVoted": 1443,
+        "didNotRecentlyVote": 2378,
+        "recentlyVotedPct": 37.76,
+        "topZodiacByRecentlyVotedPct": "Leo"
+      },
+      {
+        "county": "Carroll",
+        "activeRegisteredVoters": 13978,
+        "recentlyVoted": 5274,
+        "didNotRecentlyVote": 8704,
+        "recentlyVotedPct": 37.73,
+        "topZodiacByRecentlyVotedPct": "Scorpio"
+      },
+      {
+        "county": "Lincoln",
+        "activeRegisteredVoters": 3970,
+        "recentlyVoted": 1470,
+        "didNotRecentlyVote": 2500,
+        "recentlyVotedPct": 37.03,
+        "topZodiacByRecentlyVotedPct": "Gemini"
+      },
+      {
+        "county": "Lawrence",
+        "activeRegisteredVoters": 6786,
+        "recentlyVoted": 2505,
+        "didNotRecentlyVote": 4281,
+        "recentlyVotedPct": 36.91,
+        "topZodiacByRecentlyVotedPct": "Cancer"
+      },
+      {
+        "county": "Searcy",
+        "activeRegisteredVoters": 6464,
+        "recentlyVoted": 2366,
+        "didNotRecentlyVote": 4098,
+        "recentlyVotedPct": 36.6,
+        "topZodiacByRecentlyVotedPct": "Sagittarius"
+      },
+      {
+        "county": "Ouachita",
+        "activeRegisteredVoters": 8850,
+        "recentlyVoted": 3170,
+        "didNotRecentlyVote": 5680,
+        "recentlyVotedPct": 35.82,
+        "topZodiacByRecentlyVotedPct": "Libra"
+      },
+      {
+        "county": "Greene",
+        "activeRegisteredVoters": 18800,
+        "recentlyVoted": 6720,
+        "didNotRecentlyVote": 12080,
+        "recentlyVotedPct": 35.74,
+        "topZodiacByRecentlyVotedPct": "Leo"
+      },
+      {
+        "county": "Jefferson",
+        "activeRegisteredVoters": 26066,
+        "recentlyVoted": 9307,
+        "didNotRecentlyVote": 16759,
+        "recentlyVotedPct": 35.71,
+        "topZodiacByRecentlyVotedPct": "Leo"
+      },
+      {
+        "county": "Independence",
+        "activeRegisteredVoters": 16890,
+        "recentlyVoted": 5958,
+        "didNotRecentlyVote": 10932,
+        "recentlyVotedPct": 35.28,
+        "topZodiacByRecentlyVotedPct": "Aquarius"
+      },
+      {
+        "county": "Woodruff",
+        "activeRegisteredVoters": 2808,
+        "recentlyVoted": 973,
+        "didNotRecentlyVote": 1835,
+        "recentlyVotedPct": 34.65,
+        "topZodiacByRecentlyVotedPct": "Aquarius"
+      },
+      {
+        "county": "Lafayette",
+        "activeRegisteredVoters": 2923,
+        "recentlyVoted": 1012,
+        "didNotRecentlyVote": 1911,
+        "recentlyVotedPct": 34.62,
+        "topZodiacByRecentlyVotedPct": "Sagittarius"
+      },
+      {
+        "county": "Hot Spring",
+        "activeRegisteredVoters": 15025,
+        "recentlyVoted": 5169,
+        "didNotRecentlyVote": 9856,
+        "recentlyVotedPct": 34.4,
+        "topZodiacByRecentlyVotedPct": "Capricorn"
+      },
+      {
+        "county": "Randolph",
+        "activeRegisteredVoters": 8413,
+        "recentlyVoted": 2841,
+        "didNotRecentlyVote": 5572,
+        "recentlyVotedPct": 33.77,
+        "topZodiacByRecentlyVotedPct": "Aquarius"
+      },
+      {
+        "county": "Pulaski",
+        "activeRegisteredVoters": 187004,
+        "recentlyVoted": 63017,
+        "didNotRecentlyVote": 123987,
+        "recentlyVotedPct": 33.7,
+        "topZodiacByRecentlyVotedPct": "Leo"
+      },
+      {
+        "county": "Cleburne",
+        "activeRegisteredVoters": 15379,
+        "recentlyVoted": 5153,
+        "didNotRecentlyVote": 10226,
+        "recentlyVotedPct": 33.51,
+        "topZodiacByRecentlyVotedPct": "Capricorn"
+      },
+      {
+        "county": "Nevada",
+        "activeRegisteredVoters": 3413,
+        "recentlyVoted": 1092,
+        "didNotRecentlyVote": 2321,
+        "recentlyVotedPct": 32.0,
+        "topZodiacByRecentlyVotedPct": "Leo"
+      },
+      {
+        "county": "Lonoke",
+        "activeRegisteredVoters": 38223,
+        "recentlyVoted": 12140,
+        "didNotRecentlyVote": 26083,
+        "recentlyVotedPct": 31.76,
+        "topZodiacByRecentlyVotedPct": "Cancer"
+      },
+      {
+        "county": "Boone",
+        "activeRegisteredVoters": 20987,
+        "recentlyVoted": 6549,
+        "didNotRecentlyVote": 14438,
+        "recentlyVotedPct": 31.21,
+        "topZodiacByRecentlyVotedPct": "Cancer"
+      },
+      {
+        "county": "Polk",
+        "activeRegisteredVoters": 9760,
+        "recentlyVoted": 3030,
+        "didNotRecentlyVote": 6730,
+        "recentlyVotedPct": 31.05,
+        "topZodiacByRecentlyVotedPct": "Pisces"
+      },
+      {
+        "county": "Baxter",
+        "activeRegisteredVoters": 25736,
+        "recentlyVoted": 7966,
+        "didNotRecentlyVote": 17770,
+        "recentlyVotedPct": 30.95,
+        "topZodiacByRecentlyVotedPct": "Leo"
+      },
+      {
+        "county": "Izard",
+        "activeRegisteredVoters": 7407,
+        "recentlyVoted": 2253,
+        "didNotRecentlyVote": 5154,
+        "recentlyVotedPct": 30.42,
+        "topZodiacByRecentlyVotedPct": "Gemini"
+      },
+      {
+        "county": "Johnson",
+        "activeRegisteredVoters": 12253,
+        "recentlyVoted": 3709,
+        "didNotRecentlyVote": 8544,
+        "recentlyVotedPct": 30.27,
+        "topZodiacByRecentlyVotedPct": "Pisces"
+      },
+      {
+        "county": "Franklin",
+        "activeRegisteredVoters": 8433,
+        "recentlyVoted": 2545,
+        "didNotRecentlyVote": 5888,
+        "recentlyVotedPct": 30.18,
+        "topZodiacByRecentlyVotedPct": "Virgo"
+      },
+      {
+        "county": "Marion",
+        "activeRegisteredVoters": 10466,
+        "recentlyVoted": 3153,
+        "didNotRecentlyVote": 7313,
+        "recentlyVotedPct": 30.13,
+        "topZodiacByRecentlyVotedPct": "Libra"
+      },
+      {
+        "county": "Monroe",
+        "activeRegisteredVoters": 2936,
+        "recentlyVoted": 884,
+        "didNotRecentlyVote": 2052,
+        "recentlyVotedPct": 30.11,
+        "topZodiacByRecentlyVotedPct": "Leo"
+      },
+      {
+        "county": "Drew",
+        "activeRegisteredVoters": 7676,
+        "recentlyVoted": 2309,
+        "didNotRecentlyVote": 5367,
+        "recentlyVotedPct": 30.08,
+        "topZodiacByRecentlyVotedPct": "Aries"
+      },
+      {
+        "county": "Clark",
+        "activeRegisteredVoters": 9220,
+        "recentlyVoted": 2769,
+        "didNotRecentlyVote": 6451,
+        "recentlyVotedPct": 30.03,
+        "topZodiacByRecentlyVotedPct": "Aquarius"
+      },
+      {
+        "county": "Pope",
+        "activeRegisteredVoters": 29318,
+        "recentlyVoted": 8777,
+        "didNotRecentlyVote": 20541,
+        "recentlyVotedPct": 29.94,
+        "topZodiacByRecentlyVotedPct": "Sagittarius"
+      },
+      {
+        "county": "Newton",
+        "activeRegisteredVoters": 4691,
+        "recentlyVoted": 1398,
+        "didNotRecentlyVote": 3293,
+        "recentlyVotedPct": 29.8,
+        "topZodiacByRecentlyVotedPct": "Libra"
+      },
+      {
+        "county": "Garland",
+        "activeRegisteredVoters": 51589,
+        "recentlyVoted": 15271,
+        "didNotRecentlyVote": 36318,
+        "recentlyVotedPct": 29.6,
+        "topZodiacByRecentlyVotedPct": "Sagittarius"
+      },
+      {
+        "county": "Miller",
+        "activeRegisteredVoters": 19526,
+        "recentlyVoted": 5754,
+        "didNotRecentlyVote": 13772,
+        "recentlyVotedPct": 29.47,
+        "topZodiacByRecentlyVotedPct": "Cancer"
+      },
+      {
+        "county": "Washington",
+        "activeRegisteredVoters": 120495,
+        "recentlyVoted": 34927,
+        "didNotRecentlyVote": 85568,
+        "recentlyVotedPct": 28.99,
+        "topZodiacByRecentlyVotedPct": "Scorpio"
+      },
+      {
+        "county": "Howard",
+        "activeRegisteredVoters": 5992,
+        "recentlyVoted": 1698,
+        "didNotRecentlyVote": 4294,
+        "recentlyVotedPct": 28.34,
+        "topZodiacByRecentlyVotedPct": "Pisces"
+      },
+      {
+        "county": "Arkansas",
+        "activeRegisteredVoters": 6529,
+        "recentlyVoted": 1818,
+        "didNotRecentlyVote": 4711,
+        "recentlyVotedPct": 27.84,
+        "topZodiacByRecentlyVotedPct": "Leo"
+      },
+      {
+        "county": "Saline",
+        "activeRegisteredVoters": 69242,
+        "recentlyVoted": 19147,
+        "didNotRecentlyVote": 50095,
+        "recentlyVotedPct": 27.65,
+        "topZodiacByRecentlyVotedPct": "Libra"
+      },
+      {
+        "county": "Sharp",
+        "activeRegisteredVoters": 9118,
+        "recentlyVoted": 2518,
+        "didNotRecentlyVote": 6600,
+        "recentlyVotedPct": 27.62,
+        "topZodiacByRecentlyVotedPct": "Capricorn"
+      },
+      {
+        "county": "White",
+        "activeRegisteredVoters": 38633,
+        "recentlyVoted": 10587,
+        "didNotRecentlyVote": 28046,
+        "recentlyVotedPct": 27.4,
+        "topZodiacByRecentlyVotedPct": "Libra"
+      },
+      {
+        "county": "St. Francis",
+        "activeRegisteredVoters": 7059,
+        "recentlyVoted": 1880,
+        "didNotRecentlyVote": 5179,
+        "recentlyVotedPct": 26.63,
+        "topZodiacByRecentlyVotedPct": "Leo"
+      },
+      {
+        "county": "Crawford",
+        "activeRegisteredVoters": 28557,
+        "recentlyVoted": 7455,
+        "didNotRecentlyVote": 21102,
+        "recentlyVotedPct": 26.11,
+        "topZodiacByRecentlyVotedPct": "Cancer"
+      },
+      {
+        "county": "Faulkner",
+        "activeRegisteredVoters": 66146,
+        "recentlyVoted": 16955,
+        "didNotRecentlyVote": 49191,
+        "recentlyVotedPct": 25.63,
+        "topZodiacByRecentlyVotedPct": "Pisces"
+      },
+      {
+        "county": "Poinsett",
+        "activeRegisteredVoters": 8920,
+        "recentlyVoted": 2253,
+        "didNotRecentlyVote": 6667,
+        "recentlyVotedPct": 25.26,
+        "topZodiacByRecentlyVotedPct": "Sagittarius"
+      },
+      {
+        "county": "Craighead",
+        "activeRegisteredVoters": 46380,
+        "recentlyVoted": 10797,
+        "didNotRecentlyVote": 35583,
+        "recentlyVotedPct": 23.28,
+        "topZodiacByRecentlyVotedPct": "Sagittarius"
+      },
+      {
+        "county": "Union",
+        "activeRegisteredVoters": 18226,
+        "recentlyVoted": 4209,
+        "didNotRecentlyVote": 14017,
+        "recentlyVotedPct": 23.09,
+        "topZodiacByRecentlyVotedPct": "Sagittarius"
+      },
+      {
+        "county": "Sebastian",
+        "activeRegisteredVoters": 63292,
+        "recentlyVoted": 14596,
+        "didNotRecentlyVote": 48696,
+        "recentlyVotedPct": 23.06,
+        "topZodiacByRecentlyVotedPct": "Virgo"
+      },
+      {
+        "county": "Crittenden",
+        "activeRegisteredVoters": 17777,
+        "recentlyVoted": 3712,
+        "didNotRecentlyVote": 14065,
+        "recentlyVotedPct": 20.88,
+        "topZodiacByRecentlyVotedPct": "Cancer"
+      },
+      {
+        "county": "Ashley",
+        "activeRegisteredVoters": 8331,
+        "recentlyVoted": 1714,
+        "didNotRecentlyVote": 6617,
+        "recentlyVotedPct": 20.57,
+        "topZodiacByRecentlyVotedPct": "Gemini"
+      },
+      {
+        "county": "Benton",
+        "activeRegisteredVoters": 163003,
+        "recentlyVoted": 32114,
+        "didNotRecentlyVote": 130889,
+        "recentlyVotedPct": 19.7,
+        "topZodiacByRecentlyVotedPct": "Leo"
+      },
+      {
+        "county": "Columbia",
+        "activeRegisteredVoters": 9253,
+        "recentlyVoted": 1811,
+        "didNotRecentlyVote": 7442,
+        "recentlyVotedPct": 19.57,
+        "topZodiacByRecentlyVotedPct": "Virgo"
+      },
+      {
+        "county": "Prairie",
+        "activeRegisteredVoters": 3816,
+        "recentlyVoted": 714,
+        "didNotRecentlyVote": 3102,
+        "recentlyVotedPct": 18.71,
+        "topZodiacByRecentlyVotedPct": "Aries"
+      },
+      {
+        "county": "Mississippi",
+        "activeRegisteredVoters": 13219,
+        "recentlyVoted": 2358,
+        "didNotRecentlyVote": 10861,
+        "recentlyVotedPct": 17.84,
+        "topZodiacByRecentlyVotedPct": "Libra"
+      }
+    ],
+    "pulaskiBySign": [
+      {
+        "zodiacSign": "Leo",
+        "activeRegisteredVoters": 17000,
+        "activeRegisteredPct": 9.09,
+        "recentlyVoted": 5932,
+        "recentlyVotedPct": 34.89,
+        "didNotRecentlyVote": 11068
+      },
+      {
+        "zodiacSign": "Sagittarius",
+        "activeRegisteredVoters": 15404,
+        "activeRegisteredPct": 8.24,
+        "recentlyVoted": 5344,
+        "recentlyVotedPct": 34.69,
+        "didNotRecentlyVote": 10060
+      },
+      {
+        "zodiacSign": "Libra",
+        "activeRegisteredVoters": 16279,
+        "activeRegisteredPct": 8.71,
+        "recentlyVoted": 5627,
+        "recentlyVotedPct": 34.57,
+        "didNotRecentlyVote": 10652
+      },
+      {
+        "zodiacSign": "Cancer",
+        "activeRegisteredVoters": 16622,
+        "activeRegisteredPct": 8.89,
+        "recentlyVoted": 5708,
+        "recentlyVotedPct": 34.34,
+        "didNotRecentlyVote": 10914
+      },
+      {
+        "zodiacSign": "Capricorn",
+        "activeRegisteredVoters": 14592,
+        "activeRegisteredPct": 7.8,
+        "recentlyVoted": 4980,
+        "recentlyVotedPct": 34.13,
+        "didNotRecentlyVote": 9612
+      },
+      {
+        "zodiacSign": "Scorpio",
+        "activeRegisteredVoters": 15566,
+        "activeRegisteredPct": 8.32,
+        "recentlyVoted": 5289,
+        "recentlyVotedPct": 33.98,
+        "didNotRecentlyVote": 10277
+      },
+      {
+        "zodiacSign": "Virgo",
+        "activeRegisteredVoters": 17272,
+        "activeRegisteredPct": 9.24,
+        "recentlyVoted": 5822,
+        "recentlyVotedPct": 33.71,
+        "didNotRecentlyVote": 11450
+      },
+      {
+        "zodiacSign": "Aquarius",
+        "activeRegisteredVoters": 15459,
+        "activeRegisteredPct": 8.27,
+        "recentlyVoted": 5178,
+        "recentlyVotedPct": 33.5,
+        "didNotRecentlyVote": 10281
+      },
+      {
+        "zodiacSign": "Gemini",
+        "activeRegisteredVoters": 14662,
+        "activeRegisteredPct": 7.84,
+        "recentlyVoted": 4865,
+        "recentlyVotedPct": 33.18,
+        "didNotRecentlyVote": 9797
+      },
+      {
+        "zodiacSign": "Pisces",
+        "activeRegisteredVoters": 15287,
+        "activeRegisteredPct": 8.17,
+        "recentlyVoted": 4956,
+        "recentlyVotedPct": 32.42,
+        "didNotRecentlyVote": 10331
+      },
+      {
+        "zodiacSign": "Aries",
+        "activeRegisteredVoters": 14319,
+        "activeRegisteredPct": 7.66,
+        "recentlyVoted": 4628,
+        "recentlyVotedPct": 32.32,
+        "didNotRecentlyVote": 9691
+      },
+      {
+        "zodiacSign": "Taurus",
+        "activeRegisteredVoters": 14542,
+        "activeRegisteredPct": 7.78,
+        "recentlyVoted": 4688,
+        "recentlyVotedPct": 32.24,
+        "didNotRecentlyVote": 9854
       }
     ]
   }

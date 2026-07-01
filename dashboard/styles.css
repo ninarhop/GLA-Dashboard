@@ -316,6 +316,10 @@ select {
   padding: 18px;
 }
 
+.stacked-panel {
+  margin-top: 16px;
+}
+
 .panel-heading {
   display: flex;
   align-items: center;
