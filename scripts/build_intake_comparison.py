@@ -196,12 +196,22 @@ def main() -> None:
         for value in purge_rules["include_last_vrvh_values"]
     }
 
+    purge_period_dates = {
+        normalize_text(label): effective_date
+        for label, effective_date in purge_rules.get(
+            "period_dates",
+            {},
+        ).items()
+    }
+
     purge_ids: set[str] = set()
     removed_since_baseline = 0
     removed_by_county: Counter[str] = Counter()
     removed_by_ethnic_group: Counter[str] = Counter()
     removed_by_language: Counter[str] = Counter()
     removed_by_last_vrvh: Counter[str] = Counter()
+    removed_by_date: Counter[str] = Counter()
+    removed_by_date_county: Counter[tuple[str, str]] = Counter()
 
     with open_csv(purge_path) as file:
         reader = normalized_dict_reader(file)
@@ -216,11 +226,17 @@ def main() -> None:
             removed_since_baseline += 1
             removed_by_last_vrvh[last_vrvh_raw or "Unknown"] += 1
 
+            effective_date = purge_period_dates.get(last_vrvh)
+
             county = normalize_county(
                 row.get(purge_columns["county"])
             ) or "UNKNOWN"
 
             removed_by_county[county] += 1
+
+            if effective_date:
+                removed_by_date[effective_date] += 1
+                removed_by_date_county[(effective_date, county)] += 1
 
             ethnic_group = clean(
                 row.get(purge_columns["ethnic_group"])
@@ -268,6 +284,13 @@ def main() -> None:
 
             ez_submissions_by_county[county] += 1
 
+            submission_date_text = date_key(
+                row.get(ez_columns["submission_date"])
+            )
+
+            if submission_date_text:
+                ez_submissions_by_date[submission_date_text] += 1
+
             ez_keys[(first, last, birth)].append(
                 {
                     "county": county,
@@ -290,6 +313,8 @@ def main() -> None:
 
     registered_since_baseline = 0
     registered_since_by_county: Counter[str] = Counter()
+    registrations_by_date: Counter[str] = Counter()
+    registrations_by_date_county: Counter[tuple[str, str]] = Counter()
 
     readded_total = 0
     readded_by_county: Counter[str] = Counter()
@@ -299,6 +324,9 @@ def main() -> None:
     ez_previously_registered = 0
     ez_ambiguous_matches = 0
     ez_matches_by_county: Counter[str] = Counter()
+    ez_submissions_by_date: Counter[str] = Counter()
+    ez_matches_by_date: Counter[str] = Counter()
+    ez_registered_after_by_date: Counter[str] = Counter()
     matched_ez_keys: set[tuple[str, str, str]] = set()
 
     with open_csv(vrvh_path) as file:
@@ -332,6 +360,12 @@ def main() -> None:
             if registration_date and registration_date >= reporting_start:
                 registered_since_baseline += 1
                 registered_since_by_county[county] += 1
+
+                registration_date_text = registration_date.isoformat()
+                registrations_by_date[registration_date_text] += 1
+                registrations_by_date_county[
+                    (registration_date_text, county)
+                ] += 1
 
             identifier = normalize_identifier(
                 row.get(vrvh_columns["voter_id"])
@@ -393,12 +427,20 @@ def main() -> None:
                 selected["submission_date"]
             )
 
+            if submission_date:
+                ez_matches_by_date[
+                    submission_date.isoformat()
+                ] += 1
+
             if (
                 submission_date
                 and registration_date
                 and registration_date >= submission_date
             ):
                 ez_newly_registered_after_submission += 1
+                ez_registered_after_by_date[
+                    registration_date.isoformat()
+                ] += 1
             else:
                 ez_previously_registered += 1
 
@@ -443,6 +485,26 @@ def main() -> None:
                 ) if ez_submitted else 0,
             }
         )
+
+    def dated_counter_rows(
+        counter: Counter[str],
+    ) -> list[dict[str, Any]]:
+        return [
+            {"date": key, "count": count}
+            for key, count in sorted(counter.items())
+        ]
+
+    def dated_county_rows(
+        counter: Counter[tuple[str, str]],
+    ) -> list[dict[str, Any]]:
+        return [
+            {
+                "date": date_value,
+                "county": county,
+                "count": count,
+            }
+            for (date_value, county), count in sorted(counter.items())
+        ]
 
     output = {
         "meta": {
@@ -508,6 +570,29 @@ def main() -> None:
             ) if total_ez_submissions else 0,
         },
         "priorityCounties": priority_rows,
+        "dateSeries": {
+            "registrations": dated_counter_rows(
+                registrations_by_date
+            ),
+            "registrationsByCounty": dated_county_rows(
+                registrations_by_date_county
+            ),
+            "purgeRemovals": dated_counter_rows(
+                removed_by_date
+            ),
+            "purgeRemovalsByCounty": dated_county_rows(
+                removed_by_date_county
+            ),
+            "ezAppSubmissions": dated_counter_rows(
+                ez_submissions_by_date
+            ),
+            "ezAppMatches": dated_counter_rows(
+                ez_matches_by_date
+            ),
+            "ezAppRegisteredAfterSubmission": dated_counter_rows(
+                ez_registered_after_by_date
+            )
+        },
         "geography": {
             "currentByCounty": counter_rows(
                 current_by_county,
