@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <base target="_top">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <?!= include("Styles"); ?>
+  <style>
+    .admin-wrap{padding:24px;max-width:1800px;margin:auto}.admin-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:16px}.admin-tools{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}.admin-tools input,.admin-tools select{min-height:42px;border:1px solid var(--line);border-radius:8px;padding:0 12px;background:#fff}.admin-tools input{min-width:280px}.admin-table-wrap{overflow:auto;max-height:68vh;border:1px solid var(--line);border-radius:8px;background:#fff}.admin-table{min-width:1800px}.admin-table th{position:sticky;top:0;background:#f7fafc;z-index:1}.private-banner{background:#fff5f5;border-color:#feb2b2;color:#742a2a}.admin-link{color:var(--teal);font-weight:800}
+  </style>
+</head>
+<body>
+  <main class="admin-wrap">
+    <header class="admin-head">
+      <div><p class="eyebrow">Private Admin</p><h1>EZ App Registration Follow-Up</h1></div>
+      <a class="admin-link" href="?">Return to aggregate dashboard</a>
+    </header>
+    <div class="notice private-banner"><strong>Private person-level data.</strong> Only approved Workspace accounts may view this page. Do not share screenshots or export files outside approved GLA storage.</div>
+    <div id="summary" class="metric-grid compact"></div>
+    <div class="admin-tools">
+      <input id="search" type="search" placeholder="Search name, email, phone, city, ZIP…">
+      <select id="status"><option value="">All match statuses</option></select>
+      <select id="county"><option value="">All counties</option></select>
+      <button id="apply" class="nav-button active" type="button">Apply filters</button>
+      <button id="clear" class="nav-button active" type="button">Clear</button>
+    </div>
+    <div id="meta" class="notice"></div>
+    <div id="results"></div>
+  </main>
+<script>
+const byId=(id)=>document.getElementById(id);const fmt=new Intl.NumberFormat('en-US');const esc=(v)=>String(v??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
+function card(label,value,detail=''){return `<article class="metric-card"><span>${esc(label)}</span><strong>${fmt.format(Number(value||0))}</strong><small>${esc(detail)}</small></article>`}
+function filters(){return {search:byId('search').value,status:byId('status').value,county:byId('county').value}}
+function load(){byId('results').innerHTML='<section class="loading-panel"><strong>Loading private EZ App records…</strong></section>';google.script.run.withSuccessHandler(render).withFailureHandler((e)=>byId('results').innerHTML=`<section class="panel empty-state"><h2>Unable to load</h2><p>${esc(e.message||e)}</p></section>`).getEzAppAdminData(filters())}
+function render(data){const t=data.totals||{};byId('summary').innerHTML=card('All submissions',t.allSubmissions,'Current EZ App export')+card('Found in VRVH',t.foundInCurrentVrvh,'Any current match')+card('Registered after EZ App',t.registeredOnOrAfterSubmission,'Registration date on/after submission')+card('Not found',t.notFoundInCurrentVrvh,'Needs follow-up')+card('Manual review',t.multiplePossibleMatches,'Multiple possible matches')+card('County changed',t.countyChanged,'EZ App county differs from VRVH');
+if(!byId('status').dataset.loaded){byId('status').innerHTML='<option value="">All match statuses</option>'+data.statusOptions.map(v=>`<option>${esc(v)}</option>`).join('');byId('county').innerHTML='<option value="">All counties</option>'+data.countyOptions.map(v=>`<option>${esc(v)}</option>`).join('');byId('status').dataset.loaded='1'}
+byId('meta').innerHTML=`Signed in as <strong>${esc(data.currentUser)}</strong>. Showing <strong>${fmt.format(data.filteredCount)}</strong> of ${fmt.format(data.totalRows)} records. Source: <a class="admin-link" href="${esc(data.fileUrl)}" target="_blank">${esc(data.fileName)}</a>. Last updated ${esc(data.lastUpdated)}.${data.truncated?' First 1,000 matching rows shown.':''}`;
+const cols=[['Name',r=>[r.firstName,r.middleName,r.lastName].filter(Boolean).join(' ')],['Contact',r=>[r.email,r.homePhone,r.workPhone].filter(Boolean).join(' | ')],['EZ App Date',r=>r.submissionDate],['EZ App Address',r=>[r.ezAppAddress,r.ezAppCity,r.ezAppCounty,r.ezAppZip].filter(Boolean).join(', ')],['Match Status',r=>r.matchStatus],['VRVH Status',r=>r.currentVrvhStatus],['VRVH Registration Date',r=>r.vrvhRegistrationDate],['VRVH Location',r=>[r.vrvhCity,r.vrvhCounty,r.vrvhZip].filter(Boolean).join(', ')],['Registered After EZ App',r=>r.registeredOnOrAfterEzApp],['County Changed',r=>r.countyChanged],['Review Note',r=>r.reviewNote]];
+const head=cols.map(c=>`<th>${esc(c[0])}</th>`).join('');const body=data.rows.map(r=>`<tr>${cols.map(c=>`<td>${esc(c[1](r))}</td>`).join('')}</tr>`).join('');byId('results').innerHTML=`<div class="admin-table-wrap"><table class="admin-table"><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table></div>`}
+byId('apply').onclick=load;byId('clear').onclick=()=>{byId('search').value='';byId('status').value='';byId('county').value='';load()};byId('search').addEventListener('keydown',e=>{if(e.key==='Enter')load()});load();
+</script>
+</body>
+</html>
