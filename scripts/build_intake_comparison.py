@@ -263,6 +263,9 @@ def main() -> None:
     total_ez_submissions = 0
     invalid_ez_match_fields = 0
     ez_submissions_by_county: Counter[str] = Counter()
+    ez_submissions_by_date: Counter[str] = Counter()
+    ez_matches_by_date: Counter[str] = Counter()
+    ez_registered_after_by_date: Counter[str] = Counter()
 
     with open_csv(ez_path) as file:
         reader = normalized_dict_reader(file)
@@ -324,9 +327,6 @@ def main() -> None:
     ez_previously_registered = 0
     ez_ambiguous_matches = 0
     ez_matches_by_county: Counter[str] = Counter()
-    ez_submissions_by_date: Counter[str] = Counter()
-    ez_matches_by_date: Counter[str] = Counter()
-    ez_registered_after_by_date: Counter[str] = Counter()
     matched_ez_keys: set[tuple[str, str, str]] = set()
 
     with open_csv(vrvh_path) as file:
