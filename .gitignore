@@ -40,3 +40,6 @@ private-source-data/
 !github-pages/data/*.json
 !templates/*.csv
 config/data_sources.local.json
+.clasp.json
+.clasprc.json
+.apps-script-deployment-id

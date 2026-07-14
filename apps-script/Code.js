@@ -1,4 +1,4 @@
-﻿const INTAKE_FILE_PROPERTY = "INTAKE_JSON_FILE_ID";
+const INTAKE_FILE_PROPERTY = "INTAKE_JSON_FILE_ID";
 const LEGACY_FILE_PROPERTY = "LEGACY_JSON_FILE_ID";
 
 function doGet() {
@@ -122,3 +122,4 @@ function validateAggregateOnly_(data) {
     );
   }
 }
+
