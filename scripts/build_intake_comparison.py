@@ -118,6 +118,18 @@ def open_csv(path: Path):
     )
 
 
+def normalized_dict_reader(file):
+    reader = csv.DictReader(file)
+
+    if reader.fieldnames:
+        reader.fieldnames = [
+            clean(header)
+            for header in reader.fieldnames
+        ]
+
+    return reader
+
+
 def main() -> None:
     config_path = LOCAL_CONFIG if LOCAL_CONFIG.exists() else EXAMPLE_CONFIG
     config = load_json(config_path)
@@ -164,7 +176,7 @@ def main() -> None:
     priority_counties: set[str] = set()
 
     with open_csv(priority_path) as file:
-        reader = csv.DictReader(file)
+        reader = normalized_dict_reader(file)
         county_column = columns["priority_counties"]["county"]
         status_column = columns["priority_counties"]["status"]
 
@@ -192,7 +204,7 @@ def main() -> None:
     removed_by_last_vrvh: Counter[str] = Counter()
 
     with open_csv(purge_path) as file:
-        reader = csv.DictReader(file)
+        reader = normalized_dict_reader(file)
 
         for row in reader:
             last_vrvh_raw = clean(row.get(purge_columns["last_vrvh"]))
@@ -237,7 +249,7 @@ def main() -> None:
     ez_submissions_by_county: Counter[str] = Counter()
 
     with open_csv(ez_path) as file:
-        reader = csv.DictReader(file)
+        reader = normalized_dict_reader(file)
 
         for row in reader:
             first = normalize_text(row.get(ez_columns["first_name"]))
@@ -290,7 +302,7 @@ def main() -> None:
     matched_ez_keys: set[tuple[str, str, str]] = set()
 
     with open_csv(vrvh_path) as file:
-        reader = csv.DictReader(file)
+        reader = normalized_dict_reader(file)
 
         for row_number, row in enumerate(reader, start=2):
             current_vrvh_total += 1
