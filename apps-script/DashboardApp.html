@@ -1,0 +1,631 @@
+﻿<script>
+(() => {
+  const INTAKE_URL = "data/intake-comparison.json";
+  const LEGACY_URL = "data/public-dashboard.json";
+
+  const sections = [
+    { id: "overview", label: "Executive Overview" },
+    { id: "priority", label: "Priority Counties" },
+    { id: "ezapp", label: "EZ App" },
+    { id: "purge", label: "Purge" },
+    { id: "zodiac", label: "Zodiac" },
+    { id: "county", label: "County Explorer" }
+  ];
+
+  const formatter = new Intl.NumberFormat("en-US");
+  const formatNumber = (value) => formatter.format(Number(value || 0));
+  const formatPercent = (value) => `${Number(value || 0).toFixed(1)}%`;
+  const byId = (id) => document.getElementById(id);
+  const countyKey = (value) => String(value || "").trim().toUpperCase();
+
+  const state = {
+    intake: null,
+    zodiac: null,
+    activeSection: "overview",
+    county: "all",
+    startDate: "2026-01-01",
+    endDate: ""
+  };
+
+  function escapeHtml(value) {
+    return String(value ?? "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/\"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  function metricCard(label, value, detail = "") {
+    return `
+      <article class="metric-card">
+        <span>${escapeHtml(label)}</span>
+        <strong>${escapeHtml(value)}</strong>
+        ${detail ? `<small>${escapeHtml(detail)}</small>` : ""}
+      </article>
+    `;
+  }
+
+  function rowsToTable(columns, rows, emptyMessage = "No aggregate rows are available for this selection.") {
+    if (!rows || !rows.length) {
+      return `<p class="table-note">${escapeHtml(emptyMessage)}</p>`;
+    }
+
+    const head = columns.map((column) => `<th>${escapeHtml(column.label)}</th>`).join("");
+    const body = rows
+      .map((row) => {
+        const cells = columns
+          .map((column) => {
+            const raw = column.render ? column.render(row) : row[column.key];
+            return `<td>${escapeHtml(raw)}</td>`;
+          })
+          .join("");
+        return `<tr>${cells}</tr>`;
+      })
+      .join("");
+
+    return `<table><thead><tr>${head}</tr></thead><tbody>${body}</tbody></table>`;
+  }
+
+  function panel(title, subtitle, body) {
+    return `
+      <section class="panel">
+        <div class="panel-heading">
+          <h3>${escapeHtml(title)}</h3>
+          <span>${escapeHtml(subtitle)}</span>
+        </div>
+        ${body}
+      </section>
+    `;
+  }
+
+  function inDateRange(value) {
+    if (!value) return false;
+    if (state.startDate && value < state.startDate) return false;
+    if (state.endDate && value > state.endDate) return false;
+    return true;
+  }
+
+  function sumDated(rows = []) {
+    return rows.reduce((total, row) => total + (inDateRange(row.date) ? Number(row.count || 0) : 0), 0);
+  }
+
+  function sumDatedCounty(rows = [], county = null) {
+    const target = county ? countyKey(county) : null;
+    return rows.reduce((total, row) => {
+      if (!inDateRange(row.date)) return total;
+      if (target && countyKey(row.county) !== target) return total;
+      return total + Number(row.count || 0);
+    }, 0);
+  }
+
+  function validIsoDate(value) {
+    return /^\d{4}-\d{2}-\d{2}$/.test(String(value || ""));
+  }
+
+  function mostRecentUploadDate() {
+    const sourceNames = Object.values(state.intake?.meta?.sources || {});
+    const sourceDates = sourceNames.flatMap((name) =>
+      String(name || "").match(/\d{4}-\d{2}-\d{2}/g) || []
+    );
+    const generatedDate = String(state.intake?.meta?.generatedAt || "").slice(0, 10);
+    const candidates = [...sourceDates, generatedDate]
+      .filter(validIsoDate)
+      .sort();
+
+    return candidates[candidates.length - 1] || new Date().toISOString().slice(0, 10);
+  }
+
+  function displayDate(value) {
+    if (!validIsoDate(value)) return String(value || "");
+    const [year, month, day] = value.split("-").map(Number);
+    return new Intl.DateTimeFormat("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric"
+    }).format(new Date(year, month - 1, day));
+  }
+
+  function dateLabel() {
+    const start = state.startDate ? displayDate(state.startDate) : "Earliest available";
+    const latest = mostRecentUploadDate();
+    const end = !state.endDate || state.endDate === latest
+      ? `Current data (${displayDate(latest)})`
+      : displayDate(state.endDate);
+
+    return `${start} through ${end}`;
+  }
+
+  function allCountyNames() {
+    const rows = state.intake?.geography?.currentByCounty || [];
+    return [...rows]
+      .map((row) => row.county)
+      .filter(Boolean)
+      .sort((a, b) => String(a).localeCompare(String(b)));
+  }
+
+  function countyCount(rows, county) {
+    const target = countyKey(county);
+    const found = (rows || []).find((row) => countyKey(row.county) === target);
+    return Number(found?.count || 0);
+  }
+
+  function selectedCountyName() {
+    return state.county === "all" ? null : state.county;
+  }
+
+  function currentRegisteredFor(county = null) {
+    if (!county) return Number(state.intake?.voterFile?.currentTotal || 0);
+    return countyCount(state.intake?.geography?.currentByCounty, county);
+  }
+
+  function returnedFor(county = null) {
+    if (!county) return Number(state.intake?.purge?.returnedToCurrentFile || 0);
+    return countyCount(state.intake?.geography?.returnedToCurrentFileByCounty, county);
+  }
+
+  function ezMatchesFor(county = null) {
+    if (!county) return Number(state.intake?.ezApp?.matchedToCurrentFile || 0);
+    return countyCount(state.intake?.geography?.ezAppMatchesByCounty, county);
+  }
+
+  function renderNav() {
+    const nav = byId("nav");
+    if (!nav) return;
+
+    nav.innerHTML = sections
+      .map(
+        (section) => `
+          <button class="nav-button${state.activeSection === section.id ? " active" : ""}" data-section="${section.id}" type="button">
+            ${escapeHtml(section.label)}
+          </button>
+        `
+      )
+      .join("");
+
+    nav.querySelectorAll(".nav-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        state.activeSection = button.dataset.section;
+        render();
+      });
+    });
+  }
+
+  function renderFilters() {
+    const countySelect = byId("countyFilter");
+    const startInput = byId("startDateFilter");
+    const endInput = byId("endDateFilter");
+    if (!countySelect || !startInput || !endInput) return;
+
+    countySelect.innerHTML = `<option value="all">All counties</option>${allCountyNames()
+      .map((county) => `<option value="${escapeHtml(county)}">${escapeHtml(county)}</option>`)
+      .join("")}`;
+    countySelect.value = state.county;
+
+    const allDates = [
+      ...(state.intake?.dateSeries?.registrations || []),
+      ...(state.intake?.dateSeries?.purgeRemovals || []),
+      ...(state.intake?.dateSeries?.ezAppSubmissions || []),
+      ...(state.intake?.dateSeries?.ezAppRegisteredAfterSubmission || [])
+    ]
+      .map((row) => row.date)
+      .filter(validIsoDate)
+      .sort();
+
+    const minDate = state.intake?.meta?.reportingStartDate || allDates[0] || "2025-12-01";
+    const maxDate = mostRecentUploadDate();
+
+    if (!state.startDate) state.startDate = "2026-01-01";
+    if (!state.endDate) state.endDate = maxDate;
+
+    startInput.min = minDate;
+    startInput.max = maxDate;
+    startInput.value = state.startDate;
+    endInput.min = minDate;
+    endInput.max = maxDate;
+    endInput.value = state.endDate;
+
+    countySelect.onchange = (event) => {
+      state.county = event.target.value;
+      render();
+    };
+    startInput.onchange = (event) => {
+      state.startDate = event.target.value;
+      if (state.endDate && state.startDate > state.endDate) state.endDate = state.startDate;
+      renderFilters();
+      render();
+    };
+    endInput.onchange = (event) => {
+      state.endDate = event.target.value;
+      if (state.startDate && state.endDate < state.startDate) state.startDate = state.endDate;
+      renderFilters();
+      render();
+    };
+  }
+
+  function renderPrivacyNotice() {
+    const notice = byId("privacyNotice");
+    if (!notice || !state.intake) return;
+    notice.innerHTML = `
+      <strong>Aggregate data only.</strong>
+      No names, birth dates, addresses, phone numbers, emails, or voter IDs are displayed.
+      Data generated: <time>${escapeHtml(state.intake.meta?.generatedAt || "Unknown")}</time>.
+      Selected date range: <strong>${escapeHtml(dateLabel())}</strong>.
+    `;
+  }
+
+  function priorityRows() {
+    const registrations = state.intake?.dateSeries?.registrationsByCounty || [];
+    const removals = state.intake?.dateSeries?.purgeRemovalsByCounty || [];
+
+    return (state.intake?.priorityCounties || [])
+      .map((row) => ({
+        county: row.county,
+        currentRegistered: Number(row.currentRegistered || 0),
+        registeredInRange: sumDatedCounty(registrations, row.county),
+        removedInRange: sumDatedCounty(removals, row.county),
+        returnedSinceBaseline: Number(row.returnedToCurrentFile || 0),
+        ezAppMatches: Number(row.ezAppMatches || 0)
+      }))
+      .sort((a, b) => b.registeredInRange - a.registeredInRange || a.county.localeCompare(b.county));
+  }
+
+  function renderOverview() {
+    const county = selectedCountyName();
+    const registrations = sumDatedCounty(state.intake?.dateSeries?.registrationsByCounty, county);
+    const removals = sumDatedCounty(state.intake?.dateSeries?.purgeRemovalsByCounty, county);
+    const returned = returnedFor(county);
+    const ezRegistered = county
+      ? ezMatchesFor(county)
+      : sumDated(state.intake?.dateSeries?.ezAppRegisteredAfterSubmission);
+    const ezDetail = county
+      ? "Found in current VRVH; all EZ App dates"
+      : "Registered on or after submission in selected range";
+
+    return `
+      <section class="dashboard-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Executive Overview</p>
+            <h2>${county ? `${escapeHtml(county)} County` : "Statewide Summary"}</h2>
+          </div>
+          <span class="status-pill">${escapeHtml(dateLabel())}</span>
+        </div>
+
+        <div class="metric-grid hero-kpis">
+          ${metricCard("Current Registered Voters", formatNumber(currentRegisteredFor(county)), "Current VRVH file")}
+          ${metricCard("Registered in Date Range", formatNumber(registrations), dateLabel())}
+          ${metricCard("Removed in Date Range", formatNumber(removals), dateLabel())}
+          ${metricCard("Returned to Current VRVH", formatNumber(returned), "Cumulative since December 1, 2025")}
+          ${metricCard("EZ App Found Registered", formatNumber(ezRegistered), ezDetail)}
+          ${metricCard("Usable EZ App Submissions", formatNumber(state.intake?.ezApp?.usableSubmissions), "All submissions in current export")}
+        </div>
+
+        ${panel(
+          "Priority County Registration Activity",
+          `Registrations from ${dateLabel()}`,
+          rowsToTable(
+            [
+              { key: "county", label: "Priority County" },
+              { key: "currentRegistered", label: "Current Registered", render: (row) => formatNumber(row.currentRegistered) },
+              { key: "registeredInRange", label: "Registered in Range", render: (row) => formatNumber(row.registeredInRange) },
+              { key: "removedInRange", label: "Removed in Range", render: (row) => formatNumber(row.removedInRange) },
+              { key: "returnedSinceBaseline", label: "Returned Since Dec. 2025", render: (row) => formatNumber(row.returnedSinceBaseline) },
+              { key: "ezAppMatches", label: "EZ App Found Registered", render: (row) => formatNumber(row.ezAppMatches) }
+            ],
+            priorityRows()
+          )
+        )}
+      </section>
+    `;
+  }
+
+  function renderPriority() {
+    return `
+      <section class="dashboard-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Priority Counties</p>
+            <h2>Registration and Purge Activity</h2>
+          </div>
+          <span class="status-pill">${escapeHtml(dateLabel())}</span>
+        </div>
+        ${panel(
+          "Priority Counties",
+          "Date-filtered registrations and removals",
+          rowsToTable(
+            [
+              { key: "county", label: "County" },
+              { key: "currentRegistered", label: "Current Registered", render: (row) => formatNumber(row.currentRegistered) },
+              { key: "registeredInRange", label: "Registered in Range", render: (row) => formatNumber(row.registeredInRange) },
+              { key: "removedInRange", label: "Removed in Range", render: (row) => formatNumber(row.removedInRange) },
+              { key: "returnedSinceBaseline", label: "Returned Since Dec. 2025", render: (row) => formatNumber(row.returnedSinceBaseline) },
+              { key: "ezAppMatches", label: "EZ App Found Registered", render: (row) => formatNumber(row.ezAppMatches) }
+            ],
+            priorityRows()
+          )
+        )}
+      </section>
+    `;
+  }
+
+  function renderEzApp() {
+    const ez = state.intake?.ezApp || {};
+    const submissionsInRange = sumDated(state.intake?.dateSeries?.ezAppSubmissions);
+    const matchesInRange = sumDated(state.intake?.dateSeries?.ezAppMatches);
+    const registeredAfterInRange = sumDated(state.intake?.dateSeries?.ezAppRegisteredAfterSubmission);
+
+    const statuses = [
+      { status: "Usable submissions in current export", count: ez.usableSubmissions || 0 },
+      { status: "Found in current VRVH", count: ez.matchedToCurrentFile || 0 },
+      { status: "Registered on or after EZ App submission", count: ez.registeredOnOrAfterSubmission || 0 },
+      { status: "Already registered or registration date unavailable", count: ez.registeredBeforeSubmissionOrDateUnavailable || 0 },
+      { status: "Not found in current VRVH", count: ez.notFound || 0 },
+      { status: "Ambiguous match requiring review", count: ez.ambiguous || 0 }
+    ];
+
+    return `
+      <section class="dashboard-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">GLA EZ App</p>
+            <h2>Registration Status</h2>
+          </div>
+          <span class="status-pill">${escapeHtml(dateLabel())}</span>
+        </div>
+        <div class="metric-grid compact">
+          ${metricCard("Submissions in Date Range", formatNumber(submissionsInRange), "Based on EZ App submission date")}
+          ${metricCard("Submissions Found in VRVH", formatNumber(matchesInRange), "Based on EZ App submission date")}
+          ${metricCard("Registered After Submission", formatNumber(registeredAfterInRange), "Based on VRVH registration date")}
+          ${metricCard("Overall Match Rate", formatPercent(ez.matchRate), `${formatNumber(ez.matchedToCurrentFile)} of ${formatNumber(ez.usableSubmissions)} usable submissions`)}
+        </div>
+        ${panel(
+          "Current EZ App Status Totals",
+          "All records in the latest EZ App export",
+          rowsToTable(
+            [
+              { key: "status", label: "Status" },
+              { key: "count", label: "Count", render: (row) => formatNumber(row.count) }
+            ],
+            statuses
+          )
+        )}
+      </section>
+    `;
+  }
+
+  function renderPurge() {
+    const purge = state.intake?.purge || {};
+    const county = selectedCountyName();
+    const removedInRange = sumDatedCounty(state.intake?.dateSeries?.purgeRemovalsByCounty, county);
+    const returned = returnedFor(county);
+
+    const rows = county
+      ? [{ county, removed: removedInRange, returned }]
+      : (state.intake?.priorityCounties || []).map((row) => ({
+          county: row.county,
+          removed: sumDatedCounty(state.intake?.dateSeries?.purgeRemovalsByCounty, row.county),
+          returned: Number(row.returnedToCurrentFile || 0)
+        }));
+
+    return `
+      <section class="dashboard-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Purge Tracking</p>
+            <h2>Removed and Returned Voters</h2>
+          </div>
+          <span class="status-pill">${escapeHtml(dateLabel())}</span>
+        </div>
+        <div class="metric-grid compact">
+          ${metricCard("Removed in Date Range", formatNumber(removedInRange), dateLabel())}
+          ${metricCard("Returned to Current VRVH", formatNumber(returned), "Cumulative since December 1, 2025")}
+          ${metricCard("Still Missing Statewide", formatNumber(purge.stillMissingFromCurrentFile), "Cumulative since December 1, 2025")}
+          ${metricCard("Statewide Return Rate", formatPercent(purge.returnRate), "Returned divided by removed since December 1, 2025")}
+        </div>
+        ${panel(
+          county ? `${county} County` : "Priority County Purge Activity",
+          "Removals use selected dates; returns are cumulative since December 1, 2025",
+          rowsToTable(
+            [
+              { key: "county", label: "County" },
+              { key: "removed", label: "Removed in Range", render: (row) => formatNumber(row.removed) },
+              { key: "returned", label: "Returned Since Dec. 2025", render: (row) => formatNumber(row.returned) }
+            ],
+            rows
+          )
+        )}
+      </section>
+    `;
+  }
+
+  function renderZodiac() {
+    const zodiac = state.zodiac;
+    if (!zodiac) {
+      return `
+        <section class="dashboard-section">
+          <div class="section-heading"><div><p class="eyebrow">Zodiac</p><h2>Aggregate Zodiac Turnout</h2></div></div>
+          <section class="panel empty-state">
+            <h3>Zodiac aggregate data is not loaded</h3>
+            <p>Rebuild the existing public dashboard zodiac aggregate file. Birth dates remain private and are never displayed.</p>
+          </section>
+        </section>
+      `;
+    }
+
+    const county = selectedCountyName();
+    const countySummary = zodiac.countySummary || [];
+    const selectedSummary = county
+      ? countySummary.find((row) => countyKey(row.county) === countyKey(county))
+      : null;
+    const summaryRows = selectedSummary ? [selectedSummary] : countySummary.slice(0, 20);
+    const signRows = [...(zodiac.statewideBySign || [])].sort(
+      (a, b) => Number(b.recentlyVotedPct || 0) - Number(a.recentlyVotedPct || 0)
+    );
+
+    return `
+      <section class="dashboard-section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Zodiac</p>
+            <h2>Registered Voters and Voting Rate by Zodiac</h2>
+          </div>
+          <span class="status-pill">Date filter does not change this section</span>
+        </div>
+        <div class="two-column">
+          ${panel(
+            "Statewide Zodiac Turnout",
+            "Sorted by percentage who recently voted",
+            rowsToTable(
+              [
+                { key: "zodiacSign", label: "Zodiac Sign" },
+                { key: "activeRegisteredVoters", label: "Registered Voters", render: (row) => formatNumber(row.activeRegisteredVoters) },
+                { key: "recentlyVoted", label: "Recently Voted", render: (row) => formatNumber(row.recentlyVoted) },
+                { key: "recentlyVotedPct", label: "Voting Rate", render: (row) => formatPercent(row.recentlyVotedPct) }
+              ],
+              signRows
+            )
+          )}
+          ${panel(
+            county ? `${county} County Zodiac Summary` : "County Zodiac Summary",
+            county ? "Selected county" : "Top counties by recent voting rate",
+            rowsToTable(
+              [
+                { key: "county", label: "County" },
+                { key: "activeRegisteredVoters", label: "Registered Voters", render: (row) => formatNumber(row.activeRegisteredVoters) },
+                { key: "recentlyVoted", label: "Recently Voted", render: (row) => formatNumber(row.recentlyVoted) },
+                { key: "recentlyVotedPct", label: "Voting Rate", render: (row) => formatPercent(row.recentlyVotedPct) },
+                { key: "topZodiacByRecentlyVotedPct", label: "Highest-Rate Zodiac" }
+              ],
+              summaryRows
+            )
+          )}
+        </div>
+      </section>
+    `;
+  }
+
+  function renderCountyExplorer() {
+    const county = selectedCountyName();
+    if (!county) {
+      return `
+        <section class="dashboard-section">
+          <section class="panel empty-state">
+            <h2>Select a county</h2>
+            <p>Choose a county in the filter to see its current registered count, date-filtered registrations and removals, cumulative returned-voter count, and EZ App matches.</p>
+          </section>
+        </section>
+      `;
+    }
+
+    const registrations = sumDatedCounty(state.intake?.dateSeries?.registrationsByCounty, county);
+    const removals = sumDatedCounty(state.intake?.dateSeries?.purgeRemovalsByCounty, county);
+
+    return `
+      <section class="dashboard-section">
+        <div class="section-heading">
+          <div><p class="eyebrow">County Explorer</p><h2>${escapeHtml(county)} County</h2></div>
+          <span class="status-pill">${escapeHtml(dateLabel())}</span>
+        </div>
+        <div class="metric-grid compact">
+          ${metricCard("Current Registered Voters", formatNumber(currentRegisteredFor(county)), "Current VRVH")}
+          ${metricCard("Registered in Date Range", formatNumber(registrations), dateLabel())}
+          ${metricCard("Removed in Date Range", formatNumber(removals), dateLabel())}
+          ${metricCard("Returned to Current VRVH", formatNumber(returnedFor(county)), "Cumulative since December 1, 2025")}
+          ${metricCard("EZ App Found Registered", formatNumber(ezMatchesFor(county)), "All EZ App dates")}
+        </div>
+      </section>
+    `;
+  }
+
+  function renderActiveSection() {
+    switch (state.activeSection) {
+      case "priority":
+        return renderPriority();
+      case "ezapp":
+        return renderEzApp();
+      case "purge":
+        return renderPurge();
+      case "zodiac":
+        return renderZodiac();
+      case "county":
+        return renderCountyExplorer();
+      case "overview":
+      default:
+        return renderOverview();
+    }
+  }
+
+  function render() {
+    renderNav();
+    renderPrivacyNotice();
+    const container = byId("sections");
+    if (container) container.innerHTML = renderActiveSection();
+  }
+
+  function renderLoading() {
+    const container = byId("sections");
+    if (container) {
+      container.innerHTML = `
+        <section class="dashboard-section">
+          <div class="loading-panel">
+            <strong>Loading aggregate dashboard data...</strong>
+            <span>Reading ${escapeHtml(INTAKE_URL)}.</span>
+          </div>
+        </section>
+      `;
+    }
+  }
+
+  function renderError(error) {
+    const container = byId("sections");
+    const notice = byId("privacyNotice");
+    if (notice) notice.innerHTML = "<strong>Dashboard data did not load.</strong>";
+    if (container) {
+      container.innerHTML = `
+        <section class="dashboard-section">
+          <section class="panel empty-state">
+            <h2>Aggregate data unavailable</h2>
+            <p>Run the local comparison build, then restart the local web server.</p>
+            <p class="error-text">${escapeHtml(error.message || error)}</p>
+          </section>
+        </section>
+      `;
+    }
+  }
+
+  async function fetchJson(url, required = true) {
+    return new Promise((resolve, reject) => {
+      google.script.run
+        .withSuccessHandler((data) => resolve(data))
+        .withFailureHandler((error) => {
+          if (!required) {
+            resolve(null);
+            return;
+          }
+          reject(new Error(error?.message || String(error)));
+        })
+        .getDashboardData(url, required);
+    });
+  }
+
+  async function init() {
+    renderNav();
+    renderLoading();
+    try {
+      state.intake = await fetchJson(INTAKE_URL, true);
+      const legacy = await fetchJson(LEGACY_URL, false);
+      state.zodiac = legacy?.zodiac || null;
+      renderFilters();
+      render();
+    } catch (error) {
+      renderError(error);
+    }
+  }
+
+  init();
+})();
+
+
+
+</script>

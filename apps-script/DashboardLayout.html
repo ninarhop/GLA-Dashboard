@@ -1,0 +1,49 @@
+﻿<script>
+(() => {
+  const root = document.getElementById("app");
+  if (!root) return;
+
+  root.innerHTML = `
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Dashboard sections">
+        <div class="brand-block">
+          <div class="brand-mark" aria-hidden="true"><span>GLA</span></div>
+          <div>
+            <div class="brand-name">Get Loud Arkansas</div>
+            <div class="brand-subtitle">Aggregate voter dashboard</div>
+          </div>
+        </div>
+        <nav id="nav" class="section-nav" aria-label="Executive dashboard navigation"></nav>
+      </aside>
+
+      <main class="content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">GLA Dashboard</p>
+            <h1>Registration, Purge, and EZ App Results</h1>
+          </div>
+          <div class="filter-row" aria-label="Dashboard filters">
+            <label>
+              Start date
+              <input id="startDateFilter" type="date">
+            </label>
+            <label>
+              End date
+              <input id="endDateFilter" type="date">
+            </label>
+            <label>
+              County
+              <select id="countyFilter"><option value="all">All counties</option></select>
+            </label>
+          </div>
+        </header>
+
+        <div id="privacyNotice" class="notice" role="status"></div>
+        <section id="sections" class="sections" aria-live="polite"></section>
+      </main>
+    </div>
+  `;
+})();
+
+
+</script>
