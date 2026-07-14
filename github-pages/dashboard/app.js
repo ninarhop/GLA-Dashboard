@@ -1,5 +1,5 @@
 (() => {
-  const DATA_URL = "data/public-dashboard.json";
+  const DATA_URL = "data/intake-comparison.json";
   const sections = [
     { id: "overview", label: "Executive Overview" },
     { id: "outreach", label: "Outreach" },
@@ -20,6 +20,157 @@
     activeSection: "overview",
     county: "all"
   };
+
+
+  function adaptIntakeData(raw) {
+    if (raw.overview) return raw;
+
+    const currentRows = raw.geography?.currentByCounty || [];
+    const registeredRows = raw.geography?.registeredSinceBaselineByCounty || [];
+    const returnedRows = raw.geography?.returnedToCurrentFileByCounty || [];
+    const ezRows = raw.geography?.ezAppMatchesByCounty || [];
+
+    const valuesByCounty = new Map();
+
+    function applyRows(rows, field) {
+      rows.forEach((row) => {
+        const county = row.county || "Unknown";
+        const item = valuesByCounty.get(county) || {
+          county,
+          people: 0,
+          contacted: 0,
+          addedToCurrentVrvh: 0,
+          active: 0,
+          inactive: 0,
+          returnedToCurrentFile: 0
+        };
+
+        item[field] = Number(row.count || 0);
+        valuesByCounty.set(county, item);
+      });
+    }
+
+    applyRows(currentRows, "people");
+    applyRows(registeredRows, "addedToCurrentVrvh");
+    applyRows(returnedRows, "returnedToCurrentFile");
+    applyRows(ezRows, "contacted");
+
+    const counties = [...valuesByCounty.values()]
+      .sort((a, b) => b.people - a.people);
+
+    const ez = raw.ezApp || {};
+    const purge = raw.purge || {};
+    const voterFile = raw.voterFile || {};
+
+    return {
+      meta: {
+        ...raw.meta,
+        title: "GLA Current Voter Dashboard"
+      },
+
+      overview: {
+        totalPeople: voterFile.currentTotal || 0,
+        addedToCurrentVrvh: voterFile.registeredSinceBaseline || 0,
+        contacted: ez.matchedToCurrentFile || 0,
+        contactRate: ez.matchRate || 0,
+        counties: counties.length
+      },
+
+      voterFile: {
+        summary: {
+          totalPeople: voterFile.currentTotal || 0,
+          active: voterFile.active || 0,
+          inactive: voterFile.inactive || 0
+        },
+        registrationStatus: [
+          { status: "Active", count: voterFile.active || 0 },
+          { status: "Inactive", count: voterFile.inactive || 0 },
+          {
+            status: "Registered since December 2025",
+            count: voterFile.registeredSinceBaseline || 0
+          }
+        ]
+      },
+
+      purge: {
+        summary: {
+          totalPeople: purge.removedSinceBaseline || 0,
+          addedToCurrentVrvh: purge.returnedToCurrentFile || 0
+        },
+        removedTrackingStatus: [
+          {
+            status: "Removed since December 2025",
+            count: purge.removedSinceBaseline || 0
+          },
+          {
+            status: "Returned to current VRVH",
+            count: purge.returnedToCurrentFile || 0
+          },
+          {
+            status: "Still missing from current VRVH",
+            count: purge.stillMissingFromCurrentFile || 0
+          }
+        ]
+      },
+
+      outreach: {
+        summary: {
+          totalPeople: ez.usableSubmissions || 0,
+          contacted: ez.matchedToCurrentFile || 0,
+          notInGlaContactFile: ez.notFound || 0,
+          contactRate: ez.matchRate || 0
+        },
+        contactStatus: [
+          { status: "Usable EZ App submissions", count: ez.usableSubmissions || 0 },
+          { status: "Matched to current VRVH", count: ez.matchedToCurrentFile || 0 },
+          { status: "Not found", count: ez.notFound || 0 },
+          { status: "Ambiguous match", count: ez.ambiguous || 0 }
+        ]
+      },
+
+      registration: {
+        summary: {
+          totalPeople: ez.usableSubmissions || 0,
+          addedToCurrentVrvh: ez.registeredOnOrAfterSubmission || 0,
+          active: ez.matchedToCurrentFile || 0,
+          inactive: ez.notFound || 0
+        },
+        changeStatus: [
+          {
+            status: "Registered on or after EZ App submission",
+            count: ez.registeredOnOrAfterSubmission || 0
+          },
+          {
+            status: "Registered before submission or date unavailable",
+            count: ez.registeredBeforeSubmissionOrDateUnavailable || 0
+          },
+          { status: "Not found", count: ez.notFound || 0 }
+        ]
+      },
+
+      tracking: {
+        summary: {
+          totalPeople: ez.usableSubmissions || 0,
+          addedToCurrentVrvh: ez.registeredOnOrAfterSubmission || 0,
+          notInGlaContactFile: ez.notFound || 0,
+          counties: counties.length
+        },
+        sourceTotals: [
+          {
+            source: "GLA EZ App",
+            people: ez.usableSubmissions || 0,
+            addedToCurrentVrvh: ez.registeredOnOrAfterSubmission || 0,
+            notInGlaContactFile: ez.notFound || 0
+          }
+        ],
+        countyTotals: counties
+      },
+
+      geography: {
+        counties
+      }
+    };
+  }
 
   function escapeHtml(value) {
     return String(value ?? "")
@@ -134,7 +285,7 @@
     const generatedAt = state.data.meta?.generatedAt || "Unknown";
     notice.innerHTML = `
       <strong>Public aggregate data only.</strong>
-      This dashboard is generated from aggregate rollups in <code>public-dashboard.json</code>.
+      This dashboard is generated from current aggregate comparisons in <code>intake-comparison.json</code>.
       Last updated: <time>${escapeHtml(generatedAt)}</time>.
     `;
   }
@@ -511,7 +662,7 @@
           </div>
           <section class="panel empty-state">
             <h3>Choose a county from the filter</h3>
-            <p>The explorer will show one county at a time using the aggregate county rollups already present in <code>public-dashboard.json</code>.</p>
+            <p>The explorer will show one county at a time using the aggregate county rollups already present in <code>intake-comparison.json</code>.</p>
           </section>
         </section>
       `;
