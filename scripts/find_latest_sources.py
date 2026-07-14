@@ -6,7 +6,9 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
-CONFIG_PATH = ROOT / "config" / "data_sources.example.json"
+LOCAL_CONFIG_PATH = ROOT / "config" / "data_sources.local.json"
+EXAMPLE_CONFIG_PATH = ROOT / "config" / "data_sources.example.json"
+CONFIG_PATH = LOCAL_CONFIG_PATH if LOCAL_CONFIG_PATH.exists() else EXAMPLE_CONFIG_PATH
 
 
 def load_config() -> dict[str, Any]:

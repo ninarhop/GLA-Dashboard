@@ -39,3 +39,4 @@ private-source-data/
 # Allow approved public aggregate files
 !github-pages/data/*.json
 !templates/*.csv
+config/data_sources.local.json
