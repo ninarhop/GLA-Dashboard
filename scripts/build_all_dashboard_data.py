@@ -18,8 +18,9 @@ def run(script_name: str) -> None:
 def main() -> None:
     run("build_intake_comparison.py")
     run("build_zodiac_aggregate.py")
+    run("build_ez_app_admin_report.py")
     print()
-    print("All dashboard aggregates are current.")
+    print("All dashboard aggregates and private EZ App follow-up reports are current.")
 
 
 if __name__ == "__main__":
