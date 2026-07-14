@@ -23,3 +23,19 @@ __pycache__/
 *.pyc
 .venv/
 venv/
+
+# Private voter-data folders and files
+uploads/
+private-source-data/
+01_Data_Intake/
+02_Processed_Data/
+*.csv
+*.xlsx
+*.xls
+*.db
+*.sqlite
+*.sqlite3
+
+# Allow approved public aggregate files
+!github-pages/data/*.json
+!templates/*.csv
