@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="card">
+    <h1>Reports</h1>
+    <p>These report buttons are placeholders for the next build step.</p>
+  </section>
+
+  <section class="grid">
+    {% for report in reports %}
+      <div class="card">
+        <h2>{{ report }}</h2>
+        <p>This will generate a dashboard table and CSV export.</p>
+        <button type="button">Run Report</button>
+      </div>
+    {% endfor %}
+  </section>
+{% endblock %}

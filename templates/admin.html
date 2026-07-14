@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="card">
+    <h1>Admin Home</h1>
+    <p>Welcome, {{ user.username }}. This is the first version of the GLA CRM/dashboard platform.</p>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <h2>Uploads</h2>
+      <p><strong>{{ upload_count }}</strong> uploaded file records.</p>
+      <a class="button" href="/upload">Upload CSV</a>
+    </div>
+
+    <div class="card">
+      <h2>Reports</h2>
+      <p>Run voter outreach, purge, registration, and county reports.</p>
+      <a class="button" href="/reports">View Reports</a>
+    </div>
+
+    <div class="card">
+      <h2>Dashboard</h2>
+      <p>Open the existing GLA dashboard.</p>
+      <a class="button" href="/dashboard">Open Dashboard</a>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Latest Uploads</h2>
+    {% if latest_uploads %}
+      <table>
+        <thead>
+          <tr>
+            <th>File</th>
+            <th>Type</th>
+            <th>Rows</th>
+            <th>Status</th>
+            <th>Uploaded</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in latest_uploads %}
+            <tr>
+              <td>{{ item.original_filename }}</td>
+              <td>{{ item.upload_type }}</td>
+              <td>{{ item.row_count }}</td>
+              <td>{{ item.status }}</td>
+              <td>{{ item.uploaded_at }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>No uploads yet.</p>
+    {% endif %}
+  </section>
+{% endblock %}

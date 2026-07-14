@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>GLA Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f6efff;
+      color: #281237;
+    }
+    header {
+      background: #3b1856;
+      color: white;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header a {
+      color: white;
+      margin-left: 16px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    main {
+      padding: 24px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .card {
+      background: white;
+      border: 1px solid #ddc6ef;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 18px;
+      box-shadow: 0 10px 24px rgba(72, 31, 101, 0.12);
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    a.button, button {
+      display: inline-block;
+      background: #7d2fb0;
+      color: white;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 0;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      margin-bottom: 14px;
+      border: 1px solid #ddc6ef;
+      border-radius: 8px;
+    }
+    label {
+      font-weight: bold;
+      color: #735985;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+    }
+    th, td {
+      border-bottom: 1px solid #ddc6ef;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      color: #735985;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+    .error {
+      background: #ffe8f3;
+      border: 1px solid #cf3d7f;
+      color: #7e1f86;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div><strong>GLA CRM + Dashboard</strong></div>
+    <nav>
+      <a href="/admin">Admin</a>
+      <a href="/upload">Upload</a>
+      <a href="/uploads">Uploads</a>
+      <a href="/data-sources">Data Sources</a>
+      <a href="/local-sources">Local Files</a>
+      <a href="/reports">Reports</a>
+      <a href="/dashboard">Dashboard</a>
+      <a href="/help">Help</a>
+      <a href="/logout">Logout</a>
+    </nav>
+  </header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

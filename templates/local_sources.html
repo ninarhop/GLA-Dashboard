@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="card">
+    <h1>Local File Sources</h1>
+    <p>These are private file paths. The files stay on your computer/shared drive and are not uploaded to the cloud.</p>
+    <a class="button" href="/local-sources/register">Register Local File Path</a>
+  </section>
+
+  <section class="card">
+    {% if sources %}
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Source</th>
+            <th>Type</th>
+            <th>Rows</th>
+            <th>Status</th>
+            <th>Path</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in sources %}
+            <tr>
+              <td>{{ item.id }}</td>
+              <td>{{ item.source_name }}</td>
+              <td>{{ item.source_type }}</td>
+              <td>{{ item.row_count or "—" }}</td>
+              <td>{{ item.status }}</td>
+              <td>{{ item.file_path }}</td>
+              <td><a class="button" href="/local-sources/{{ item.id }}">Open</a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>No local file paths registered yet.</p>
+    {% endif %}
+  </section>
+{% endblock %}

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Login - GLA Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #fbf7ff, #ead8ff);
+      color: #281237;
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+    }
+    .login-card {
+      width: min(420px, 92vw);
+      background: white;
+      border: 1px solid #ddc6ef;
+      border-radius: 12px;
+      padding: 28px;
+      box-shadow: 0 18px 44px rgba(72, 31, 101, 0.14);
+    }
+    h1 {
+      margin-top: 0;
+    }
+    label {
+      display: block;
+      margin-top: 14px;
+      font-weight: bold;
+      color: #735985;
+    }
+    input {
+      width: 100%;
+      padding: 11px;
+      margin-top: 6px;
+      border: 1px solid #ddc6ef;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+    button {
+      width: 100%;
+      margin-top: 18px;
+      padding: 12px;
+      border: 0;
+      border-radius: 8px;
+      background: #7d2fb0;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .error {
+      background: #ffe8f3;
+      border: 1px solid #cf3d7f;
+      color: #7e1f86;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+<body>
+  <section class="login-card">
+    <h1>GLA Platform Login</h1>
+    <p>Private CRM and dashboard access.</p>
+
+    {% if error %}
+      <div class="error">{{ error }}</div>
+    {% endif %}
+
+    <form method="post" action="/login">
+      <label>Username</label>
+      <input name="username" required>
+
+      <label>Password</label>
+      <input name="password" type="password" required>
+
+      <button type="submit">Log in</button>
+    </form>
+  </section>
+</body>
+</html>

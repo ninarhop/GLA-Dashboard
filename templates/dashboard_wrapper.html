@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="card">
+    <h1>Dashboard</h1>
+    <p>The dashboard is shown below. Use the top menu to return to Admin, Upload, Data Sources, Reports, or Help.</p>
+    <a class="button" href="/admin">Back to Admin</a>
+    <a class="button" href="/dashboard-files/index.html" target="_blank">Open Full Screen</a>
+  </section>
+
+  <section class="card" style="padding:0; overflow:hidden;">
+    <iframe
+      src="/dashboard-files/index.html"
+      title="GLA Dashboard"
+      style="width:100%; height:85vh; border:0;"
+    ></iframe>
+  </section>
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="card">
+    <h1>Import Detail</h1>
+    <p><strong>{{ analysis.upload.original_filename }}</strong></p>
+    <p>
+      Type: {{ analysis.upload.upload_type }} |
+      Rows: {{ analysis.upload.row_count }} |
+      Status: {{ analysis.upload.status }}
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Detected Columns</h2>
+    {% if analysis.columns %}
+      <table>
+        <thead>
+          <tr>
+            <th>Column</th>
+            <th>Non-empty sample count</th>
+            <th>Blank sample count</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for column in analysis.columns %}
+            <tr>
+              <td>{{ column }}</td>
+              <td>{{ analysis.stats[column].non_empty }}</td>
+              <td>{{ analysis.stats[column].blank }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>No columns found.</p>
+    {% endif %}
+  </section>
+
+  <section class="card">
+    <h2>Suggested Mapping</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Platform Field</th>
+          <th>Matched CSV Column</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for item in analysis.mapping %}
+          <tr>
+            <td>{{ item.field }}</td>
+            <td>{{ item.matched_column or "—" }}</td>
+            <td>{{ item.status }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>Run Report From This Source</h2>
+    <form method="post" action="/imports/{{ analysis.upload.id }}/run-report">
+      <label>Report</label>
+      <select name="report_name">
+        {% for report in analysis.reports %}
+          <option value="{{ report }}">{{ report }}</option>
+        {% endfor %}
+      </select>
+      <button type="submit">Run Report</button>
+    </form>
+  </section>
+{% endblock %}

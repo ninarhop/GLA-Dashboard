@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="card">
+    <h1>Help Center</h1>
+    <p>This page explains how to use the GLA CRM + Dashboard platform.</p>
+  </section>
+
+  <section class="card">
+    <h2>1. Log In</h2>
+    <p>Go to <strong>/login</strong> and enter your username and password.</p>
+    <p>After logging in, you will land on the Admin Home page.</p>
+  </section>
+
+  <section class="card">
+    <h2>2. Upload a CSV</h2>
+    <ol>
+      <li>Click <strong>Upload</strong> in the top menu.</li>
+      <li>Choose the upload type.</li>
+      <li>Select your CSV file.</li>
+      <li>Click <strong>Upload File</strong>.</li>
+    </ol>
+
+    <p><strong>Upload types currently available:</strong></p>
+    <ul>
+      <li>VRVH voter file</li>
+      <li>Purge list</li>
+      <li>Outreach/contact history</li>
+      <li>Registration apps</li>
+      <li>Zodiac data</li>
+      <li>Primary election data</li>
+      <li>Other</li>
+    </ul>
+
+    <p><strong>Important:</strong> For now, upload CSV files only. Do not upload real voter data until the private data rules and production setup are finished.</p>
+  </section>
+
+  <section class="card">
+    <h2>3. View Upload History</h2>
+    <ol>
+      <li>Click <strong>Uploads</strong>.</li>
+      <li>Review the file name, upload type, upload date, row count, and status.</li>
+    </ol>
+    <p>This confirms that the platform saved the file and counted the rows.</p>
+  </section>
+
+  <section class="card">
+    <h2>4. Inspect a Data Source</h2>
+    <ol>
+      <li>Click <strong>Data Sources</strong>.</li>
+      <li>Find the uploaded file.</li>
+      <li>Click <strong>Inspect</strong>.</li>
+    </ol>
+
+    <p>The Import Detail page shows:</p>
+    <ul>
+      <li>Detected columns from the CSV</li>
+      <li>Non-empty and blank sample counts</li>
+      <li>Suggested platform field mapping</li>
+      <li>Available reports that can be run from that file</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>5. Run a Report</h2>
+    <ol>
+      <li>Open a file from <strong>Data Sources</strong>.</li>
+      <li>Choose a report from the dropdown.</li>
+      <li>Click <strong>Run Report</strong>.</li>
+    </ol>
+
+    <p>The first version creates simple grouped reports from the uploaded CSV. For example, a County Performance Report will group records by county when a county column exists.</p>
+  </section>
+
+  <section class="card">
+    <h2>6. Open the Dashboard</h2>
+    <ol>
+      <li>Click <strong>Dashboard</strong> in the top menu.</li>
+      <li>The platform opens the existing dashboard from the <strong>github-pages</strong> folder.</li>
+    </ol>
+
+    <p>The next build step is connecting uploaded/imported data directly into dashboard dropdowns and dashboard metrics.</p>
+  </section>
+
+  <section class="card">
+    <h2>7. What Each Page Does</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Page</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Admin</td>
+          <td>Main home page with quick links and latest uploads.</td>
+        </tr>
+        <tr>
+          <td>Upload</td>
+          <td>Upload a CSV and choose what type of data it is.</td>
+        </tr>
+        <tr>
+          <td>Uploads</td>
+          <td>View upload history and row counts.</td>
+        </tr>
+        <tr>
+          <td>Data Sources</td>
+          <td>Inspect uploaded files, detected columns, and suggested mappings.</td>
+        </tr>
+        <tr>
+          <td>Reports</td>
+          <td>Report library. Some buttons are placeholders for the next build step.</td>
+        </tr>
+        <tr>
+          <td>Dashboard</td>
+          <td>View the existing GLA dashboard.</td>
+        </tr>
+        <tr>
+          <td>Help</td>
+          <td>Instructions for using the platform.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="card">
+    <h2>8. Privacy Rules</h2>
+    <p>This platform must protect private voter and contact data.</p>
+    <p>Do not publish or commit raw files, voter names, voter IDs, birth dates, addresses, phone numbers, emails, person-level outreach history, SQLite databases, or private source files to GitHub Pages.</p>
+    <p>The public dashboard should only show aggregate data.</p>
+  </section>
+{% endblock %}

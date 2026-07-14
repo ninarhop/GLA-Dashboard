@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="card">
+    <h1>Data Sources</h1>
+    <p>Uploaded CSVs live here. Open a source to inspect columns, review suggested mappings, and run dashboard reports.</p>
+    <a class="button" href="/upload">Upload New CSV</a>
+  </section>
+
+  <section class="card">
+    {% if uploads %}
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>File</th>
+            <th>Type</th>
+            <th>Rows</th>
+            <th>Status</th>
+            <th>Uploaded</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in uploads %}
+            <tr>
+              <td>{{ item.id }}</td>
+              <td>{{ item.original_filename }}</td>
+              <td>{{ item.upload_type }}</td>
+              <td>{{ item.row_count }}</td>
+              <td>{{ item.status }}</td>
+              <td>{{ item.uploaded_at }}</td>
+              <td><a class="button" href="/imports/{{ item.id }}">Inspect</a></td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>No data sources uploaded yet.</p>
+    {% endif %}
+  </section>
+{% endblock %}

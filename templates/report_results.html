@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="card">
+    <h1>{{ result.report_name }}</h1>
+    <p>
+      Source: <strong>{{ result.upload.original_filename }}</strong><br>
+      Grouped by: <strong>{{ result.group_column }}</strong><br>
+      Total rows reviewed: <strong>{{ result.total_rows }}</strong>
+    </p>
+    <a class="button" href="/imports/{{ result.upload.id }}">Back to Import</a>
+  </section>
+
+  <section class="card">
+    {% if result.rows %}
+      <table>
+        <thead>
+          <tr>
+            <th>Group</th>
+            <th>Count</th>
+            <th>Percent</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in result.rows %}
+            <tr>
+              <td>{{ row.label }}</td>
+              <td>{{ row.count }}</td>
+              <td>{{ row.percent }}%</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>No report rows found. This may mean the CSV does not have a matching column yet.</p>
+    {% endif %}
+  </section>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="card">
+    <h1>Upload History</h1>
+    <p>Every uploaded file is tracked here.</p>
+    <a class="button" href="/upload">Upload Another CSV</a>
+  </section>
+
+  <section class="card">
+    {% if uploads %}
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Original File</th>
+            <th>Upload Type</th>
+            <th>Uploaded By</th>
+            <th>Uploaded At</th>
+            <th>Rows</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for item in uploads %}
+            <tr>
+              <td>{{ item.id }}</td>
+              <td>{{ item.original_filename }}</td>
+              <td>{{ item.upload_type }}</td>
+              <td>{{ item.uploaded_by }}</td>
+              <td>{{ item.uploaded_at }}</td>
+              <td>{{ item.row_count }}</td>
+              <td>{{ item.status }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>No uploads yet.</p>
+    {% endif %}
+  </section>
+{% endblock %}

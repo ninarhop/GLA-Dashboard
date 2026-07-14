@@ -1,22 +1,25 @@
-# Public GitHub repository allowlist.
-# Everything is ignored unless explicitly allowed below.
-*
-
-!.gitignore
-!README.md
-!UPDATE_DASHBOARD_FROM_CSV.cmd
-
-!.github/
-!.github/**
-
-!scripts/
-!scripts/build_public_dashboard.py
-!scripts/validate_public_output.py
-!scripts/update_dashboard_from_csv.ps1
-
-!github-pages/
-!github-pages/**
-
-!private-source-data/
+# private data
+uploads/*
 private-source-data/*
-!private-source-data/README.md
+*.csv
+*.xlsx
+*.xls
+*.db
+*.sqlite
+*.sqlite3
+
+# keep folders
+!uploads/.gitkeep
+!private-source-data/.gitkeep
+
+# secrets
+.env
+.env.*
+*.key
+*.pem
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/

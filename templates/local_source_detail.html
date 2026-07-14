@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="card">
+    <h1>{{ source.source_name }}</h1>
+    <p><strong>Type:</strong> {{ source.source_type }}</p>
+    <p><strong>Path:</strong> {{ source.file_path }}</p>
+    <p><strong>Status:</strong> {{ source.status }}</p>
+    <p><strong>Rows:</strong> {{ source.row_count or "Not counted yet" }}</p>
+
+    <form method="post" action="/local-sources/{{ source.id }}/refresh">
+      <button type="submit">Refresh / Check File</button>
+    </form>
+  </section>
+
+  <section class="card">
+    <h2>Detected Columns</h2>
+    {% if columns %}
+      <table>
+        <thead>
+          <tr>
+            <th>Column</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for column in columns %}
+            <tr>
+              <td>{{ column }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>No columns available yet. If this is a G:\ path, it will only be readable when the app runs locally on your computer.</p>
+    {% endif %}
+  </section>
+
+  <section class="card">
+    <h2>Important</h2>
+    <p>If this app is running in Codespaces or another cloud server, it cannot read your local G:\ drive. It can only remember the path.</p>
+    <p>To process this file, run the platform locally on your computer where the G:\ shared drive is mounted.</p>
+  </section>
+{% endblock %}

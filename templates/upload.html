@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="card">
+    <h1>Upload CSV</h1>
+    <p>Upload source files here. This first version saves the file and records the row count.</p>
+
+    {% if message %}
+      <div class="error">{{ message }}</div>
+    {% endif %}
+
+    <form method="post" action="/upload" enctype="multipart/form-data">
+      <label>Upload Type</label>
+      <select name="upload_type" required>
+        {% for type in upload_types %}
+          <option value="{{ type }}">{{ type }}</option>
+        {% endfor %}
+      </select>
+
+      <label>CSV File</label>
+      <input type="file" name="file" accept=".csv,.txt" required>
+
+      <button type="submit">Upload File</button>
+    </form>
+  </section>
+{% endblock %}
