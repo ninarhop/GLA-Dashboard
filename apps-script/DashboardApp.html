@@ -24,7 +24,8 @@
     activeSection: "overview",
     county: "all",
     startDate: "2026-01-01",
-    endDate: ""
+    endDate: "",
+    zodiacElection: ""
   };
 
   function escapeHtml(value) {
@@ -440,66 +441,113 @@
   }
 
   function renderZodiac() {
-    const zodiac = state.zodiac;
+    const zodiac = state.intake?.zodiac || state.zodiac;
     if (!zodiac) {
       return `
         <section class="dashboard-section">
-          <div class="section-heading"><div><p class="eyebrow">Zodiac</p><h2>Aggregate Zodiac Turnout</h2></div></div>
+          <div class="section-heading"><div><p class="eyebrow">Zodiac</p><h2>Registered Voters and Election Participation</h2></div></div>
           <section class="panel empty-state">
             <h3>Zodiac aggregate data is not loaded</h3>
-            <p>Rebuild the existing public dashboard zodiac aggregate file. Birth dates remain private and are never displayed.</p>
+            <p>Run the Zodiac aggregate builder after the normal intake comparison. Birth dates remain private and are never displayed.</p>
           </section>
         </section>
       `;
     }
 
+    const elections = zodiac.elections || [];
+    if (!state.zodiacElection) {
+      state.zodiacElection = zodiac.defaultElectionId || elections[0]?.id || "";
+    }
+
+    const selectedElection = elections.find((row) => row.id === state.zodiacElection) || elections[0] || {};
+    const electionId = selectedElection.id || state.zodiacElection;
+    const statewideRows = zodiac.statewideByElection?.[electionId] || [];
     const county = selectedCountyName();
-    const countySummary = zodiac.countySummary || [];
-    const selectedSummary = county
-      ? countySummary.find((row) => countyKey(row.county) === countyKey(county))
+    const countyElectionRows = zodiac.countyByElection?.[electionId] || [];
+    const selectedCounty = county
+      ? countyElectionRows.find((row) => countyKey(row.county) === countyKey(county))
       : null;
-    const summaryRows = selectedSummary ? [selectedSummary] : countySummary.slice(0, 20);
-    const signRows = [...(zodiac.statewideBySign || [])].sort(
-      (a, b) => Number(b.recentlyVotedPct || 0) - Number(a.recentlyVotedPct || 0)
+
+    const registered = statewideRows.reduce((total, row) => total + Number(row.registeredVoters || 0), 0);
+    const voted = statewideRows.reduce((total, row) => total + Number(row.voted || 0), 0);
+    const votingRate = registered ? (voted / registered) * 100 : 0;
+
+    const sortedStatewide = [...statewideRows].sort(
+      (a, b) => Number(b.votingRate || 0) - Number(a.votingRate || 0) || Number(b.voted || 0) - Number(a.voted || 0)
     );
+
+    const countyRows = selectedCounty
+      ? selectedCounty.bySign || []
+      : [...countyElectionRows]
+          .sort((a, b) => Number(b.votingRate || 0) - Number(a.votingRate || 0))
+          .slice(0, 20);
+
+    const countyPanel = selectedCounty
+      ? panel(
+          `${county} County by Zodiac`,
+          selectedElection.label || "Selected election",
+          rowsToTable(
+            [
+              { key: "zodiacSign", label: "Zodiac Sign" },
+              { key: "registeredVoters", label: "Registered Voters", render: (row) => formatNumber(row.registeredVoters) },
+              { key: "voted", label: "Voted", render: (row) => formatNumber(row.voted) },
+              { key: "votingRate", label: "Voting Rate", render: (row) => formatPercent(row.votingRate) }
+            ],
+            countyRows
+          )
+        )
+      : panel(
+          "County Election Participation",
+          "Top 20 counties by voting rate",
+          rowsToTable(
+            [
+              { key: "county", label: "County" },
+              { key: "registeredVoters", label: "Registered Voters", render: (row) => formatNumber(row.registeredVoters) },
+              { key: "voted", label: "Voted", render: (row) => formatNumber(row.voted) },
+              { key: "votingRate", label: "Voting Rate", render: (row) => formatPercent(row.votingRate) },
+              { key: "topZodiacByVotingRate", label: "Highest-Rate Zodiac" }
+            ],
+            countyRows
+          )
+        );
 
     return `
       <section class="dashboard-section">
         <div class="section-heading">
           <div>
             <p class="eyebrow">Zodiac</p>
-            <h2>Registered Voters and Voting Rate by Zodiac</h2>
+            <h2>Registered Voters and Election Participation</h2>
           </div>
-          <span class="status-pill">Date filter does not change this section</span>
+          <label>
+            Election
+            <select id="zodiacElectionFilter">
+              ${elections.map((election) => `<option value="${escapeHtml(election.id)}"${election.id === electionId ? " selected" : ""}>${escapeHtml(election.label)}</option>`).join("")}
+            </select>
+          </label>
         </div>
+
+        <div class="metric-grid compact">
+          ${metricCard("Current Registered Voters", formatNumber(zodiac.registeredVoters), "All rows in the current VRVH")}
+          ${metricCard("Categorized by Zodiac", formatNumber(zodiac.registeredWithBirthDate), "Valid birth date available")}
+          ${metricCard("Voted in Selected Election", formatNumber(voted), selectedElection.label || "Selected election")}
+          ${metricCard("Voting Rate", formatPercent(votingRate), "Voted divided by registered voters with a valid birth date")}
+        </div>
+
         <div class="two-column">
           ${panel(
-            "Statewide Zodiac Turnout",
-            "Sorted by percentage who recently voted",
+            "Statewide by Zodiac Sign",
+            selectedElection.label || "Selected election",
             rowsToTable(
               [
                 { key: "zodiacSign", label: "Zodiac Sign" },
-                { key: "activeRegisteredVoters", label: "Registered Voters", render: (row) => formatNumber(row.activeRegisteredVoters) },
-                { key: "recentlyVoted", label: "Recently Voted", render: (row) => formatNumber(row.recentlyVoted) },
-                { key: "recentlyVotedPct", label: "Voting Rate", render: (row) => formatPercent(row.recentlyVotedPct) }
+                { key: "registeredVoters", label: "Registered Voters", render: (row) => formatNumber(row.registeredVoters) },
+                { key: "voted", label: "Voted", render: (row) => formatNumber(row.voted) },
+                { key: "votingRate", label: "Voting Rate", render: (row) => formatPercent(row.votingRate) }
               ],
-              signRows
+              sortedStatewide
             )
           )}
-          ${panel(
-            county ? `${county} County Zodiac Summary` : "County Zodiac Summary",
-            county ? "Selected county" : "Top counties by recent voting rate",
-            rowsToTable(
-              [
-                { key: "county", label: "County" },
-                { key: "activeRegisteredVoters", label: "Registered Voters", render: (row) => formatNumber(row.activeRegisteredVoters) },
-                { key: "recentlyVoted", label: "Recently Voted", render: (row) => formatNumber(row.recentlyVoted) },
-                { key: "recentlyVotedPct", label: "Voting Rate", render: (row) => formatPercent(row.recentlyVotedPct) },
-                { key: "topZodiacByRecentlyVotedPct", label: "Highest-Rate Zodiac" }
-              ],
-              summaryRows
-            )
-          )}
+          ${countyPanel}
         </div>
       </section>
     `;
@@ -556,11 +604,21 @@
     }
   }
 
+  function wireZodiacElectionFilter() {
+    const select = byId("zodiacElectionFilter");
+    if (!select) return;
+    select.onchange = (event) => {
+      state.zodiacElection = event.target.value;
+      render();
+    };
+  }
+
   function render() {
     renderNav();
     renderPrivacyNotice();
     const container = byId("sections");
     if (container) container.innerHTML = renderActiveSection();
+    wireZodiacElectionFilter();
   }
 
   function renderLoading() {
@@ -615,7 +673,10 @@
     try {
       state.intake = await fetchJson(INTAKE_URL, true);
       const legacy = await fetchJson(LEGACY_URL, false);
-      state.zodiac = legacy?.zodiac || null;
+      state.zodiac = state.intake?.zodiac || legacy?.zodiac || null;
+      if (!state.zodiacElection) {
+        state.zodiacElection = state.zodiac?.defaultElectionId || state.zodiac?.elections?.[0]?.id || "";
+      }
       renderFilters();
       render();
     } catch (error) {
