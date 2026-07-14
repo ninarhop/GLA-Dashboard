@@ -1,0 +1,36 @@
+{
+  "dashboard_root": "G:\\Shared drives\\Get Loud Arkansas\\Data\\Get Load Arkansas Dashboard",
+  "sources": {
+    "vrvh": {
+      "folder": "01_Data_Intake\\01_Current_VRVH",
+      "pattern": "VRVH_FULL_*.csv"
+    },
+    "purge": {
+      "folder": "01_Data_Intake\\02_Purge_Lists",
+      "pattern": "PURGE_CUMULATIVE_*.csv",
+      "reporting_start_date": "2025-12-01"
+    },
+    "ez_app": {
+      "folder": "01_Data_Intake\\03_EZ_App",
+      "pattern": "GLA_EZ_APP_FULL_*.csv"
+    },
+    "outreach": {
+      "folder": "01_Data_Intake\\04_Outreach",
+      "pattern": "GLA_OUTREACH_*.csv"
+    },
+    "priority_counties": {
+      "folder": "01_Data_Intake\\05_Priority_Counties",
+      "filename": "GLA_PRIORITY_COUNTIES_CURRENT.csv"
+    }
+  },
+  "privacy": {
+    "public_output_must_exclude": [
+      "name",
+      "voter_id",
+      "birth_date",
+      "address",
+      "phone",
+      "email"
+    ]
+  }
+}
