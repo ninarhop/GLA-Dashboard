@@ -768,7 +768,7 @@
     renderNav();
     renderLoading();
     try {
-      state.data = await loadData();
+      state.data = adaptIntakeData(await loadData());
       renderFilters();
       render();
     } catch (error) {
