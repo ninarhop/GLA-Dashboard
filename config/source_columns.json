@@ -1,0 +1,87 @@
+{
+  "vrvh": {
+    "voter_id": "VoterID",
+    "status": "CDE_REGISTRANT_STATUS",
+    "registration_date": "date_of_registration",
+    "birth_date": "date_of_birth",
+    "first_name": "TEXT_NAME_FIRST",
+    "middle_name": "TEXT_NAME_MIDDLE",
+    "last_name": "TEXT_NAME_LAST",
+    "county": "County",
+    "city": "TEXT_RES_CITY",
+    "zip": "TEXT_RES_ZIP5",
+    "address": "TEXT_RES_PHYSICAL_ADDRESS",
+    "precinct": "PrecinctName",
+    "house_district": "StateRepresentativeDistrict",
+    "senate_district": "StateSenateDistrict",
+    "congressional_district": "CongressionalDistrict",
+    "last_voted": "DateLastVoted",
+    "primary_2026": "2026 Preferential Primary"
+  },
+  "purge": {
+    "voter_id": "VR_VH OLD.VoterID",
+    "first_name": "VR_VH OLD.TEXT_NAME_FIRST",
+    "middle_name": "VR_VH OLD.TEXT_NAME_MIDDLE",
+    "last_name": "VR_VH OLD.TEXT_NAME_LAST",
+    "county": "VR_VH OLD.County",
+    "city": "VR_VH OLD.TEXT_RES_CITY",
+    "zip": "VR_VH OLD.TEXT_RES_ZIP5",
+    "address_1": "VR_VH OLD.Full Address Line 1",
+    "address_2": "VR_VH OLD.Full Address Line 2",
+    "previous_registration_date": "VR_VH OLD.date_of_registration",
+    "previous_status": "VR_VH OLD.CDE_REGISTRANT_STATUS",
+    "last_voted": "VR_VH OLD.DateLastVoted",
+    "ethnic_group": "Ethnic Group",
+    "language_preference": "Hispanic Language Preference",
+    "last_vrvh": "Last VRVH"
+  },
+  "ez_app": {
+    "submission_id": "EasyApp Submission",
+    "submission_date": "Date",
+    "first_name": "First Name",
+    "middle_name": "Middle Name",
+    "last_name": "Last Name",
+    "birth_date": "Date of Birth",
+    "address": "Address Where You Live",
+    "city": "City",
+    "county": "County",
+    "state": "State",
+    "zip": "Zip Code",
+    "email": "E-mail Address",
+    "home_phone": "Home Phone Number",
+    "work_phone": "Work Phone Number"
+  },
+  "priority_counties": {
+    "county": "County",
+    "status": "Priority_Status",
+    "effective_date": "Effective_Date"
+  },
+  "matching": {
+    "ez_app_exact_match": [
+      "first_name",
+      "last_name",
+      "birth_date"
+    ],
+    "ez_app_tiebreakers": [
+      "county",
+      "zip"
+    ],
+    "allow_address_change": true,
+    "require_manual_review_for_multiple_matches": true,
+    "do_not_match_on_name_only": true
+  },
+  "purge_reporting": {
+    "reporting_start_date": "2025-12-01",
+    "include_last_vrvh_values": [
+      "26-Jan",
+      "26-Feb",
+      "14-Apr",
+      "26-Apr",
+      "26-May",
+      "6/26/2026"
+    ],
+    "exclude_last_vrvh_values": [
+      "Summer2025"
+    ]
+  }
+}
