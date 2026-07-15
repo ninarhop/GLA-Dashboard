@@ -652,4 +652,76 @@ input[type="date"] {
   overflow-x: auto;
 }
 
+
+.metric-card {
+  position: relative;
+}
+
+.metric-card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.metric-info-button {
+  display: inline-grid;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface-soft);
+  color: var(--blue);
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.metric-info-button:hover,
+.metric-info-button[aria-expanded="true"] {
+  border-color: var(--blue);
+  background: var(--blue);
+  color: #fff;
+}
+
+.metric-info-popover {
+  position: absolute;
+  z-index: 30;
+  top: 46px;
+  right: 12px;
+  width: min(340px, calc(100vw - 48px));
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 18px 42px rgba(20, 33, 61, 0.22);
+  color: var(--text);
+}
+
+.metric-info-popover[hidden] {
+  display: none;
+}
+
+.metric-info-popover div + div {
+  margin-top: 10px;
+}
+
+.metric-info-popover b {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--teal);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+}
+
+.metric-info-popover p {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.84rem;
+  line-height: 1.42;
+}
+
 </style>
