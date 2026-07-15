@@ -71,7 +71,7 @@ function configureDashboardFiles(intakeFileId, legacyFileId) {
   }
 
   PropertiesService.getScriptProperties()
-    .setProperties(properties, true);
+    .setProperties(properties);
 
   return getConfiguredDashboardFiles();
 }
@@ -153,7 +153,7 @@ function configureEzAppAdmin(detailFileId, adminEmails) {
   PropertiesService.getScriptProperties().setProperties({
     [EZ_APP_DETAIL_FILE_PROPERTY]: detailId,
     [EZ_APP_ADMIN_EMAILS_PROPERTY]: emails.join(",")
-  }, true);
+  });
 
   return getConfiguredEzAppAdmin();
 }
