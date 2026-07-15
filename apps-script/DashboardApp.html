@@ -271,6 +271,24 @@
       .sort((a, b) => b.registeredInRange - a.registeredInRange || a.county.localeCompare(b.county));
   }
 
+  function allCountyOverviewRows() {
+    const registrations = state.intake?.dateSeries?.registrationsByCounty || [];
+    const removals = state.intake?.dateSeries?.purgeRemovalsByCounty || [];
+    const selectedCounty = selectedCountyName();
+    const counties = selectedCounty ? [selectedCounty] : allCountyNames();
+
+    return counties
+      .map((county) => ({
+        county,
+        currentRegistered: currentRegisteredFor(county),
+        registeredInRange: sumDatedCounty(registrations, county),
+        removedInRange: sumDatedCounty(removals, county),
+        returnedSinceBaseline: returnedFor(county),
+        ezAppMatches: ezMatchesFor(county)
+      }))
+      .sort((a, b) => b.currentRegistered - a.currentRegistered || a.county.localeCompare(b.county));
+  }
+
   function renderOverview() {
     const county = selectedCountyName();
     const registrations = sumDatedCounty(state.intake?.dateSeries?.registrationsByCounty, county);
@@ -303,18 +321,18 @@
         </div>
 
         ${panel(
-          "Priority County Registration Activity",
-          `Registrations from ${dateLabel()}`,
+          county ? `${county} County Totals` : "All County Totals",
+          county ? `Selected county; ${dateLabel()}` : `All Arkansas counties; ${dateLabel()}`,
           rowsToTable(
             [
-              { key: "county", label: "Priority County" },
+              { key: "county", label: "County" },
               { key: "currentRegistered", label: "Current Registered", render: (row) => formatNumber(row.currentRegistered) },
               { key: "registeredInRange", label: "Registered in Range", render: (row) => formatNumber(row.registeredInRange) },
               { key: "removedInRange", label: "Removed in Range", render: (row) => formatNumber(row.removedInRange) },
               { key: "returnedSinceBaseline", label: "Returned Since Dec. 2025", render: (row) => formatNumber(row.returnedSinceBaseline) },
               { key: "ezAppMatches", label: "EZ App Found Registered", render: (row) => formatNumber(row.ezAppMatches) }
             ],
-            priorityRows()
+            allCountyOverviewRows()
           )
         )}
       </section>
