@@ -158,6 +158,23 @@ function configureEzAppAdmin(detailFileId, adminEmails) {
   return getConfiguredEzAppAdmin();
 }
 
+function getEzAppAdminAccessState() {
+  const properties = PropertiesService.getScriptProperties();
+  const detailFileId = String(
+    properties.getProperty(EZ_APP_DETAIL_FILE_PROPERTY) || ""
+  ).trim();
+  const allowed = allowedEzAppAdminEmails_();
+  const email = String(Session.getActiveUser().getEmail() || "")
+    .trim()
+    .toLowerCase();
+
+  return {
+    configured: Boolean(detailFileId && allowed.length),
+    approved: Boolean(email && allowed.includes(email)),
+    email: email
+  };
+}
+
 function getConfiguredEzAppAdmin() {
   const properties = PropertiesService.getScriptProperties();
   return {

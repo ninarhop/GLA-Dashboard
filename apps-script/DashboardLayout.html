@@ -1,3 +1,15 @@
+<style>
+.admin-nav-slot {
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid rgba(255, 255, 255, 0.18);
+      }
+
+      .admin-nav-link {
+        display: block;
+        text-decoration: none;
+      }
+</style>
 <script>
 (() => {
   const root = document.getElementById("app");
@@ -14,6 +26,11 @@
           </div>
         </div>
         <nav id="nav" class="section-nav" aria-label="Executive dashboard navigation"></nav>
+<div id="adminNavSlot" class="admin-nav-slot" hidden>
+          <a id="ezAdminNavLink" class="nav-button admin-nav-link" href="?view=ez-admin">
+            EZ App Admin
+          </a>
+        </div>
       </aside>
 
       <main class="content">
@@ -43,6 +60,16 @@
       </main>
     </div>
   `;
+google.script.run
+    .withSuccessHandler((state) => {
+      const slot = document.getElementById("adminNavSlot");
+      if (!slot) return;
+      if (state && state.configured && state.approved) {
+        slot.hidden = false;
+      }
+    })
+    .withFailureHandler(() => {})
+    .getEzAppAdminAccessState();
 })();
 
 
